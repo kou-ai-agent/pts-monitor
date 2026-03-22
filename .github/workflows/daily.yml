@@ -1,0 +1,42 @@
+name: Daily PTS Monitor Fetch
+
+on:
+  schedule:
+    # 毎日 0:00 JST = 15:00 UTC
+    - cron: '0 15 * * *'
+  workflow_dispatch: # 手動実行用トグル
+
+jobs:
+  run-batch:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          
+      - name: Run daily pipeline (Scraper -> Processor -> AI Agent)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python main.py
+        
+      - name: Cleanup old data (keep past 30 days)
+        run: |
+          echo "Cleaning up files older than 30 days in data/ directory..."
+          # index.json を除外し、作成から30日が経過したjsonを削除
+          find data -name "*.json" ! -name "index.json" -mtime +30 -exec rm {} \;
+        
+      - name: Commit and Push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Automated daily PTS data update"
+          file_pattern: "data/*.json"

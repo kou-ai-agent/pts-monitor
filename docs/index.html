@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PTS Night Monitor</title>
+    <!-- Chart.js（グラフ描画用） -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">PTS Monitor</div>
+        <!-- カレンダーに該当する日付選択 -->
+        <select id="date-selector" class="dropdown header-dropdown"></select>
+    </header>
+
+    <main class="container">
+        <!-- AI Summary -->
+        <section class="card" id="summary-section">
+            <h2><span class="icon">✨</span>今日のサマリー</h2>
+            <p id="ai-summary-text" class="placeholder-text">データ読み込み中...</p>
+        </section>
+
+        <!-- AI Highlights -->
+        <section class="card" id="highlights-section">
+            <h2><span class="icon">🔥</span>注目銘柄</h2>
+            <div id="highlights-container" class="highlights-grid">
+                <!-- Javascriptで自動挿入 -->
+            </div>
+        </section>
+
+        <!-- Ranking Controls -->
+        <section class="controls">
+            <div class="filters">
+                <select id="market-selector" class="dropdown">
+                    <option value="all">全市場</option>
+                    <option value="prime">プライム</option>
+                    <option value="standard">スタンダード</option>
+                    <option value="growth">グロース</option>
+                </select>
+                <select id="category-selector" class="dropdown">
+                    <option value="price_up">値上がり率</option>
+                    <option value="price_down">値下がり率</option>
+                    <option value="volume">出来高</option>
+                    <option value="turnover">売買代金</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Ranking Table -->
+        <section class="table-container">
+            <table class="ranking-table" id="ranking-table">
+                <thead>
+                    <tr>
+                        <th class="col-rank">順位</th>
+                        <th class="col-name">銘柄</th>
+                        <th class="col-price">PTS株価 / 変化</th>
+                        <th class="col-vol">出来高・代金</th>
+                    </tr>
+                </thead>
+                <tbody id="ranking-tbody">
+                    <!-- Javascriptで自動挿入 -->
+                </tbody>
+            </table>
+            <div class="disclaimer">※ 銘柄行をタップすることで過去の順位推移グラフを確認できます。</div>
+        </section>
+    </main>
+
+    <!-- Modal for 30 days Chart -->
+    <div id="chart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="modal-close">&times;</span>
+            <h3 id="modal-title">銘柄名推移</h3>
+            <div class="chart-container">
+                <canvas id="history-chart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/app.js"></script>
+</body>
+</html>
