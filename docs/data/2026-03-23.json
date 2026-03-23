@@ -1,6 +1,6 @@
 {
   "date": "2026-03-23",
-  "generated_at": "16:42:24",
+  "generated_at": "17:00:49",
   "ai_summary": "AIサマリーの生成に失敗しました。",
   "ai_highlights": [],
   "rankings": {
@@ -5646,10 +5646,10 @@
           "rank": 10,
           "code": "8729",
           "name": "ソニーＦＧ",
-          "price": 146.7,
-          "change_pct": 2.09,
-          "volume": 838900,
-          "turnover": 123066629
+          "price": 146.8,
+          "change_pct": 2.16,
+          "volume": 840000,
+          "turnover": 123312000
         },
         {
           "rank": 11,
@@ -6485,10 +6485,10 @@
           "rank": 3,
           "code": "8729",
           "name": "ソニーＦＧ",
-          "price": 146.7,
-          "change_pct": 2.09,
-          "volume": 838900,
-          "turnover": 123066629
+          "price": 146.8,
+          "change_pct": 2.16,
+          "volume": 840000,
+          "turnover": 123312000
         },
         {
           "rank": 4,
@@ -9661,9 +9661,9 @@
           "rank": 55,
           "code": "8729",
           "name": "ソニーＦＧ",
-          "price": 146.7,
-          "change_pct": 2.09,
-          "volume": 831629,
+          "price": 146.8,
+          "change_pct": 2.16,
+          "volume": 831062,
           "turnover": 122000000
         },
         {
@@ -10401,9 +10401,9 @@
           "rank": 37,
           "code": "8729",
           "name": "ソニーＦＧ",
-          "price": 146.7,
-          "change_pct": 2.09,
-          "volume": 831629,
+          "price": 146.8,
+          "change_pct": 2.16,
+          "volume": 831062,
           "turnover": 122000000
         },
         {
