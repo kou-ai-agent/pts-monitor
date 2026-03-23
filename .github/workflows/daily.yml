@@ -6,6 +6,9 @@ on:
     - cron: '0 15 * * *'
   workflow_dispatch: # 手動実行用トグル
 
+permissions:
+  contents: write
+
 jobs:
   run-batch:
     runs-on: ubuntu-latest
