@@ -6,8 +6,8 @@ from scraper import fetch_ranking, CATEGORY_MAP, MARKET_MAP
 
 logger = logging.getLogger(__name__)
 
-# データ出力先ディレクトリ
-DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
+# データ出力先ディレクトリ（Cloudflare Pagesで公開するため docs 配下に配置）
+DATA_DIR = os.path.join(os.path.dirname(__file__), 'docs', 'data')
 
 def generate_daily_json(target_date: str) -> str:
     """

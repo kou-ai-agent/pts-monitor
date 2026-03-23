@@ -29,8 +29,7 @@ const formatVolume = (num) => {
 // 初期化
 async function init() {
     try {
-        const cacheBuster = new Date().getTime();
-        const res = await fetch(`../data/index.json?t=${cacheBuster}`);
+        const res = await fetch('data/index.json');
         if (!res.ok) throw new Error("Index file not found.");
         const idxData = await res.json();
         state.availableDates = idxData.dates || [];
@@ -78,7 +77,7 @@ async function loadDateData(dateStr) {
         
         // ローカル開発時のキャッシュ対策パラメーター
         const cacheBuster = new Date().getTime();
-        const res = await fetch(`../data/${dateStr}.json?t=${cacheBuster}`);
+        const res = await fetch(`data/${dateStr}.json?t=${cacheBuster}`);
         if (!res.ok) throw new Error("File not found");
         
         state.currentData = await res.json();
@@ -190,7 +189,7 @@ async function openChart(code, name, category, market) {
     const fetchPromises = dates.map(async d => {
         try {
             const cacheBuster = new Date().getTime();
-            const r = await fetch(`../data/${d}.json?t=${cacheBuster}`);
+            const r = await fetch(`data/${d}.json?t=${cacheBuster}`);
             if(!r.ok) return {date: d, rank: 101}; // エラーなら圏外として扱う
             const json = await r.json();
             const list = json.rankings?.[category]?.[market] || [];

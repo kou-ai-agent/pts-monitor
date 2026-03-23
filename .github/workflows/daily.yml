@@ -34,12 +34,12 @@ jobs:
         
       - name: Cleanup old data (keep past 30 days)
         run: |
-          echo "Cleaning up files older than 30 days in data/ directory..."
+          echo "Cleaning up files older than 30 days in docs/data/ directory..."
           # index.json を除外し、作成から30日が経過したjsonを削除
-          find data -name "*.json" ! -name "index.json" -mtime +30 -exec rm {} \;
+          find docs/data -name "*.json" ! -name "index.json" -mtime +30 -exec rm {} \;
         
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Automated daily PTS data update"
-          file_pattern: "data/*.json"
+          file_pattern: "docs/data/*.json"
