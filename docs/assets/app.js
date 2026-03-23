@@ -29,7 +29,8 @@ const formatVolume = (num) => {
 // 初期化
 async function init() {
     try {
-        const res = await fetch('data/index.json');
+        const cacheBuster = new Date().getTime();
+        const res = await fetch(`data/index.json?t=${cacheBuster}`);
         if (!res.ok) throw new Error("Index file not found.");
         const idxData = await res.json();
         state.availableDates = idxData.dates || [];

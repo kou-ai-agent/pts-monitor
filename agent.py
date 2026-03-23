@@ -20,7 +20,8 @@ def generate_ai_content(target_date: str) -> None:
     """
     保存された日次JSONデータを読み込み、Claude APIを用いてサマリーと注目銘柄ハイライトを生成、追記する。
     """
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    # 環境変数から取得し、念のため前後に入り込んだ空白や改行を除去
+    api_key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
     if not api_key:
         logger.error("環境変数 'ANTHROPIC_API_KEY' が設定されていません。AI処理をスキップします。")
         return
@@ -81,7 +82,7 @@ def _generate_summary(client: Anthropic, rankings: dict) -> str:
         )
         return response.content[0].text.strip()
     except Exception as e:
-        logger.error(f"Summary generation error: {e}")
+        logger.error(f"Summary generation error ({type(e).__name__}): {e}")
         return "AIサマリーの生成に失敗しました。"
 
 def _generate_highlights(client: Anthropic, rankings: dict) -> list:
@@ -128,7 +129,7 @@ def _generate_highlights(client: Anthropic, rankings: dict) -> list:
             
         return json.loads(result_text)
     except Exception as e:
-        logger.error(f"Highlights generation error: {e}")
+        logger.error(f"Highlights generation error ({type(e).__name__}): {e}")
         return []
 
 if __name__ == "__main__":
