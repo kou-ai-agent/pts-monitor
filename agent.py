@@ -14,7 +14,7 @@ from processor import load_daily_json, save_daily_json
 logger = logging.getLogger(__name__)
 
 # 使用するClaudeモデル（Haikuを指定）
-MODEL_NAME = "claude-3-5-haiku-20241022" 
+MODEL_NAME = "claude-haiku-4-5"
 
 def generate_ai_content(target_date: str) -> None:
     """
