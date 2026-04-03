@@ -25,6 +25,9 @@ def generate_daily_json(target_date: str) -> str:
             logger.info(f"Fetching {cat} - {mkt} for {target_date}")
             data = fetch_ranking(target_date, cat, mkt)
             rankings[cat][mkt] = data
+            for item in rankings[cat][mkt]:
+                if abs(item.get('change_pct', 0)) >= 40:
+                    item['split_suspected'] = True
             
     now = datetime.now()
     generated_at = now.strftime("%H:%M:%S")

@@ -62,12 +62,17 @@ def _generate_summary(client: Anthropic, rankings: dict) -> str:
     turnover = _extract_top_10(rankings, "turnover")
     
     prompt = f"""
-あなたは優秀な株式市場アナリストです。以下の本日のPTS（私設取引システム）ランキングデータを分析し、全体の特徴や傾向を3〜4文の自然な日本語で要約してください。
-テーマ株への物色傾向、セクターの偏り、新興銘柄の動向、特異な動きがあれば言及してください。
+あなたは優秀な株式市場アナリストです。以下の本日のPTS（私設取引システム）ランキングデータを分析し、3〜4文の自然な日本語で市場全体を解釈してください。
+
+【分析の視点】
+- 事実の列挙ではなく、**なぜその動きが起きたか**の仮説を前面に出してください
+- 翌日の現物市場への示唆（どのセクターに資金が流入しやすいか等）を含めてください
+- セクターローテーションの観点（資金がどこから来てどこへ向かっているか）で解釈してください
+- [分割疑い]マークの付いた銘柄は株式分割の可能性があるため、値動き異常として扱わず分析から除外してください
 
 【本日のPTSトップデータ】
-- 値上がり率上位10: {[item['name'] + '(+' + str(item['change_pct']) + '%)' for item in price_up]}
-- 値下がり率上位10: {[item['name'] + '(' + str(item['change_pct']) + '%)' for item in price_down]}
+- 値上がり率上位10: {[item['name'] + '(+' + str(item['change_pct']) + '%)' + ('[分割疑い]' if item.get('split_suspected') else '') for item in price_up]}
+- 値下がり率上位10: {[item['name'] + '(' + str(item['change_pct']) + '%)' + ('[分割疑い]' if item.get('split_suspected') else '') for item in price_down]}
 - 出来高上位10: {[item['name'] for item in volume]}
 - 売買代金上位10: {[item['name'] for item in turnover]}
 
@@ -96,7 +101,17 @@ def _generate_highlights(client: Anthropic, rankings: dict) -> list:
     
     prompt = f"""
 あなたは優秀な株式相場アナリストです。以下のPTSランキングデータ（値上がり・値下がり・出来高のトップ10）を分析し、**今日最も注目すべき銘柄を最大3〜5つ選定**してください。
-選んだ理由（急騰の背景、出来高を伴う上昇など）を各2〜3文で解説してください。
+
+【split_suspected=trueの銘柄について】
+split_suspected=trueの銘柄は株式分割の可能性があるため、急騰・急落の値動き異常として扱わず、選定対象から外してください。
+
+【選定理由（reasonフィールド）の必須要素】
+以下の3点を必ず含む2〜3文で記述してください：
+1. 数値的根拠（変化率・出来高・売買代金など具体的な数値）
+2. 動いた仮説（なぜその動きが起きたかの仮説・背景）
+3. 翌日注目点（翌日の現物市場でどこに注目すべきか）
+
+【注意】「材料を確認してください」という表現は、急騰・急落の背景が全く不明な場合に限り使用してください。それ以外では具体的な仮説を記述してください。
 
 【データ】
 {json.dumps(data_context, ensure_ascii=False)}
@@ -107,7 +122,7 @@ def _generate_highlights(client: Anthropic, rankings: dict) -> list:
   {{
     "code": "1234",
     "name": "銘柄名",
-    "reason": "選定理由。2〜3文で記載...",
+    "reason": "選定理由。数値的根拠・動いた仮説・翌日注目点の3点を含む2〜3文で記載...",
     "rank_today": 1,
     "category": "price_up"
   }}

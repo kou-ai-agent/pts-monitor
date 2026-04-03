@@ -2,8 +2,8 @@ name: Daily PTS Monitor Fetch
 
 on:
   schedule:
-    # 毎日 0:00 JST = 15:00 UTC
-    - cron: '0 15 * * *'
+    # 平日 0:30 JST = 15:30 UTC (日曜〜木曜 UTC = 月〜金 JST)
+    - cron: '30 15 * * 0-4'
   workflow_dispatch: # 手動実行用トグル
 
 permissions:
@@ -43,3 +43,14 @@ jobs:
         with:
           commit_message: "Automated daily PTS data update"
           file_pattern: "docs/data/*.json"
+
+      - name: Write workflow summary
+        if: always()
+        run: |
+          echo "## PTS Monitor Daily Run Summary" >> $GITHUB_STEP_SUMMARY
+          echo "| 項目 | 値 |" >> $GITHUB_STEP_SUMMARY
+          echo "|------|-----|" >> $GITHUB_STEP_SUMMARY
+          echo "| **ステータス** | ${{ job.status }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| **実行日時 (JST)** | $(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M') |" >> $GITHUB_STEP_SUMMARY
+          echo "| **トリガー** | ${{ github.event_name }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| **コミットSHA** | ${{ github.sha }} |" >> $GITHUB_STEP_SUMMARY

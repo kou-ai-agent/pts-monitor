@@ -82,7 +82,11 @@ async function loadDateData(dateStr) {
         if (!res.ok) throw new Error("File not found");
         
         state.currentData = await res.json();
-        
+        const d = state.currentData;
+        const timeLabel = d.generated_at ? d.generated_at.slice(0, 5) : '';
+        const lastUpdatedEl = document.getElementById('last-updated');
+        if (lastUpdatedEl) lastUpdatedEl.textContent = `最終更新: ${d.date} ${timeLabel}`;
+
         renderAIContents();
         renderRankings();
     } catch (e) {
