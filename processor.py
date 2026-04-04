@@ -1,7 +1,7 @@
 import os
 import json
 import logging
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 from scraper import fetch_ranking, CATEGORY_MAP, MARKET_MAP
 
 logger = logging.getLogger(__name__)
@@ -29,7 +29,8 @@ def generate_daily_json(target_date: str) -> str:
                 if abs(item.get('change_pct', 0)) >= 40:
                     item['split_suspected'] = True
             
-    now = datetime.now()
+    JST = timezone(timedelta(hours=9))
+    now = datetime.now(JST)
     generated_at = now.strftime("%H:%M:%S")
     
     # AI処理部分は後でagent.pyによって埋められるため、空または初期値にしておく
