@@ -7,14 +7,9 @@ from notifier import send_notification
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
     logger = logging.getLogger("main")
-<<<<<<< HEAD
     
     JST = timezone(timedelta(hours=9))
     today = datetime.now(JST).strftime("%Y-%m-%d")
-=======
-
-    today = datetime.now().strftime("%Y-%m-%d")
->>>>>>> e80b630 (feat: add notifier integration and optimize daily pipeline)
     logger.info(f"--- PTS Stock Check Pipeline Started for {today} ---")
 
     # 通知レポート用の集計変数
