@@ -2,8 +2,8 @@ name: Daily PTS Monitor Fetch
 
 on:
   schedule:
-    # 平日 0:30 JST = 15:30 UTC (日曜〜木曜 UTC = 月〜金 JST)
-    - cron: '30 15 * * 0-4'
+    # 月〜金曜の翌営業日 0:30 JST = 火〜土曜 15:30 UTC
+    - cron: '30 15 * * 2-6'
   workflow_dispatch: # 手動実行用トグル
 
 permissions:
@@ -27,15 +27,17 @@ jobs:
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           
-      - name: Run daily pipeline (Scraper -> Processor -> AI Agent)
+      - name: Run daily pipeline (Scraper -> Processor -> AI Agent -> Notifier)
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          PTS_DISCORD_WEBHOOK_URL: ${{ secrets.PTS_DISCORD_WEBHOOK_URL }}
+          PTS_SLACK_WEBHOOK_URL: ${{ secrets.PTS_SLACK_WEBHOOK_URL }}
+          PTS_LINE_ACCESS_TOKEN: ${{ secrets.PTS_LINE_ACCESS_TOKEN }}
         run: python main.py
         
       - name: Cleanup old data (keep past 30 days)
         run: |
           echo "Cleaning up files older than 30 days in docs/data/ directory..."
-          # index.json を除外し、作成から30日が経過したjsonを削除
           find docs/data -name "*.json" ! -name "index.json" -mtime +30 -exec rm {} \;
         
       - name: Commit and Push changes
@@ -43,14 +45,3 @@ jobs:
         with:
           commit_message: "Automated daily PTS data update"
           file_pattern: "docs/data/*.json"
-
-      - name: Write workflow summary
-        if: always()
-        run: |
-          echo "## PTS Monitor Daily Run Summary" >> $GITHUB_STEP_SUMMARY
-          echo "| 項目 | 値 |" >> $GITHUB_STEP_SUMMARY
-          echo "|------|-----|" >> $GITHUB_STEP_SUMMARY
-          echo "| **ステータス** | ${{ job.status }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| **実行日時 (JST)** | $(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M') |" >> $GITHUB_STEP_SUMMARY
-          echo "| **トリガー** | ${{ github.event_name }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| **コミットSHA** | ${{ github.sha }} |" >> $GITHUB_STEP_SUMMARY
