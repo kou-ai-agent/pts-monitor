@@ -294,7 +294,7 @@ function renderRankingTable(pageId, cat, market) {
     if (!tbody || !state.currentData?.rankings) return;
 
     let list = [];
-    try { list = state.currentData.rankings[cat][market] || []; } catch (e) {}
+    try { list = (state.currentData.rankings[cat][market] || []).filter(item => !/^1\d{3}$/.test(item.code)); } catch (e) {}
 
     tbody.innerHTML = '';
     if (list.length === 0) {
