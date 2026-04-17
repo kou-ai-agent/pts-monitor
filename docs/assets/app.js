@@ -83,7 +83,11 @@ async function loadDateData(dateStr) {
         
         state.currentData = await res.json();
         const d = state.currentData;
-        const timeLabel = d.generated_at ? d.generated_at.slice(0, 5) : '';
+        const timeLabel = d.generated_at ? (() => {
+            const [h, m] = d.generated_at.slice(0, 5).split(':').map(Number);
+            const jst = (h + 9) % 24;
+            return `${String(jst).padStart(2, '0')}:${String(m).padStart(2, '0')}`;
+        })() : '';
         const lastUpdatedEl = document.getElementById('last-updated');
         if (lastUpdatedEl) lastUpdatedEl.textContent = `最終更新: ${d.date} ${timeLabel}`;
 
