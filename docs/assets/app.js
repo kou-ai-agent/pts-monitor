@@ -230,7 +230,7 @@ function computeSectorScores(rankings) {
     const sectorStocks  = {};
 
     for (const [cat, weight] of Object.entries(SECTOR_WEIGHTS)) {
-        const list = rankings[cat]?.all || [];
+        const list = (rankings[cat]?.all || []).filter(item => !/^1\d{3}$/.test(item.code));
         list.slice(0, 10).forEach((item, idx) => {
             const sector = getSector(item.code);
             const score  = (10 - idx) * weight;
