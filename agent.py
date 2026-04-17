@@ -96,11 +96,12 @@ def _generate_highlights(client: Anthropic, rankings: dict) -> list:
     data_context = {
         "price_up": _extract_top_10(rankings, "price_up"),
         "price_down": _extract_top_10(rankings, "price_down"),
-        "volume": _extract_top_10(rankings, "volume")
+        "volume": _extract_top_10(rankings, "volume"),
+        "turnover": _extract_top_10(rankings, "turnover")
     }
     
     prompt = f"""
-あなたは優秀な株式相場アナリストです。以下のPTSランキングデータ（値上がり・値下がり・出来高のトップ10）を分析し、**今日最も注目すべき銘柄を最大3〜5つ選定**してください。
+あなたは優秀な株式相場アナリストです。以下のPTSランキングデータ（値上がり・値下がり・出来高・売買代金のトップ10）を分析し、**今日最も注目すべき銘柄を最大3〜5つ選定**してください。
 
 【split_suspected=trueの銘柄について】
 split_suspected=trueの銘柄は株式分割の可能性があるため、急騰・急落の値動き異常として扱わず、選定対象から外してください。
@@ -110,6 +111,12 @@ split_suspected=trueの銘柄は株式分割の可能性があるため、急騰
 1. 数値的根拠（変化率・出来高・売買代金など具体的な数値）
 2. 動いた仮説（なぜその動きが起きたかの仮説・背景）
 3. 翌日注目点（翌日の現物市場でどこに注目すべきか）
+
+【選定根拠（selection_basisフィールド）の必須要素】
+以下を必ず含めてください：
+- 選定に使用した具体的な数値（change_pct・volume_rank・turnover_rank）
+- 複数ランキングに登場している場合はappeared_inにそのランキング名をすべて列挙
+- 推定・仮説の場合は reasonフィールドで「〜と推定」「〜の可能性」と明示すること
 
 【注意】「材料を確認してください」という表現は、急騰・急落の背景が全く不明な場合に限り使用してください。それ以外では具体的な仮説を記述してください。
 
@@ -123,6 +130,12 @@ split_suspected=trueの銘柄は株式分割の可能性があるため、急騰
     "code": "1234",
     "name": "銘柄名",
     "reason": "選定理由。数値的根拠・動いた仮説・翌日注目点の3点を含む2〜3文で記載...",
+    "selection_basis": {{
+      "change_pct": 10.79,
+      "volume_rank": 3,
+      "turnover_rank": 5,
+      "appeared_in": ["price_up", "volume"]
+    }},
     "rank_today": 1,
     "category": "price_up"
   }}
@@ -131,7 +144,7 @@ split_suspected=trueの銘柄は株式分割の可能性があるため、急騰
     try:
         response = client.messages.create(
             model=MODEL_NAME,
-            max_tokens=1000,
+            max_tokens=1500,
             temperature=0.7,
             messages=[{"role": "user", "content": prompt}]
         )
