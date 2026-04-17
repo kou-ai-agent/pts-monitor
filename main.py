@@ -44,7 +44,7 @@ if __name__ == "__main__":
                     fail_counts[key] = 1
                     total_fails += 1
 
-        now_str = datetime.now().strftime("%H:%M:%S")
+        now_str = datetime.now(JST).strftime("%H:%M:%S")
         daily_data = {
             "date": today,
             "generated_at": now_str,
