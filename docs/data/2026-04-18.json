@@ -1,35 +1,70 @@
 {
   "date": "2026-04-18",
-  "generated_at": "01:38:14",
-  "ai_summary": "本日のPTS市場は、エネルギー・素材セクターの急落が顕著であり、WTI原油やエネルギー関連銘柄の大幅下げから、グローバルなインフレ懸念の後退と景気減速予想が市場心理を支配していることが伺えます。一方で、機械・電子部品など実需系の小型株が堅調に上昇しており、リスク資産からの資金流出というより、むしろ割安な国内需要関連銘柄への選別的な買い直しが進行している状況です。出来高上位に日経レバレッジ・ベア系ETFが集中していることから、翌日の現物市場では投機的な買い戻しよりも、機械・精密機器・電子部品といった実需基盤のあるセクターへの機関投資家の資金シフトが加速する可能性が高く、素材・エネルギー株の調整が続く見込みです。",
+  "generated_at": "03:21:43",
+  "ai_summary": "本日のPTS市場では、エネルギー関連銘柄の大幅下落が目立つ一方で、機械・電子部品セクターが堅調に推移しており、原油価格の下振れに伴う資金シフトが鮮明です。出来高上位に日経ベア２や楽天Ｗベアといったインバース商品が集中していることから、投資家が下落リスクへのヘッジを強化する防御的姿勢を強めており、市場心理の慎重化が進んでいます。翌日の現物市場では、機械工業や半導体関連といった成長セクターへの買い直しが期待される一方で、エネルギー・素材セクターは売り圧力が継続する可能性が高く、セクターローテーションの加速が予想されます。",
   "ai_highlights": [
-    {
-      "code": "6217",
-      "name": "津田駒",
-      "reason": "値上がりランク1位で16.22%の急騰、売買代金4,923万円と出来高も伴っており、機械工業セクターの需要回復期待が背景と考えられます。翌日は高値圏での利益確定売りと、この上昇が一時的なのか持続的なトレンドなのかを見極める現物での買い支え動向に注目すべきです。",
-      "rank_today": 1,
-      "category": "price_up"
-    },
     {
       "code": "3823",
       "name": "ＷＨＤＣ",
-      "reason": "値上がり2位（+10.91%）かつ出来高ランク2位の452万株、売買代金2.76億円と高流動性を伴う買い圧力が顕著で、デジタルコンテンツ関連の好材料か需給改善が推測されます。翌日は現物市場でこの高出来高が続くかどうか、また機関投資家の追加買いが入るかが重要な確認ポイントとなります。",
+      "reason": "値上がり率10.91%で第2位、出来高ランキング第2位（452.5万株）、売買代金ランキング第2位（2.76億円）と複数ランキングで上位に登場し、機関投資家の買い集中が示唆される。テック関連銘柄の買い直しまたはポジション構築の可能性が高く、翌日は現物市場での買い圧力継続の有無と、売却による利益確定圧力のバランスに注目すべき。",
+      "selection_basis": {
+        "change_pct": 10.91,
+        "volume_rank": 2,
+        "turnover_rank": 2,
+        "appeared_in": [
+          "price_up",
+          "volume",
+          "turnover"
+        ]
+      },
       "rank_today": 2,
+      "category": "price_up"
+    },
+    {
+      "code": "6217",
+      "name": "津田駒",
+      "reason": "値上がり率16.22%で値上がりランキング第1位の最高騰率を記録し、機械工業セクターの買い直しを示唆している。出来高4.58万株は限定的だが売買代金4.92億円と相応の取引規模があり、小型株での意図的な買いの可能性が高い。翌日は現物市場での買い継続力の確認と、この騰勢が他の機械関連銘柄に波及するかの波及効果に注目。",
+      "selection_basis": {
+        "change_pct": 16.22,
+        "volume_rank": null,
+        "turnover_rank": null,
+        "appeared_in": [
+          "price_up"
+        ]
+      },
+      "rank_today": 1,
       "category": "price_up"
     },
     {
       "code": "1671",
       "name": "ＷＴＩ原油",
-      "reason": "値下がりランク5位で-12.16%の下落、出来高7.19万株・売買代金3.13億円と高流動性で、原油価格の国際的な下落圧力（地政学リスク軽減やドル高など）が背景と考えられます。翌日は原油先物価格の動きと連動しながら、テクニカルレベルでの下げ止まり確認、および原油価格の反発兆候が見られるかに注目すべきです。",
+      "reason": "値下がり率-12.16%で値下がりランキング第5位、売買代金ランキング第5位（3.13億円）と複数ランキングで登場し、原油価格下落に伴う投資家の一斉売却が示唆される。地政学的リスク後退またはマクロ経済の弱気見通しの可能性があり、翌日は原油先物価格の動向確認と、エネルギー関連銘柄全体の売圧力継続の有無に注目。",
+      "selection_basis": {
+        "change_pct": -12.16,
+        "volume_rank": null,
+        "turnover_rank": 5,
+        "appeared_in": [
+          "price_down",
+          "turnover"
+        ]
+      },
       "rank_today": 5,
       "category": "price_down"
     },
     {
-      "code": "6740",
-      "name": "Ｊディスプレ",
-      "reason": "出来高ランク4位で246万株の高流動性を示しており、わずかながら+5.45%の上昇で売買代金2.86億円と機関投資家の関心が高く、ディスプレイ産業の需要回復期待（次世代デバイス向けなど）が背景と推測されます。翌日は出来高の持続性と、この上昇が単なるテクニカルリバウンドか実需に基づくものかを見極める買い方の質に注目してください。",
-      "rank_today": 4,
-      "category": "volume"
+      "code": "6629",
+      "name": "Ｔホライゾン",
+      "reason": "値上がり率10.28%で第3位、売買代金1.53億円と相応の取引があり、特定セクターの買い直しが進行中と推定される。出来高12.96万株の取引規模から機関投資家の関心が高まっている可能性があり、翌日は現物市場での買い継続力の確認と、業績関連ニュースの有無確認に注目。",
+      "selection_basis": {
+        "change_pct": 10.28,
+        "volume_rank": null,
+        "turnover_rank": null,
+        "appeared_in": [
+          "price_up"
+        ]
+      },
+      "rank_today": 3,
+      "category": "price_up"
     }
   ],
   "rankings": {
@@ -100,6 +135,15 @@
         },
         {
           "rank": 8,
+          "code": "7794",
+          "name": "ＥＤＰ",
+          "price": 1392.0,
+          "change_pct": 8.41,
+          "volume": 14200,
+          "turnover": 19766400
+        },
+        {
+          "rank": 9,
           "code": "6871",
           "name": "日本マイクロ",
           "price": 13300.0,
@@ -108,7 +152,7 @@
           "turnover": 81130000
         },
         {
-          "rank": 9,
+          "rank": 10,
           "code": "7725",
           "name": "インターアク",
           "price": 1820.0,
@@ -117,7 +161,7 @@
           "turnover": 16926000
         },
         {
-          "rank": 10,
+          "rank": 11,
           "code": "6366",
           "name": "千代建",
           "price": 1240.0,
@@ -126,7 +170,7 @@
           "turnover": 126728000
         },
         {
-          "rank": 11,
+          "rank": 12,
           "code": "5333",
           "name": "ＮＧＫ",
           "price": 4775.0,
@@ -135,7 +179,7 @@
           "turnover": 477500
         },
         {
-          "rank": 12,
+          "rank": 13,
           "code": "8095",
           "name": "アステナＨＤ",
           "price": 525.0,
@@ -144,7 +188,7 @@
           "turnover": 105000
         },
         {
-          "rank": 13,
+          "rank": 14,
           "code": "9159",
           "name": "ＷＴＯＫＹＯ",
           "price": 2499.9,
@@ -153,7 +197,7 @@
           "turnover": 1499940
         },
         {
-          "rank": 14,
+          "rank": 15,
           "code": "6140",
           "name": "旭ダイヤ",
           "price": 1413.0,
@@ -162,31 +206,22 @@
           "turnover": 68530500
         },
         {
-          "rank": 15,
+          "rank": 16,
           "code": "285A",
           "name": "キオクシア",
-          "price": 32222.0,
-          "change_pct": 5.54,
-          "volume": 181800,
-          "turnover": 5857959600
+          "price": 32223.0,
+          "change_pct": 5.55,
+          "volume": 182000,
+          "turnover": 5864586000
         },
         {
-          "rank": 16,
+          "rank": 17,
           "code": "3747",
           "name": "インタートレ",
           "price": 648.0,
           "change_pct": 5.54,
           "volume": 1300,
           "turnover": 842400
-        },
-        {
-          "rank": 17,
-          "code": "6740",
-          "name": "Ｊディスプレ",
-          "price": 116.0,
-          "change_pct": 5.45,
-          "volume": 2463100,
-          "turnover": 285719600
         },
         {
           "rank": 18,
@@ -280,6 +315,15 @@
         },
         {
           "rank": 28,
+          "code": "1963",
+          "name": "日揮ＨＤ",
+          "price": 2658.0,
+          "change_pct": 4.96,
+          "volume": 11900,
+          "turnover": 31630200
+        },
+        {
+          "rank": 29,
           "code": "4971",
           "name": "メック",
           "price": 8625.0,
@@ -288,7 +332,7 @@
           "turnover": 6900000
         },
         {
-          "rank": 29,
+          "rank": 30,
           "code": "290A",
           "name": "Ｓｙｎｓ",
           "price": 1430.0,
@@ -297,16 +341,1538 @@
           "turnover": 6721000
         },
         {
-          "rank": 30,
+          "rank": 31,
           "code": "3189",
           "name": "ＡＮＡＰＨＤ",
           "price": 172.0,
           "change_pct": 4.88,
           "volume": 3400,
           "turnover": 584800
+        },
+        {
+          "rank": 32,
+          "code": "9201",
+          "name": "ＪＡＬ",
+          "price": 2660.0,
+          "change_pct": 4.81,
+          "volume": 67200,
+          "turnover": 178752000
+        },
+        {
+          "rank": 33,
+          "code": "4004",
+          "name": "レゾナック",
+          "price": 13058.0,
+          "change_pct": 4.8,
+          "volume": 8100,
+          "turnover": 105769800
+        },
+        {
+          "rank": 34,
+          "code": "6298",
+          "name": "ワイエイシイ",
+          "price": 1355.0,
+          "change_pct": 4.8,
+          "volume": 2500,
+          "turnover": 3387500
+        },
+        {
+          "rank": 35,
+          "code": "6590",
+          "name": "芝浦",
+          "price": 5270.0,
+          "change_pct": 4.77,
+          "volume": 7400,
+          "turnover": 38998000
+        },
+        {
+          "rank": 36,
+          "code": "5938",
+          "name": "ＬＩＸＩＬ",
+          "price": 1692.0,
+          "change_pct": 4.74,
+          "volume": 14400,
+          "turnover": 24364800
+        },
+        {
+          "rank": 37,
+          "code": "5714",
+          "name": "ＤＯＷＡ",
+          "price": 10433.5,
+          "change_pct": 4.73,
+          "volume": 200,
+          "turnover": 2086700
+        },
+        {
+          "rank": 38,
+          "code": "3436",
+          "name": "ＳＵＭＣＯ",
+          "price": 2194.0,
+          "change_pct": 4.73,
+          "volume": 35300,
+          "turnover": 77448200
+        },
+        {
+          "rank": 39,
+          "code": "6227",
+          "name": "ＡＩメカ",
+          "price": 8500.0,
+          "change_pct": 4.68,
+          "volume": 8600,
+          "turnover": 73100000
+        },
+        {
+          "rank": 40,
+          "code": "5381",
+          "name": "マイポックス",
+          "price": 1200.0,
+          "change_pct": 4.62,
+          "volume": 1400,
+          "turnover": 1680000
+        },
+        {
+          "rank": 41,
+          "code": "6327",
+          "name": "北川精機",
+          "price": 2146.0,
+          "change_pct": 4.53,
+          "volume": 1700,
+          "turnover": 3648200
+        },
+        {
+          "rank": 42,
+          "code": "1367",
+          "name": "ｉＦＴＰＷブ",
+          "price": 2800.0,
+          "change_pct": 4.48,
+          "volume": 6080,
+          "turnover": 17024000
+        },
+        {
+          "rank": 43,
+          "code": "9412",
+          "name": "スカＪＳＡＴ",
+          "price": 3520.0,
+          "change_pct": 4.45,
+          "volume": 2400,
+          "turnover": 8448000
+        },
+        {
+          "rank": 44,
+          "code": "5010",
+          "name": "日精蝋",
+          "price": 257.8,
+          "change_pct": 4.37,
+          "volume": 900,
+          "turnover": 232020
+        },
+        {
+          "rank": 45,
+          "code": "6613",
+          "name": "ＱＤレーザ",
+          "price": 1340.0,
+          "change_pct": 4.28,
+          "volume": 79300,
+          "turnover": 106262000
+        },
+        {
+          "rank": 46,
+          "code": "5016",
+          "name": "ＪＸ金属",
+          "price": 5107.0,
+          "change_pct": 4.25,
+          "volume": 223700,
+          "turnover": 1142435900
+        },
+        {
+          "rank": 47,
+          "code": "9202",
+          "name": "ＡＮＡＨＤ",
+          "price": 2940.0,
+          "change_pct": 4.22,
+          "volume": 22800,
+          "turnover": 67032000
+        },
+        {
+          "rank": 48,
+          "code": "213A",
+          "name": "上場半導体株",
+          "price": 350.0,
+          "change_pct": 4.2,
+          "volume": 2480,
+          "turnover": 868000
+        },
+        {
+          "rank": 49,
+          "code": "1579",
+          "name": "日経ブル２",
+          "price": 642.0,
+          "change_pct": 4.19,
+          "volume": 1080930,
+          "turnover": 693957060
+        },
+        {
+          "rank": 50,
+          "code": "1515",
+          "name": "日鉄鉱",
+          "price": 2835.0,
+          "change_pct": 4.15,
+          "volume": 3800,
+          "turnover": 10773000
+        },
+        {
+          "rank": 51,
+          "code": "6723",
+          "name": "ルネサス",
+          "price": 2910.0,
+          "change_pct": 4.11,
+          "volume": 14900,
+          "turnover": 43359000
+        },
+        {
+          "rank": 52,
+          "code": "7203",
+          "name": "トヨタ",
+          "price": 3480.0,
+          "change_pct": 4.1,
+          "volume": 64100,
+          "turnover": 223068000
+        },
+        {
+          "rank": 53,
+          "code": "5727",
+          "name": "邦チタ",
+          "price": 3570.0,
+          "change_pct": 4.08,
+          "volume": 3400,
+          "turnover": 12138000
+        },
+        {
+          "rank": 54,
+          "code": "6166",
+          "name": "中村超硬",
+          "price": 816.0,
+          "change_pct": 4.08,
+          "volume": 3700,
+          "turnover": 3019200
+        },
+        {
+          "rank": 55,
+          "code": "5201",
+          "name": "ＡＧＣ",
+          "price": 5950.0,
+          "change_pct": 4.08,
+          "volume": 1200,
+          "turnover": 7140000
+        },
+        {
+          "rank": 56,
+          "code": "8308",
+          "name": "りそなＨＤ",
+          "price": 2046.0,
+          "change_pct": 4.07,
+          "volume": 8600,
+          "turnover": 17595600
+        },
+        {
+          "rank": 57,
+          "code": "3407",
+          "name": "旭化成",
+          "price": 1666.9,
+          "change_pct": 4.05,
+          "volume": 6700,
+          "turnover": 11168230
+        },
+        {
+          "rank": 58,
+          "code": "6857",
+          "name": "アドテスト",
+          "price": 28999.0,
+          "change_pct": 4.05,
+          "volume": 38400,
+          "turnover": 1113561600
+        },
+        {
+          "rank": 59,
+          "code": "6521",
+          "name": "オキサイド",
+          "price": 4214.0,
+          "change_pct": 4.05,
+          "volume": 5600,
+          "turnover": 23598400
+        },
+        {
+          "rank": 60,
+          "code": "6634",
+          "name": "ＪＮグループ",
+          "price": 103.0,
+          "change_pct": 4.04,
+          "volume": 1300,
+          "turnover": 133900
+        },
+        {
+          "rank": 61,
+          "code": "4043",
+          "name": "トクヤマ",
+          "price": 3970.0,
+          "change_pct": 4.04,
+          "volume": 1500,
+          "turnover": 5955000
+        },
+        {
+          "rank": 62,
+          "code": "282A",
+          "name": "ＧＸ半導１０",
+          "price": 2110.0,
+          "change_pct": 3.99,
+          "volume": 320,
+          "turnover": 675200
+        },
+        {
+          "rank": 63,
+          "code": "3840",
+          "name": "パス",
+          "price": 65.5,
+          "change_pct": 3.97,
+          "volume": 3300,
+          "turnover": 216150
+        },
+        {
+          "rank": 64,
+          "code": "6627",
+          "name": "テラプローブ",
+          "price": 10145.0,
+          "change_pct": 3.94,
+          "volume": 300,
+          "turnover": 3043500
+        },
+        {
+          "rank": 65,
+          "code": "4186",
+          "name": "東応化",
+          "price": 9389.0,
+          "change_pct": 3.94,
+          "volume": 2700,
+          "turnover": 25350300
+        },
+        {
+          "rank": 66,
+          "code": "6363",
+          "name": "酉島",
+          "price": 3300.0,
+          "change_pct": 3.94,
+          "volume": 2500,
+          "turnover": 8250000
+        },
+        {
+          "rank": 67,
+          "code": "4022",
+          "name": "ラサ工",
+          "price": 1850.0,
+          "change_pct": 3.93,
+          "volume": 8900,
+          "turnover": 16465000
+        },
+        {
+          "rank": 68,
+          "code": "4005",
+          "name": "住友化",
+          "price": 549.9,
+          "change_pct": 3.93,
+          "volume": 19100,
+          "turnover": 10503090
+        },
+        {
+          "rank": 69,
+          "code": "4664",
+          "name": "ＲＳＣ",
+          "price": 930.0,
+          "change_pct": 3.91,
+          "volume": 900,
+          "turnover": 837000
+        },
+        {
+          "rank": 70,
+          "code": "6779",
+          "name": "日電波",
+          "price": 1708.0,
+          "change_pct": 3.89,
+          "volume": 3000,
+          "turnover": 5124000
+        },
+        {
+          "rank": 71,
+          "code": "1570",
+          "name": "日経レバ",
+          "price": 59290.0,
+          "change_pct": 3.89,
+          "volume": 75331,
+          "turnover": 4466374990
+        },
+        {
+          "rank": 72,
+          "code": "6721",
+          "name": "ウインテスト",
+          "price": 107.0,
+          "change_pct": 3.88,
+          "volume": 25500,
+          "turnover": 2728500
+        },
+        {
+          "rank": 73,
+          "code": "4833",
+          "name": "Ｄｅｆコン",
+          "price": 69.6,
+          "change_pct": 3.88,
+          "volume": 52500,
+          "turnover": 3653999
+        },
+        {
+          "rank": 74,
+          "code": "6997",
+          "name": "日ケミコン",
+          "price": 2330.0,
+          "change_pct": 3.88,
+          "volume": 700,
+          "turnover": 1631000
+        },
+        {
+          "rank": 75,
+          "code": "2820",
+          "name": "やまみ",
+          "price": 4450.0,
+          "change_pct": 3.85,
+          "volume": 100,
+          "turnover": 445000
+        },
+        {
+          "rank": 76,
+          "code": "1358",
+          "name": "上場日経２倍",
+          "price": 113400.0,
+          "change_pct": 3.85,
+          "volume": 79,
+          "turnover": 8958600
+        },
+        {
+          "rank": 77,
+          "code": "1458",
+          "name": "楽天Ｗブル",
+          "price": 70600.0,
+          "change_pct": 3.82,
+          "volume": 5098,
+          "turnover": 359918800
+        },
+        {
+          "rank": 78,
+          "code": "6323",
+          "name": "ローツェ",
+          "price": 3764.0,
+          "change_pct": 3.81,
+          "volume": 7100,
+          "turnover": 26724400
+        },
+        {
+          "rank": 79,
+          "code": "6029",
+          "name": "アトラＧ",
+          "price": 180.6,
+          "change_pct": 3.79,
+          "volume": 33600,
+          "turnover": 6068160
+        },
+        {
+          "rank": 80,
+          "code": "3350",
+          "name": "メタプラ",
+          "price": 358.0,
+          "change_pct": 3.77,
+          "volume": 1049100,
+          "turnover": 375577800
+        },
+        {
+          "rank": 81,
+          "code": "4368",
+          "name": "扶桑化学",
+          "price": 3170.0,
+          "change_pct": 3.76,
+          "volume": 500,
+          "turnover": 1585000
+        },
+        {
+          "rank": 82,
+          "code": "4188",
+          "name": "三菱ケミＧ",
+          "price": 1026.0,
+          "change_pct": 3.75,
+          "volume": 11700,
+          "turnover": 12004200
+        },
+        {
+          "rank": 83,
+          "code": "3719",
+          "name": "ＡＩストーム",
+          "price": 246.9,
+          "change_pct": 3.74,
+          "volume": 27200,
+          "turnover": 6715680
+        },
+        {
+          "rank": 84,
+          "code": "6387",
+          "name": "サムコ",
+          "price": 10000.0,
+          "change_pct": 3.73,
+          "volume": 700,
+          "turnover": 7000000
+        },
+        {
+          "rank": 85,
+          "code": "5805",
+          "name": "ＳＷＣＣ",
+          "price": 14760.0,
+          "change_pct": 3.72,
+          "volume": 1600,
+          "turnover": 23616000
+        },
+        {
+          "rank": 86,
+          "code": "1542",
+          "name": "純銀信託",
+          "price": 38260.0,
+          "change_pct": 3.71,
+          "volume": 4058,
+          "turnover": 155259080
+        },
+        {
+          "rank": 87,
+          "code": "7735",
+          "name": "スクリン",
+          "price": 10900.0,
+          "change_pct": 3.71,
+          "volume": 15900,
+          "turnover": 173310000
+        },
+        {
+          "rank": 88,
+          "code": "6315",
+          "name": "ＴＯＷＡ",
+          "price": 2732.0,
+          "change_pct": 3.68,
+          "volume": 20600,
+          "turnover": 56279200
+        },
+        {
+          "rank": 89,
+          "code": "7717",
+          "name": "Ｖテク",
+          "price": 5080.0,
+          "change_pct": 3.67,
+          "volume": 600,
+          "turnover": 3048000
+        },
+        {
+          "rank": 90,
+          "code": "3861",
+          "name": "王子ＨＤ",
+          "price": 873.0,
+          "change_pct": 3.67,
+          "volume": 8900,
+          "turnover": 7769700
+        },
+        {
+          "rank": 91,
+          "code": "6976",
+          "name": "太陽誘電",
+          "price": 6430.0,
+          "change_pct": 3.66,
+          "volume": 4200,
+          "turnover": 27006000
+        },
+        {
+          "rank": 92,
+          "code": "5707",
+          "name": "東邦鉛",
+          "price": 1450.0,
+          "change_pct": 3.65,
+          "volume": 1400,
+          "turnover": 2030000
+        },
+        {
+          "rank": 93,
+          "code": "9143",
+          "name": "ＳＧＨＤ",
+          "price": 1564.0,
+          "change_pct": 3.64,
+          "volume": 800,
+          "turnover": 1251200
+        },
+        {
+          "rank": 94,
+          "code": "8050",
+          "name": "セイコーＧ",
+          "price": 6768.0,
+          "change_pct": 3.64,
+          "volume": 100,
+          "turnover": 676800
+        },
+        {
+          "rank": 95,
+          "code": "6574",
+          "name": "コンヴァノ",
+          "price": 114.0,
+          "change_pct": 3.64,
+          "volume": 4600,
+          "turnover": 524400
+        },
+        {
+          "rank": 96,
+          "code": "6855",
+          "name": "電子材料",
+          "price": 6840.0,
+          "change_pct": 3.64,
+          "volume": 4700,
+          "turnover": 32148000
+        },
+        {
+          "rank": 97,
+          "code": "4633",
+          "name": "サカタＩＮＸ",
+          "price": 2454.0,
+          "change_pct": 3.63,
+          "volume": 3800,
+          "turnover": 9325200
+        },
+        {
+          "rank": 98,
+          "code": "8783",
+          "name": "ａｂｃ",
+          "price": 208.3,
+          "change_pct": 3.63,
+          "volume": 34000,
+          "turnover": 7082200
+        },
+        {
+          "rank": 99,
+          "code": "1568",
+          "name": "ＴＰＸブル",
+          "price": 895.0,
+          "change_pct": 3.62,
+          "volume": 22450,
+          "turnover": 20092750
+        },
+        {
+          "rank": 100,
+          "code": "1365",
+          "name": "ｉＦ日経Ｗブ",
+          "price": 3640.0,
+          "change_pct": 3.62,
+          "volume": 6680,
+          "turnover": 24315200
         }
       ],
-      "prime": [],
+      "prime": [
+        {
+          "rank": 1,
+          "code": "6871",
+          "name": "日本マイクロ",
+          "price": 13300.0,
+          "change_pct": 7.52,
+          "volume": 6100,
+          "turnover": 81130000
+        },
+        {
+          "rank": 2,
+          "code": "7725",
+          "name": "インターアク",
+          "price": 1820.0,
+          "change_pct": 7.44,
+          "volume": 9300,
+          "turnover": 16926000
+        },
+        {
+          "rank": 3,
+          "code": "5333",
+          "name": "ＮＧＫ",
+          "price": 4775.0,
+          "change_pct": 6.75,
+          "volume": 100,
+          "turnover": 477500
+        },
+        {
+          "rank": 4,
+          "code": "8095",
+          "name": "アステナＨＤ",
+          "price": 525.0,
+          "change_pct": 6.71,
+          "volume": 200,
+          "turnover": 105000
+        },
+        {
+          "rank": 5,
+          "code": "6140",
+          "name": "旭ダイヤ",
+          "price": 1413.0,
+          "change_pct": 6.08,
+          "volume": 48500,
+          "turnover": 68530500
+        },
+        {
+          "rank": 6,
+          "code": "285A",
+          "name": "キオクシア",
+          "price": 32223.0,
+          "change_pct": 5.55,
+          "volume": 182000,
+          "turnover": 5864586000
+        },
+        {
+          "rank": 7,
+          "code": "4183",
+          "name": "三井化学",
+          "price": 2108.0,
+          "change_pct": 5.27,
+          "volume": 4900,
+          "turnover": 10329200
+        },
+        {
+          "rank": 8,
+          "code": "5713",
+          "name": "住友鉱",
+          "price": 10680.0,
+          "change_pct": 5.22,
+          "volume": 27000,
+          "turnover": 288360000
+        },
+        {
+          "rank": 9,
+          "code": "3101",
+          "name": "東洋紡",
+          "price": 1589.0,
+          "change_pct": 5.02,
+          "volume": 1500,
+          "turnover": 2383500
+        },
+        {
+          "rank": 10,
+          "code": "4617",
+          "name": "中国塗",
+          "price": 3360.0,
+          "change_pct": 5.0,
+          "volume": 3500,
+          "turnover": 11760000
+        },
+        {
+          "rank": 11,
+          "code": "6254",
+          "name": "野村マイクロ",
+          "price": 3900.0,
+          "change_pct": 4.98,
+          "volume": 1200,
+          "turnover": 4680000
+        },
+        {
+          "rank": 12,
+          "code": "1963",
+          "name": "日揮ＨＤ",
+          "price": 2658.0,
+          "change_pct": 4.96,
+          "volume": 11900,
+          "turnover": 31630200
+        },
+        {
+          "rank": 13,
+          "code": "4971",
+          "name": "メック",
+          "price": 8625.0,
+          "change_pct": 4.93,
+          "volume": 800,
+          "turnover": 6900000
+        },
+        {
+          "rank": 14,
+          "code": "9201",
+          "name": "ＪＡＬ",
+          "price": 2660.0,
+          "change_pct": 4.81,
+          "volume": 67200,
+          "turnover": 178752000
+        },
+        {
+          "rank": 15,
+          "code": "4004",
+          "name": "レゾナック",
+          "price": 13058.0,
+          "change_pct": 4.8,
+          "volume": 8100,
+          "turnover": 105769800
+        },
+        {
+          "rank": 16,
+          "code": "6298",
+          "name": "ワイエイシイ",
+          "price": 1355.0,
+          "change_pct": 4.8,
+          "volume": 2500,
+          "turnover": 3387500
+        },
+        {
+          "rank": 17,
+          "code": "6590",
+          "name": "芝浦",
+          "price": 5270.0,
+          "change_pct": 4.77,
+          "volume": 7400,
+          "turnover": 38998000
+        },
+        {
+          "rank": 18,
+          "code": "5938",
+          "name": "ＬＩＸＩＬ",
+          "price": 1692.0,
+          "change_pct": 4.74,
+          "volume": 14400,
+          "turnover": 24364800
+        },
+        {
+          "rank": 19,
+          "code": "5714",
+          "name": "ＤＯＷＡ",
+          "price": 10433.5,
+          "change_pct": 4.73,
+          "volume": 200,
+          "turnover": 2086700
+        },
+        {
+          "rank": 20,
+          "code": "3436",
+          "name": "ＳＵＭＣＯ",
+          "price": 2194.0,
+          "change_pct": 4.73,
+          "volume": 35300,
+          "turnover": 77448200
+        },
+        {
+          "rank": 21,
+          "code": "9412",
+          "name": "スカＪＳＡＴ",
+          "price": 3520.0,
+          "change_pct": 4.45,
+          "volume": 2400,
+          "turnover": 8448000
+        },
+        {
+          "rank": 22,
+          "code": "5016",
+          "name": "ＪＸ金属",
+          "price": 5107.0,
+          "change_pct": 4.25,
+          "volume": 223700,
+          "turnover": 1142435900
+        },
+        {
+          "rank": 23,
+          "code": "9202",
+          "name": "ＡＮＡＨＤ",
+          "price": 2940.0,
+          "change_pct": 4.22,
+          "volume": 22800,
+          "turnover": 67032000
+        },
+        {
+          "rank": 24,
+          "code": "1515",
+          "name": "日鉄鉱",
+          "price": 2835.0,
+          "change_pct": 4.15,
+          "volume": 3800,
+          "turnover": 10773000
+        },
+        {
+          "rank": 25,
+          "code": "6723",
+          "name": "ルネサス",
+          "price": 2910.0,
+          "change_pct": 4.11,
+          "volume": 14900,
+          "turnover": 43359000
+        },
+        {
+          "rank": 26,
+          "code": "7203",
+          "name": "トヨタ",
+          "price": 3480.0,
+          "change_pct": 4.1,
+          "volume": 64100,
+          "turnover": 223068000
+        },
+        {
+          "rank": 27,
+          "code": "5727",
+          "name": "邦チタ",
+          "price": 3570.0,
+          "change_pct": 4.08,
+          "volume": 3400,
+          "turnover": 12138000
+        },
+        {
+          "rank": 28,
+          "code": "5201",
+          "name": "ＡＧＣ",
+          "price": 5950.0,
+          "change_pct": 4.08,
+          "volume": 1200,
+          "turnover": 7140000
+        },
+        {
+          "rank": 29,
+          "code": "8308",
+          "name": "りそなＨＤ",
+          "price": 2046.0,
+          "change_pct": 4.07,
+          "volume": 8600,
+          "turnover": 17595600
+        },
+        {
+          "rank": 30,
+          "code": "3407",
+          "name": "旭化成",
+          "price": 1666.9,
+          "change_pct": 4.05,
+          "volume": 6700,
+          "turnover": 11168230
+        },
+        {
+          "rank": 31,
+          "code": "6857",
+          "name": "アドテスト",
+          "price": 28999.0,
+          "change_pct": 4.05,
+          "volume": 38400,
+          "turnover": 1113561600
+        },
+        {
+          "rank": 32,
+          "code": "4043",
+          "name": "トクヤマ",
+          "price": 3970.0,
+          "change_pct": 4.04,
+          "volume": 1500,
+          "turnover": 5955000
+        },
+        {
+          "rank": 33,
+          "code": "4186",
+          "name": "東応化",
+          "price": 9389.0,
+          "change_pct": 3.94,
+          "volume": 2700,
+          "turnover": 25350300
+        },
+        {
+          "rank": 34,
+          "code": "6363",
+          "name": "酉島",
+          "price": 3300.0,
+          "change_pct": 3.94,
+          "volume": 2500,
+          "turnover": 8250000
+        },
+        {
+          "rank": 35,
+          "code": "4022",
+          "name": "ラサ工",
+          "price": 1850.0,
+          "change_pct": 3.93,
+          "volume": 8900,
+          "turnover": 16465000
+        },
+        {
+          "rank": 36,
+          "code": "4005",
+          "name": "住友化",
+          "price": 549.9,
+          "change_pct": 3.93,
+          "volume": 19100,
+          "turnover": 10503090
+        },
+        {
+          "rank": 37,
+          "code": "6779",
+          "name": "日電波",
+          "price": 1708.0,
+          "change_pct": 3.89,
+          "volume": 3000,
+          "turnover": 5124000
+        },
+        {
+          "rank": 38,
+          "code": "6997",
+          "name": "日ケミコン",
+          "price": 2330.0,
+          "change_pct": 3.88,
+          "volume": 700,
+          "turnover": 1631000
+        },
+        {
+          "rank": 39,
+          "code": "6323",
+          "name": "ローツェ",
+          "price": 3764.0,
+          "change_pct": 3.81,
+          "volume": 7100,
+          "turnover": 26724400
+        },
+        {
+          "rank": 40,
+          "code": "4368",
+          "name": "扶桑化学",
+          "price": 3170.0,
+          "change_pct": 3.76,
+          "volume": 500,
+          "turnover": 1585000
+        },
+        {
+          "rank": 41,
+          "code": "4188",
+          "name": "三菱ケミＧ",
+          "price": 1026.0,
+          "change_pct": 3.75,
+          "volume": 11700,
+          "turnover": 12004200
+        },
+        {
+          "rank": 42,
+          "code": "6387",
+          "name": "サムコ",
+          "price": 10000.0,
+          "change_pct": 3.73,
+          "volume": 700,
+          "turnover": 7000000
+        },
+        {
+          "rank": 43,
+          "code": "5805",
+          "name": "ＳＷＣＣ",
+          "price": 14760.0,
+          "change_pct": 3.72,
+          "volume": 1600,
+          "turnover": 23616000
+        },
+        {
+          "rank": 44,
+          "code": "7735",
+          "name": "スクリン",
+          "price": 10900.0,
+          "change_pct": 3.71,
+          "volume": 15900,
+          "turnover": 173310000
+        },
+        {
+          "rank": 45,
+          "code": "6315",
+          "name": "ＴＯＷＡ",
+          "price": 2732.0,
+          "change_pct": 3.68,
+          "volume": 20600,
+          "turnover": 56279200
+        },
+        {
+          "rank": 46,
+          "code": "7717",
+          "name": "Ｖテク",
+          "price": 5080.0,
+          "change_pct": 3.67,
+          "volume": 600,
+          "turnover": 3048000
+        },
+        {
+          "rank": 47,
+          "code": "3861",
+          "name": "王子ＨＤ",
+          "price": 873.0,
+          "change_pct": 3.67,
+          "volume": 8900,
+          "turnover": 7769700
+        },
+        {
+          "rank": 48,
+          "code": "6976",
+          "name": "太陽誘電",
+          "price": 6430.0,
+          "change_pct": 3.66,
+          "volume": 4200,
+          "turnover": 27006000
+        },
+        {
+          "rank": 49,
+          "code": "5707",
+          "name": "東邦鉛",
+          "price": 1450.0,
+          "change_pct": 3.65,
+          "volume": 1400,
+          "turnover": 2030000
+        },
+        {
+          "rank": 50,
+          "code": "9143",
+          "name": "ＳＧＨＤ",
+          "price": 1564.0,
+          "change_pct": 3.64,
+          "volume": 800,
+          "turnover": 1251200
+        },
+        {
+          "rank": 51,
+          "code": "8050",
+          "name": "セイコーＧ",
+          "price": 6768.0,
+          "change_pct": 3.64,
+          "volume": 100,
+          "turnover": 676800
+        },
+        {
+          "rank": 52,
+          "code": "4633",
+          "name": "サカタＩＮＸ",
+          "price": 2454.0,
+          "change_pct": 3.63,
+          "volume": 3800,
+          "turnover": 9325200
+        },
+        {
+          "rank": 53,
+          "code": "6703",
+          "name": "ＯＫＩ",
+          "price": 3440.0,
+          "change_pct": 3.61,
+          "volume": 1200,
+          "turnover": 4128000
+        },
+        {
+          "rank": 54,
+          "code": "6324",
+          "name": "ハーモニック",
+          "price": 4590.0,
+          "change_pct": 3.61,
+          "volume": 5400,
+          "turnover": 24786000
+        },
+        {
+          "rank": 55,
+          "code": "6525",
+          "name": "コクサイエレ",
+          "price": 6955.0,
+          "change_pct": 3.54,
+          "volume": 18300,
+          "turnover": 127276500
+        },
+        {
+          "rank": 56,
+          "code": "6134",
+          "name": "ＦＵＪＩ",
+          "price": 5856.9,
+          "change_pct": 3.53,
+          "volume": 800,
+          "turnover": 4685520
+        },
+        {
+          "rank": 57,
+          "code": "4180",
+          "name": "Ａｐｐｉｅｒ",
+          "price": 1000.0,
+          "change_pct": 3.52,
+          "volume": 8700,
+          "turnover": 8700000
+        },
+        {
+          "rank": 58,
+          "code": "6941",
+          "name": "山一電機",
+          "price": 10797.0,
+          "change_pct": 3.52,
+          "volume": 200,
+          "turnover": 2159400
+        },
+        {
+          "rank": 59,
+          "code": "3105",
+          "name": "日清紡ＨＤ",
+          "price": 1884.0,
+          "change_pct": 3.52,
+          "volume": 2300,
+          "turnover": 4333200
+        },
+        {
+          "rank": 60,
+          "code": "6146",
+          "name": "ディスコ",
+          "price": 75450.0,
+          "change_pct": 3.5,
+          "volume": 3600,
+          "turnover": 271620000
+        },
+        {
+          "rank": 61,
+          "code": "7741",
+          "name": "ＨＯＹＡ",
+          "price": 30000.0,
+          "change_pct": 3.47,
+          "volume": 200,
+          "turnover": 6000000
+        },
+        {
+          "rank": 62,
+          "code": "6954",
+          "name": "ファナック",
+          "price": 6443.0,
+          "change_pct": 3.45,
+          "volume": 11700,
+          "turnover": 75383100
+        },
+        {
+          "rank": 63,
+          "code": "5801",
+          "name": "古河電",
+          "price": 46500.0,
+          "change_pct": 3.43,
+          "volume": 10700,
+          "turnover": 497550000
+        },
+        {
+          "rank": 64,
+          "code": "6787",
+          "name": "メイコー",
+          "price": 29630.0,
+          "change_pct": 3.42,
+          "volume": 200,
+          "turnover": 5926000
+        },
+        {
+          "rank": 65,
+          "code": "6981",
+          "name": "村田製",
+          "price": 4755.0,
+          "change_pct": 3.37,
+          "volume": 19800,
+          "turnover": 94149000
+        },
+        {
+          "rank": 66,
+          "code": "6999",
+          "name": "ＫＯＡ",
+          "price": 2060.0,
+          "change_pct": 3.36,
+          "volume": 1100,
+          "turnover": 2266000
+        },
+        {
+          "rank": 67,
+          "code": "5110",
+          "name": "住友ゴ",
+          "price": 2190.0,
+          "change_pct": 3.33,
+          "volume": 5200,
+          "turnover": 11388000
+        },
+        {
+          "rank": 68,
+          "code": "6330",
+          "name": "東洋エンジ",
+          "price": 2686.0,
+          "change_pct": 3.31,
+          "volume": 36300,
+          "turnover": 97501800
+        },
+        {
+          "rank": 69,
+          "code": "6331",
+          "name": "化工機",
+          "price": 3130.0,
+          "change_pct": 3.3,
+          "volume": 600,
+          "turnover": 1878000
+        },
+        {
+          "rank": 70,
+          "code": "5711",
+          "name": "三菱マ",
+          "price": 5710.0,
+          "change_pct": 3.29,
+          "volume": 2100,
+          "turnover": 11991000
+        },
+        {
+          "rank": 71,
+          "code": "5706",
+          "name": "三井金属",
+          "price": 37700.0,
+          "change_pct": 3.29,
+          "volume": 7500,
+          "turnover": 282750000
+        },
+        {
+          "rank": 72,
+          "code": "5105",
+          "name": "ＴＯＹＯ",
+          "price": 4107.0,
+          "change_pct": 3.27,
+          "volume": 1000,
+          "turnover": 4107000
+        },
+        {
+          "rank": 73,
+          "code": "3915",
+          "name": "テラスカイ",
+          "price": 1959.0,
+          "change_pct": 3.27,
+          "volume": 600,
+          "turnover": 1175400
+        },
+        {
+          "rank": 74,
+          "code": "4612",
+          "name": "日本ペＨＤ",
+          "price": 1030.0,
+          "change_pct": 3.24,
+          "volume": 2900,
+          "turnover": 2987000
+        },
+        {
+          "rank": 75,
+          "code": "4042",
+          "name": "東ソー",
+          "price": 2488.0,
+          "change_pct": 3.24,
+          "volume": 2000,
+          "turnover": 4976000
+        },
+        {
+          "rank": 76,
+          "code": "6235",
+          "name": "オプトラン",
+          "price": 3680.0,
+          "change_pct": 3.23,
+          "volume": 400,
+          "turnover": 1472000
+        },
+        {
+          "rank": 77,
+          "code": "7261",
+          "name": "マツダ",
+          "price": 1140.0,
+          "change_pct": 3.21,
+          "volume": 14700,
+          "turnover": 16758000
+        },
+        {
+          "rank": 78,
+          "code": "4902",
+          "name": "コニカミノル",
+          "price": 613.0,
+          "change_pct": 3.2,
+          "volume": 200,
+          "turnover": 122600
+        },
+        {
+          "rank": 79,
+          "code": "5726",
+          "name": "大阪チタ",
+          "price": 2690.0,
+          "change_pct": 3.18,
+          "volume": 4300,
+          "turnover": 11567000
+        },
+        {
+          "rank": 80,
+          "code": "3778",
+          "name": "さくらネット",
+          "price": 3869.0,
+          "change_pct": 3.17,
+          "volume": 27900,
+          "turnover": 107945100
+        },
+        {
+          "rank": 81,
+          "code": "4205",
+          "name": "ゼオン",
+          "price": 1877.0,
+          "change_pct": 3.16,
+          "volume": 900,
+          "turnover": 1689300
+        },
+        {
+          "rank": 82,
+          "code": "1969",
+          "name": "高砂熱",
+          "price": 4650.0,
+          "change_pct": 3.15,
+          "volume": 300,
+          "turnover": 1395000
+        },
+        {
+          "rank": 83,
+          "code": "8136",
+          "name": "サンリオ",
+          "price": 1065.0,
+          "change_pct": 3.15,
+          "volume": 59500,
+          "turnover": 63367500
+        },
+        {
+          "rank": 84,
+          "code": "5802",
+          "name": "住友電",
+          "price": 10290.0,
+          "change_pct": 3.15,
+          "volume": 35600,
+          "turnover": 366324000
+        },
+        {
+          "rank": 85,
+          "code": "6966",
+          "name": "三井ハイテク",
+          "price": 689.0,
+          "change_pct": 3.14,
+          "volume": 5100,
+          "turnover": 3513900
+        },
+        {
+          "rank": 86,
+          "code": "1803",
+          "name": "清水建",
+          "price": 2844.0,
+          "change_pct": 3.12,
+          "volume": 4100,
+          "turnover": 11660400
+        },
+        {
+          "rank": 87,
+          "code": "4099",
+          "name": "四国化ＨＤ",
+          "price": 4995.0,
+          "change_pct": 3.1,
+          "volume": 200,
+          "turnover": 999000
+        },
+        {
+          "rank": 88,
+          "code": "6504",
+          "name": "富士電機",
+          "price": 12330.0,
+          "change_pct": 3.09,
+          "volume": 200,
+          "turnover": 2466000
+        },
+        {
+          "rank": 89,
+          "code": "4062",
+          "name": "イビデン",
+          "price": 9520.0,
+          "change_pct": 3.09,
+          "volume": 14800,
+          "turnover": 140896000
+        },
+        {
+          "rank": 90,
+          "code": "6479",
+          "name": "ミネベア",
+          "price": 3040.0,
+          "change_pct": 3.07,
+          "volume": 1700,
+          "turnover": 5168000
+        },
+        {
+          "rank": 91,
+          "code": "1893",
+          "name": "五洋建",
+          "price": 1734.0,
+          "change_pct": 3.06,
+          "volume": 4400,
+          "turnover": 7629600
+        },
+        {
+          "rank": 92,
+          "code": "6264",
+          "name": "マルマエ",
+          "price": 1855.0,
+          "change_pct": 3.06,
+          "volume": 5300,
+          "turnover": 9831500
+        },
+        {
+          "rank": 93,
+          "code": "7245",
+          "name": "大同メ",
+          "price": 945.0,
+          "change_pct": 3.05,
+          "volume": 1000,
+          "turnover": 945000
+        },
+        {
+          "rank": 94,
+          "code": "5076",
+          "name": "インフロニア",
+          "price": 2130.0,
+          "change_pct": 3.05,
+          "volume": 6900,
+          "turnover": 14697000
+        },
+        {
+          "rank": 95,
+          "code": "429A",
+          "name": "テクセンド",
+          "price": 3900.0,
+          "change_pct": 3.04,
+          "volume": 3200,
+          "turnover": 12480000
+        },
+        {
+          "rank": 96,
+          "code": "9843",
+          "name": "ニトリＨＤ",
+          "price": 2599.0,
+          "change_pct": 3.03,
+          "volume": 8100,
+          "turnover": 21051900
+        },
+        {
+          "rank": 97,
+          "code": "6278",
+          "name": "ユニオンツル",
+          "price": 16650.0,
+          "change_pct": 3.03,
+          "volume": 2700,
+          "turnover": 44955000
+        },
+        {
+          "rank": 98,
+          "code": "9603",
+          "name": "ＨＩＳ",
+          "price": 1130.0,
+          "change_pct": 3.01,
+          "volume": 1000,
+          "turnover": 1130000
+        },
+        {
+          "rank": 99,
+          "code": "6920",
+          "name": "レーザーテク",
+          "price": 41151.0,
+          "change_pct": 3.01,
+          "volume": 16800,
+          "turnover": 691336800
+        },
+        {
+          "rank": 100,
+          "code": "8593",
+          "name": "三菱ＨＣキャ",
+          "price": 1503.0,
+          "change_pct": 2.95,
+          "volume": 35600,
+          "turnover": 53506800
+        }
+      ],
       "standard": [
         {
           "rank": 1,
@@ -454,15 +2020,6 @@
         },
         {
           "rank": 17,
-          "code": "7719",
-          "name": "東京衡機",
-          "price": 706.0,
-          "change_pct": 4.44,
-          "volume": 58800,
-          "turnover": 41512800
-        },
-        {
-          "rank": 18,
           "code": "5010",
           "name": "日精蝋",
           "price": 257.8,
@@ -471,7 +2028,7 @@
           "turnover": 232020
         },
         {
-          "rank": 19,
+          "rank": 18,
           "code": "6634",
           "name": "ＪＮグループ",
           "price": 103.0,
@@ -480,7 +2037,7 @@
           "turnover": 133900
         },
         {
-          "rank": 20,
+          "rank": 19,
           "code": "3840",
           "name": "パス",
           "price": 65.5,
@@ -489,7 +2046,7 @@
           "turnover": 216150
         },
         {
-          "rank": 21,
+          "rank": 20,
           "code": "6627",
           "name": "テラプローブ",
           "price": 10145.0,
@@ -498,7 +2055,7 @@
           "turnover": 3043500
         },
         {
-          "rank": 22,
+          "rank": 21,
           "code": "4664",
           "name": "ＲＳＣ",
           "price": 930.0,
@@ -507,7 +2064,7 @@
           "turnover": 837000
         },
         {
-          "rank": 23,
+          "rank": 22,
           "code": "6721",
           "name": "ウインテスト",
           "price": 107.0,
@@ -516,7 +2073,7 @@
           "turnover": 2728500
         },
         {
-          "rank": 24,
+          "rank": 23,
           "code": "2820",
           "name": "やまみ",
           "price": 4450.0,
@@ -525,7 +2082,7 @@
           "turnover": 445000
         },
         {
-          "rank": 25,
+          "rank": 24,
           "code": "6029",
           "name": "アトラＧ",
           "price": 180.6,
@@ -534,16 +2091,16 @@
           "turnover": 6068160
         },
         {
-          "rank": 26,
+          "rank": 25,
           "code": "3350",
           "name": "メタプラ",
           "price": 358.0,
           "change_pct": 3.77,
-          "volume": 1048200,
-          "turnover": 375255600
+          "volume": 1049100,
+          "turnover": 375577800
         },
         {
-          "rank": 27,
+          "rank": 26,
           "code": "3719",
           "name": "ＡＩストーム",
           "price": 246.9,
@@ -552,7 +2109,7 @@
           "turnover": 6715680
         },
         {
-          "rank": 28,
+          "rank": 27,
           "code": "6855",
           "name": "電子材料",
           "price": 6840.0,
@@ -561,7 +2118,7 @@
           "turnover": 32148000
         },
         {
-          "rank": 29,
+          "rank": 28,
           "code": "8783",
           "name": "ａｂｃ",
           "price": 208.3,
@@ -570,7 +2127,7 @@
           "turnover": 7082200
         },
         {
-          "rank": 30,
+          "rank": 29,
           "code": "3083",
           "name": "スターシーズ",
           "price": 1265.0,
@@ -579,7 +2136,7 @@
           "turnover": 25932500
         },
         {
-          "rank": 31,
+          "rank": 30,
           "code": "5817",
           "name": "ＪＭＡＣＳ",
           "price": 1535.0,
@@ -588,7 +2145,7 @@
           "turnover": 11973000
         },
         {
-          "rank": 32,
+          "rank": 31,
           "code": "6356",
           "name": "日ギア",
           "price": 1379.0,
@@ -597,7 +2154,7 @@
           "turnover": 5929700
         },
         {
-          "rank": 33,
+          "rank": 32,
           "code": "4107",
           "name": "伊勢化",
           "price": 6000.0,
@@ -606,7 +2163,7 @@
           "turnover": 18600000
         },
         {
-          "rank": 34,
+          "rank": 33,
           "code": "6433",
           "name": "ヒーハイスト",
           "price": 1841.0,
@@ -615,7 +2172,7 @@
           "turnover": 49338800
         },
         {
-          "rank": 35,
+          "rank": 34,
           "code": "4222",
           "name": "児玉化",
           "price": 1190.0,
@@ -624,7 +2181,7 @@
           "turnover": 1666000
         },
         {
-          "rank": 36,
+          "rank": 35,
           "code": "6072",
           "name": "地盤ＨＤ",
           "price": 1085.0,
@@ -633,7 +2190,7 @@
           "turnover": 12477500
         },
         {
-          "rank": 37,
+          "rank": 36,
           "code": "6946",
           "name": "日本アビオ",
           "price": 6641.0,
@@ -642,13 +2199,22 @@
           "turnover": 664100
         },
         {
-          "rank": 38,
+          "rank": 37,
           "code": "8117",
           "name": "中央自",
           "price": 1905.5,
           "change_pct": 3.28,
           "volume": 300,
           "turnover": 571650
+        },
+        {
+          "rank": 38,
+          "code": "7746",
+          "name": "岡本硝子",
+          "price": 980.0,
+          "change_pct": 3.27,
+          "volume": 27100,
+          "turnover": 26558000
         },
         {
           "rank": 39,
@@ -760,6 +2326,15 @@
         },
         {
           "rank": 51,
+          "code": "7719",
+          "name": "東京衡機",
+          "price": 695.0,
+          "change_pct": 2.81,
+          "volume": 58900,
+          "turnover": 40935500
+        },
+        {
+          "rank": 52,
           "code": "3997",
           "name": "Ｔワークス",
           "price": 405.0,
@@ -768,7 +2343,7 @@
           "turnover": 810000
         },
         {
-          "rank": 52,
+          "rank": 53,
           "code": "4093",
           "name": "アセチレン",
           "price": 445.0,
@@ -777,7 +2352,7 @@
           "turnover": 44500
         },
         {
-          "rank": 53,
+          "rank": 54,
           "code": "6994",
           "name": "指月電",
           "price": 1050.0,
@@ -786,7 +2361,7 @@
           "turnover": 1470000
         },
         {
-          "rank": 54,
+          "rank": 55,
           "code": "5367",
           "name": "ニッカトー",
           "price": 830.0,
@@ -795,7 +2370,7 @@
           "turnover": 1826000
         },
         {
-          "rank": 55,
+          "rank": 56,
           "code": "6666",
           "name": "リバーエレク",
           "price": 930.0,
@@ -804,7 +2379,7 @@
           "turnover": 1395000
         },
         {
-          "rank": 56,
+          "rank": 57,
           "code": "6668",
           "name": "ＡＤプラズマ",
           "price": 2875.0,
@@ -813,7 +2388,7 @@
           "turnover": 6325000
         },
         {
-          "rank": 57,
+          "rank": 58,
           "code": "4885",
           "name": "室町ケミカル",
           "price": 1020.0,
@@ -822,7 +2397,7 @@
           "turnover": 510000
         },
         {
-          "rank": 58,
+          "rank": 59,
           "code": "6928",
           "name": "エノモト",
           "price": 3311.0,
@@ -831,7 +2406,7 @@
           "turnover": 331100
         },
         {
-          "rank": 59,
+          "rank": 60,
           "code": "4620",
           "name": "藤倉化",
           "price": 1275.0,
@@ -840,7 +2415,7 @@
           "turnover": 382500
         },
         {
-          "rank": 60,
+          "rank": 61,
           "code": "6469",
           "name": "放電精密",
           "price": 3350.0,
@@ -849,7 +2424,7 @@
           "turnover": 335000
         },
         {
-          "rank": 61,
+          "rank": 62,
           "code": "6016",
           "name": "ジャパンエン",
           "price": 12290.0,
@@ -858,7 +2433,7 @@
           "turnover": 6145000
         },
         {
-          "rank": 62,
+          "rank": 63,
           "code": "2338",
           "name": "クオンタムＳ",
           "price": 123.9,
@@ -867,7 +2442,7 @@
           "turnover": 2998380
         },
         {
-          "rank": 63,
+          "rank": 64,
           "code": "4241",
           "name": "アテクト",
           "price": 815.0,
@@ -876,7 +2451,7 @@
           "turnover": 489000
         },
         {
-          "rank": 64,
+          "rank": 65,
           "code": "5885",
           "name": "ジーデップ",
           "price": 2999.9,
@@ -885,7 +2460,7 @@
           "turnover": 299990
         },
         {
-          "rank": 65,
+          "rank": 66,
           "code": "7760",
           "name": "ＩＭＶ",
           "price": 3270.0,
@@ -894,7 +2469,7 @@
           "turnover": 327000
         },
         {
-          "rank": 66,
+          "rank": 67,
           "code": "6226",
           "name": "守谷輸送機",
           "price": 1975.0,
@@ -903,7 +2478,7 @@
           "turnover": 2962500
         },
         {
-          "rank": 67,
+          "rank": 68,
           "code": "8737",
           "name": "あかつき本社",
           "price": 698.9,
@@ -912,7 +2487,7 @@
           "turnover": 349450
         },
         {
-          "rank": 68,
+          "rank": 69,
           "code": "7771",
           "name": "日本精密",
           "price": 396.0,
@@ -921,7 +2496,7 @@
           "turnover": 990000
         },
         {
-          "rank": 69,
+          "rank": 70,
           "code": "3449",
           "name": "テクノフレ",
           "price": 3969.5,
@@ -930,7 +2505,7 @@
           "turnover": 2778650
         },
         {
-          "rank": 70,
+          "rank": 71,
           "code": "5210",
           "name": "日山村硝",
           "price": 2800.0,
@@ -939,7 +2514,7 @@
           "turnover": 280000
         },
         {
-          "rank": 71,
+          "rank": 72,
           "code": "4936",
           "name": "アクシージア",
           "price": 368.0,
@@ -948,7 +2523,7 @@
           "turnover": 36800
         },
         {
-          "rank": 72,
+          "rank": 73,
           "code": "3825",
           "name": "リミックス",
           "price": 233.0,
@@ -957,7 +2532,7 @@
           "turnover": 2143600
         },
         {
-          "rank": 73,
+          "rank": 74,
           "code": "549A",
           "name": "ヒトトヒトＨ",
           "price": 519.0,
@@ -966,7 +2541,7 @@
           "turnover": 11366100
         },
         {
-          "rank": 74,
+          "rank": 75,
           "code": "4595",
           "name": "ミズホメディ",
           "price": 1860.0,
@@ -975,7 +2550,7 @@
           "turnover": 186000
         },
         {
-          "rank": 75,
+          "rank": 76,
           "code": "5161",
           "name": "西川ゴム",
           "price": 3390.0,
@@ -984,7 +2559,7 @@
           "turnover": 2034000
         },
         {
-          "rank": 76,
+          "rank": 77,
           "code": "6378",
           "name": "木村化",
           "price": 1417.0,
@@ -993,7 +2568,7 @@
           "turnover": 3967600
         },
         {
-          "rank": 77,
+          "rank": 78,
           "code": "6840",
           "name": "ＡＫＩＢＡ",
           "price": 540.0,
@@ -1002,7 +2577,7 @@
           "turnover": 756000
         },
         {
-          "rank": 78,
+          "rank": 79,
           "code": "3672",
           "name": "オルトＰ",
           "price": 39.8,
@@ -1011,7 +2586,7 @@
           "turnover": 3979
         },
         {
-          "rank": 79,
+          "rank": 80,
           "code": "2962",
           "name": "テクニスコ",
           "price": 850.0,
@@ -1020,7 +2595,7 @@
           "turnover": 255000
         },
         {
-          "rank": 80,
+          "rank": 81,
           "code": "1418",
           "name": "インタライフ",
           "price": 578.0,
@@ -1029,22 +2604,13 @@
           "turnover": 578000
         },
         {
-          "rank": 81,
+          "rank": 82,
           "code": "4960",
           "name": "ケミプロ",
           "price": 739.0,
           "change_pct": 1.93,
           "volume": 800,
           "turnover": 591200
-        },
-        {
-          "rank": 82,
-          "code": "7746",
-          "name": "岡本硝子",
-          "price": 967.0,
-          "change_pct": 1.9,
-          "volume": 26900,
-          "turnover": 26012300
         },
         {
           "rank": 83,
@@ -1221,6 +2787,15 @@
         },
         {
           "rank": 2,
+          "code": "7794",
+          "name": "ＥＤＰ",
+          "price": 1392.0,
+          "change_pct": 8.41,
+          "volume": 14200,
+          "turnover": 19766400
+        },
+        {
+          "rank": 3,
           "code": "9159",
           "name": "ＷＴＯＫＹＯ",
           "price": 2499.9,
@@ -1229,7 +2804,7 @@
           "turnover": 1499940
         },
         {
-          "rank": 3,
+          "rank": 4,
           "code": "290A",
           "name": "Ｓｙｎｓ",
           "price": 1430.0,
@@ -1238,22 +2813,13 @@
           "turnover": 6721000
         },
         {
-          "rank": 4,
+          "rank": 5,
           "code": "6613",
           "name": "ＱＤレーザ",
           "price": 1340.0,
           "change_pct": 4.28,
           "volume": 79300,
           "turnover": 106262000
-        },
-        {
-          "rank": 5,
-          "code": "7794",
-          "name": "ＥＤＰ",
-          "price": 1338.0,
-          "change_pct": 4.21,
-          "volume": 12900,
-          "turnover": 17260200
         },
         {
           "rank": 6,
@@ -2350,6 +3916,15 @@
         },
         {
           "rank": 27,
+          "code": "1357",
+          "name": "日経Ｄインバ",
+          "price": 3779.0,
+          "change_pct": -2.83,
+          "volume": 372410,
+          "turnover": 1407337390
+        },
+        {
+          "rank": 28,
           "code": "8869",
           "name": "明和地所",
           "price": 934.0,
@@ -2358,7 +3933,7 @@
           "turnover": 653800
         },
         {
-          "rank": 28,
+          "rank": 29,
           "code": "2300",
           "name": "きょくとう",
           "price": 487.0,
@@ -2367,7 +3942,7 @@
           "turnover": 97400
         },
         {
-          "rank": 29,
+          "rank": 30,
           "code": "1446",
           "name": "キャンディル",
           "price": 508.0,
@@ -2376,7 +3951,7 @@
           "turnover": 101600
         },
         {
-          "rank": 30,
+          "rank": 31,
           "code": "157A",
           "name": "Ｇモンスター",
           "price": 1010.2,
@@ -2385,7 +3960,7 @@
           "turnover": 101020
         },
         {
-          "rank": 31,
+          "rank": 32,
           "code": "8952",
           "name": "ジャパンＲＥ",
           "price": 118000.0,
@@ -2394,22 +3969,13 @@
           "turnover": 236000
         },
         {
-          "rank": 32,
+          "rank": 33,
           "code": "9073",
           "name": "京極運",
           "price": 1204.0,
           "change_pct": -2.43,
           "volume": 100,
           "turnover": 120400
-        },
-        {
-          "rank": 33,
-          "code": "1357",
-          "name": "日経Ｄインバ",
-          "price": 3800.0,
-          "change_pct": -2.29,
-          "volume": 372210,
-          "turnover": 1414398000
         },
         {
           "rank": 34,
@@ -4306,19 +5872,19 @@
           "rank": 4,
           "code": "6740",
           "name": "Ｊディスプレ",
-          "price": 116.0,
-          "change_pct": 5.45,
-          "volume": 2463100,
-          "turnover": 285719600
+          "price": 113.2,
+          "change_pct": 2.91,
+          "volume": 2463600,
+          "turnover": 278879520
         },
         {
           "rank": 5,
           "code": "1579",
           "name": "日経ブル２",
-          "price": 641.1,
-          "change_pct": 4.04,
-          "volume": 1080430,
-          "turnover": 692663673
+          "price": 642.0,
+          "change_pct": 4.19,
+          "volume": 1080930,
+          "turnover": 693957060
         },
         {
           "rank": 6,
@@ -4326,8 +5892,8 @@
           "name": "メタプラ",
           "price": 358.0,
           "change_pct": 3.77,
-          "volume": 1048200,
-          "turnover": 375255600
+          "volume": 1049100,
+          "turnover": 375577800
         },
         {
           "rank": 7,
@@ -4342,10 +5908,10 @@
           "rank": 8,
           "code": "9432",
           "name": "ＮＴＴ",
-          "price": 154.2,
-          "change_pct": 0.13,
-          "volume": 862200,
-          "turnover": 132951239
+          "price": 154.3,
+          "change_pct": 0.19,
+          "volume": 862400,
+          "turnover": 133068320
         },
         {
           "rank": 9,
@@ -4369,10 +5935,10 @@
           "rank": 11,
           "code": "1357",
           "name": "日経Ｄインバ",
-          "price": 3800.0,
-          "change_pct": -2.29,
-          "volume": 372210,
-          "turnover": 1414398000
+          "price": 3779.0,
+          "change_pct": -2.83,
+          "volume": 372410,
+          "turnover": 1407337390
         },
         {
           "rank": 12,
@@ -4650,8 +6216,8 @@
           "name": "日経レバ",
           "price": 59290.0,
           "change_pct": 3.89,
-          "volume": 75329,
-          "turnover": 4466256410
+          "volume": 75331,
+          "turnover": 4466374990
         },
         {
           "rank": 43,
@@ -4684,10 +6250,10 @@
           "rank": 46,
           "code": "7267",
           "name": "ホンダ",
-          "price": 1331.9,
-          "change_pct": 2.41,
-          "volume": 67900,
-          "turnover": 90436010
+          "price": 1328.0,
+          "change_pct": 2.11,
+          "volume": 68000,
+          "turnover": 90304000
         },
         {
           "rank": 47,
@@ -4729,10 +6295,10 @@
           "rank": 51,
           "code": "7719",
           "name": "東京衡機",
-          "price": 706.0,
-          "change_pct": 4.44,
-          "volume": 58800,
-          "turnover": 41512800
+          "price": 695.0,
+          "change_pct": 2.81,
+          "volume": 58900,
+          "turnover": 40935500
         },
         {
           "rank": 52,
@@ -4772,6 +6338,15 @@
         },
         {
           "rank": 56,
+          "code": "6758",
+          "name": "ソニーＧ",
+          "price": 3460.0,
+          "change_pct": 1.91,
+          "volume": 50200,
+          "turnover": 173692000
+        },
+        {
+          "rank": 57,
           "code": "8316",
           "name": "三井住友ＦＧ",
           "price": 5726.9,
@@ -4780,7 +6355,7 @@
           "turnover": 287490380
         },
         {
-          "rank": 57,
+          "rank": 58,
           "code": "1356",
           "name": "ＴＰＸベア２",
           "price": 125.0,
@@ -4789,22 +6364,13 @@
           "turnover": 6248750
         },
         {
-          "rank": 58,
+          "rank": 59,
           "code": "7375",
           "name": "リファバスＧ",
           "price": 1790.0,
           "change_pct": -12.47,
           "volume": 49800,
           "turnover": 89142000
-        },
-        {
-          "rank": 59,
-          "code": "6758",
-          "name": "ソニーＧ",
-          "price": 3470.1,
-          "change_pct": 2.21,
-          "volume": 49500,
-          "turnover": 171769950
         },
         {
           "rank": 60,
@@ -4893,8 +6459,8 @@
           "name": "野村東証指数",
           "price": 406.5,
           "change_pct": 1.85,
-          "volume": 38010,
-          "turnover": 15451065
+          "volume": 38060,
+          "turnover": 15471390
         },
         {
           "rank": 70,
@@ -5060,6 +6626,15 @@
         },
         {
           "rank": 88,
+          "code": "7746",
+          "name": "岡本硝子",
+          "price": 980.0,
+          "change_pct": 3.27,
+          "volume": 27100,
+          "turnover": 26558000
+        },
+        {
+          "rank": 89,
           "code": "3323",
           "name": "レカム",
           "price": 88.5,
@@ -5068,22 +6643,13 @@
           "turnover": 2389500
         },
         {
-          "rank": 89,
+          "rank": 90,
           "code": "5713",
           "name": "住友鉱",
           "price": 10680.0,
           "change_pct": 5.22,
           "volume": 27000,
           "turnover": 288360000
-        },
-        {
-          "rank": 90,
-          "code": "7746",
-          "name": "岡本硝子",
-          "price": 967.0,
-          "change_pct": 1.9,
-          "volume": 26900,
-          "turnover": 26012300
         },
         {
           "rank": 91,
@@ -5181,19 +6747,19 @@
           "rank": 1,
           "code": "6740",
           "name": "Ｊディスプレ",
-          "price": 116.0,
-          "change_pct": 5.45,
-          "volume": 2463100,
-          "turnover": 285719600
+          "price": 113.2,
+          "change_pct": 2.91,
+          "volume": 2463600,
+          "turnover": 278879520
         },
         {
           "rank": 2,
           "code": "9432",
           "name": "ＮＴＴ",
-          "price": 154.2,
-          "change_pct": 0.13,
-          "volume": 862200,
-          "turnover": 132951239
+          "price": 154.3,
+          "change_pct": 0.19,
+          "volume": 862400,
+          "turnover": 133068320
         },
         {
           "rank": 3,
@@ -5325,10 +6891,10 @@
           "rank": 17,
           "code": "7267",
           "name": "ホンダ",
-          "price": 1331.9,
-          "change_pct": 2.41,
-          "volume": 67900,
-          "turnover": 90436010
+          "price": 1328.0,
+          "change_pct": 2.11,
+          "volume": 68000,
+          "turnover": 90304000
         },
         {
           "rank": 18,
@@ -5377,21 +6943,21 @@
         },
         {
           "rank": 23,
+          "code": "6758",
+          "name": "ソニーＧ",
+          "price": 3460.0,
+          "change_pct": 1.91,
+          "volume": 50200,
+          "turnover": 173692000
+        },
+        {
+          "rank": 24,
           "code": "8316",
           "name": "三井住友ＦＧ",
           "price": 5726.9,
           "change_pct": 2.3,
           "volume": 50200,
           "turnover": 287490380
-        },
-        {
-          "rank": 24,
-          "code": "6758",
-          "name": "ソニーＧ",
-          "price": 3470.1,
-          "change_pct": 2.21,
-          "volume": 49500,
-          "turnover": 171769950
         },
         {
           "rank": 25,
@@ -5640,10 +7206,10 @@
           "rank": 52,
           "code": "4755",
           "name": "楽天グループ",
-          "price": 845.0,
-          "change_pct": 1.25,
-          "volume": 18500,
-          "turnover": 15632500
+          "price": 847.0,
+          "change_pct": 1.49,
+          "volume": 18700,
+          "turnover": 15838900
         },
         {
           "rank": 53,
@@ -5775,10 +7341,10 @@
           "rank": 67,
           "code": "5938",
           "name": "ＬＩＸＩＬ",
-          "price": 1656.0,
-          "change_pct": 2.51,
-          "volume": 14100,
-          "turnover": 23349600
+          "price": 1692.0,
+          "change_pct": 4.74,
+          "volume": 14400,
+          "turnover": 24364800
         },
         {
           "rank": 68,
@@ -5836,6 +7402,15 @@
         },
         {
           "rank": 74,
+          "code": "4063",
+          "name": "信越化",
+          "price": 7000.0,
+          "change_pct": 1.35,
+          "volume": 12100,
+          "turnover": 84700000
+        },
+        {
+          "rank": 75,
           "code": "4204",
           "name": "積水化",
           "price": 2646.0,
@@ -5844,31 +7419,22 @@
           "turnover": 32016600
         },
         {
-          "rank": 75,
-          "code": "4063",
-          "name": "信越化",
-          "price": 7080.0,
-          "change_pct": 2.5,
-          "volume": 12000,
-          "turnover": 84960000
+          "rank": 76,
+          "code": "1963",
+          "name": "日揮ＨＤ",
+          "price": 2658.0,
+          "change_pct": 4.96,
+          "volume": 11900,
+          "turnover": 31630200
         },
         {
-          "rank": 76,
+          "rank": 77,
           "code": "8031",
           "name": "三井物",
           "price": 5950.0,
           "change_pct": 2.59,
           "volume": 11800,
           "turnover": 70210000
-        },
-        {
-          "rank": 77,
-          "code": "1963",
-          "name": "日揮ＨＤ",
-          "price": 2646.0,
-          "change_pct": 4.48,
-          "volume": 11700,
-          "turnover": 30958200
         },
         {
           "rank": 78,
@@ -6009,10 +7575,10 @@
           "rank": 93,
           "code": "8410",
           "name": "セブン銀",
-          "price": 272.8,
-          "change_pct": 0.92,
-          "volume": 8400,
-          "turnover": 2291520
+          "price": 273.0,
+          "change_pct": 1.0,
+          "volume": 8500,
+          "turnover": 2320500
         },
         {
           "rank": 94,
@@ -6103,8 +7669,8 @@
           "name": "メタプラ",
           "price": 358.0,
           "change_pct": 3.77,
-          "volume": 1048200,
-          "turnover": 375255600
+          "volume": 1049100,
+          "turnover": 375577800
         },
         {
           "rank": 4,
@@ -6200,10 +7766,10 @@
           "rank": 14,
           "code": "7719",
           "name": "東京衡機",
-          "price": 706.0,
-          "change_pct": 4.44,
-          "volume": 58800,
-          "turnover": 41512800
+          "price": 695.0,
+          "change_pct": 2.81,
+          "volume": 58900,
+          "turnover": 40935500
         },
         {
           "rank": 15,
@@ -6252,21 +7818,21 @@
         },
         {
           "rank": 20,
+          "code": "7746",
+          "name": "岡本硝子",
+          "price": 980.0,
+          "change_pct": 3.27,
+          "volume": 27100,
+          "turnover": 26558000
+        },
+        {
+          "rank": 21,
           "code": "3323",
           "name": "レカム",
           "price": 88.5,
           "change_pct": -0.56,
           "volume": 27000,
           "turnover": 2389500
-        },
-        {
-          "rank": 21,
-          "code": "7746",
-          "name": "岡本硝子",
-          "price": 967.0,
-          "change_pct": 1.9,
-          "volume": 26900,
-          "turnover": 26012300
         },
         {
           "rank": 22,
@@ -7181,21 +8747,21 @@
         },
         {
           "rank": 23,
+          "code": "7794",
+          "name": "ＥＤＰ",
+          "price": 1392.0,
+          "change_pct": 8.41,
+          "volume": 14200,
+          "turnover": 19766400
+        },
+        {
+          "rank": 24,
           "code": "5243",
           "name": "ノート",
           "price": 2670.0,
           "change_pct": 2.38,
           "volume": 13200,
           "turnover": 35244000
-        },
-        {
-          "rank": 24,
-          "code": "7794",
-          "name": "ＥＤＰ",
-          "price": 1338.0,
-          "change_pct": 4.21,
-          "volume": 12900,
-          "turnover": 17260200
         },
         {
           "rank": 25,
@@ -7916,10 +9482,10 @@
           "rank": 4,
           "code": "1357",
           "name": "日経Ｄインバ",
-          "price": 3800.0,
-          "change_pct": -2.29,
-          "volume": 368421,
-          "turnover": 1400000000
+          "price": 3779.0,
+          "change_pct": -2.83,
+          "volume": 370732,
+          "turnover": 1401000000
         },
         {
           "rank": 5,
@@ -7979,9 +9545,9 @@
           "rank": 11,
           "code": "1579",
           "name": "日経ブル２",
-          "price": 641.1,
-          "change_pct": 4.04,
-          "volume": 1068476,
+          "price": 642.0,
+          "change_pct": 4.19,
+          "volume": 1066978,
           "turnover": 685000000
         },
         {
@@ -8123,9 +9689,9 @@
           "rank": 27,
           "code": "6740",
           "name": "Ｊディスプレ",
-          "price": 116.0,
-          "change_pct": 5.45,
-          "volume": 2362068,
+          "price": 113.2,
+          "change_pct": 2.91,
+          "volume": 2420494,
           "turnover": 274000000
         },
         {
@@ -8211,20 +9777,20 @@
         },
         {
           "rank": 37,
+          "code": "6758",
+          "name": "ソニーＧ",
+          "price": 3460.0,
+          "change_pct": 1.91,
+          "volume": 50000,
+          "turnover": 173000000
+        },
+        {
+          "rank": 38,
           "code": "7735",
           "name": "スクリン",
           "price": 10900.0,
           "change_pct": 3.71,
           "volume": 15688,
-          "turnover": 171000000
-        },
-        {
-          "rank": 38,
-          "code": "6758",
-          "name": "ソニーＧ",
-          "price": 3470.1,
-          "change_pct": 2.21,
-          "volume": 49278,
           "turnover": 171000000
         },
         {
@@ -8285,9 +9851,9 @@
           "rank": 45,
           "code": "9432",
           "name": "ＮＴＴ",
-          "price": 154.2,
-          "change_pct": 0.13,
-          "volume": 856031,
+          "price": 154.3,
+          "change_pct": 0.19,
+          "volume": 855476,
           "turnover": 132000000
         },
         {
@@ -8402,9 +9968,9 @@
           "rank": 58,
           "code": "7267",
           "name": "ホンダ",
-          "price": 1331.9,
-          "change_pct": 2.41,
-          "volume": 66821,
+          "price": 1328.0,
+          "change_pct": 2.11,
+          "volume": 67018,
           "turnover": 89000000
         },
         {
@@ -8438,9 +10004,9 @@
           "rank": 62,
           "code": "4063",
           "name": "信越化",
-          "price": 7080.0,
-          "change_pct": 2.5,
-          "volume": 11864,
+          "price": 7000.0,
+          "change_pct": 1.35,
+          "volume": 12000,
           "turnover": 84000000
         },
         {
@@ -8699,9 +10265,9 @@
           "rank": 91,
           "code": "7719",
           "name": "東京衡機",
-          "price": 706.0,
-          "change_pct": 4.44,
-          "volume": 56657,
+          "price": 695.0,
+          "change_pct": 2.81,
+          "volume": 57553,
           "turnover": 40000000
         },
         {
@@ -8944,9 +10510,9 @@
           "rank": 18,
           "code": "6740",
           "name": "Ｊディスプレ",
-          "price": 116.0,
-          "change_pct": 5.45,
-          "volume": 2362068,
+          "price": 113.2,
+          "change_pct": 2.91,
+          "volume": 2420494,
           "turnover": 274000000
         },
         {
@@ -9005,20 +10571,20 @@
         },
         {
           "rank": 25,
+          "code": "6758",
+          "name": "ソニーＧ",
+          "price": 3460.0,
+          "change_pct": 1.91,
+          "volume": 50000,
+          "turnover": 173000000
+        },
+        {
+          "rank": 26,
           "code": "7735",
           "name": "スクリン",
           "price": 10900.0,
           "change_pct": 3.71,
           "volume": 15688,
-          "turnover": 171000000
-        },
-        {
-          "rank": 26,
-          "code": "6758",
-          "name": "ソニーＧ",
-          "price": 3470.1,
-          "change_pct": 2.21,
-          "volume": 49278,
           "turnover": 171000000
         },
         {
@@ -9052,9 +10618,9 @@
           "rank": 30,
           "code": "9432",
           "name": "ＮＴＴ",
-          "price": 154.2,
-          "change_pct": 0.13,
-          "volume": 856031,
+          "price": 154.3,
+          "change_pct": 0.19,
+          "volume": 855476,
           "turnover": 132000000
         },
         {
@@ -9133,9 +10699,9 @@
           "rank": 39,
           "code": "7267",
           "name": "ホンダ",
-          "price": 1331.9,
-          "change_pct": 2.41,
-          "volume": 66821,
+          "price": 1328.0,
+          "change_pct": 2.11,
+          "volume": 67018,
           "turnover": 89000000
         },
         {
@@ -9160,9 +10726,9 @@
           "rank": 42,
           "code": "4063",
           "name": "信越化",
-          "price": 7080.0,
-          "change_pct": 2.5,
-          "volume": 11864,
+          "price": 7000.0,
+          "change_pct": 1.35,
+          "volume": 12000,
           "turnover": 84000000
         },
         {
@@ -9491,20 +11057,20 @@
         },
         {
           "rank": 79,
+          "code": "1963",
+          "name": "日揮ＨＤ",
+          "price": 2658.0,
+          "change_pct": 4.96,
+          "volume": 11662,
+          "turnover": 31000000
+        },
+        {
+          "rank": 80,
           "code": "6301",
           "name": "コマツ",
           "price": 6836.0,
           "change_pct": 2.03,
           "volume": 4388,
-          "turnover": 30000000
-        },
-        {
-          "rank": 80,
-          "code": "1963",
-          "name": "日揮ＨＤ",
-          "price": 2646.0,
-          "change_pct": 4.48,
-          "volume": 11337,
           "turnover": 30000000
         },
         {
@@ -9608,6 +11174,15 @@
         },
         {
           "rank": 92,
+          "code": "5938",
+          "name": "ＬＩＸＩＬ",
+          "price": 1692.0,
+          "change_pct": 4.74,
+          "volume": 13593,
+          "turnover": 23000000
+        },
+        {
+          "rank": 93,
           "code": "5411",
           "name": "ＪＦＥ",
           "price": 1828.0,
@@ -9616,7 +11191,7 @@
           "turnover": 23000000
         },
         {
-          "rank": 93,
+          "rank": 94,
           "code": "5805",
           "name": "ＳＷＣＣ",
           "price": 14760.0,
@@ -9625,21 +11200,12 @@
           "turnover": 23000000
         },
         {
-          "rank": 94,
+          "rank": 95,
           "code": "4568",
           "name": "第一三共",
           "price": 2969.0,
           "change_pct": 1.02,
           "volume": 7746,
-          "turnover": 23000000
-        },
-        {
-          "rank": 95,
-          "code": "5938",
-          "name": "ＬＩＸＩＬ",
-          "price": 1656.0,
-          "change_pct": 2.51,
-          "volume": 13888,
           "turnover": 23000000
         },
         {
@@ -9774,9 +11340,9 @@
           "rank": 10,
           "code": "7719",
           "name": "東京衡機",
-          "price": 706.0,
-          "change_pct": 4.44,
-          "volume": 56657,
+          "price": 695.0,
+          "change_pct": 2.81,
+          "volume": 57553,
           "turnover": 40000000
         },
         {
@@ -9837,9 +11403,9 @@
           "rank": 17,
           "code": "7746",
           "name": "岡本硝子",
-          "price": 967.0,
-          "change_pct": 1.9,
-          "volume": 25853,
+          "price": 980.0,
+          "change_pct": 3.27,
+          "volume": 25510,
           "turnover": 25000000
         },
         {
@@ -10728,21 +12294,21 @@
         },
         {
           "rank": 16,
+          "code": "7794",
+          "name": "ＥＤＰ",
+          "price": 1392.0,
+          "change_pct": 8.41,
+          "volume": 12931,
+          "turnover": 18000000
+        },
+        {
+          "rank": 17,
           "code": "4592",
           "name": "サンバイオ",
           "price": 2123.0,
           "change_pct": 1.53,
           "volume": 8007,
           "turnover": 17000000
-        },
-        {
-          "rank": 17,
-          "code": "7794",
-          "name": "ＥＤＰ",
-          "price": 1338.0,
-          "change_pct": 4.21,
-          "volume": 11958,
-          "turnover": 16000000
         },
         {
           "rank": 18,
