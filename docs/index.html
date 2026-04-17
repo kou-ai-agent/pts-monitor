@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>PTS Night Monitor</title>
-    <!-- Chart.js（グラフ描画用） -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -14,63 +12,175 @@
     <header class="navbar">
         <div class="logo">PTS Monitor</div>
         <span id="last-updated" class="last-updated"></span>
-        <!-- カレンダーに該当する日付選択 -->
         <select id="date-selector" class="dropdown header-dropdown"></select>
     </header>
 
-    <main class="container">
-        <!-- AI Summary -->
-        <section class="card" id="summary-section">
-            <h2><span class="icon">✨</span>今日のサマリー</h2>
-            <p id="ai-summary-text" class="placeholder-text">データ読み込み中...</p>
-        </section>
+    <nav class="dot-nav">
+        <button class="dot active" data-page="0" title="サマリー"></button>
+        <button class="dot" data-page="1" title="出来高"></button>
+        <button class="dot" data-page="2" title="値上がり率"></button>
+        <button class="dot" data-page="3" title="値下がり率"></button>
+        <button class="dot" data-page="4" title="売買代金"></button>
+    </nav>
 
-        <!-- AI Highlights -->
-        <section class="card" id="highlights-section">
-            <h2><span class="icon">🔥</span>注目銘柄</h2>
-            <div id="highlights-container" class="highlights-grid">
-                <!-- Javascriptで自動挿入 -->
+    <div class="page-wrapper">
+        <div class="page-track" id="page-track">
+
+            <!-- Page A: Summary + Sectors -->
+            <div class="page" id="page-a">
+                <div class="container">
+                    <section class="card">
+                        <h2><span class="icon">✨</span>今日のサマリー</h2>
+                        <p id="ai-summary-text" class="placeholder-text">データ読み込み中...</p>
+                    </section>
+                    <section class="card">
+                        <h2><span class="icon">📊</span>注目セクター</h2>
+                        <div id="sector-container">
+                            <p class="placeholder-text">データ読み込み中...</p>
+                        </div>
+                    </section>
+                </div>
             </div>
-        </section>
 
-        <!-- Ranking Controls -->
-        <section class="controls">
-            <div class="filters">
-                <select id="market-selector" class="dropdown">
-                    <option value="all">全市場</option>
-                    <option value="prime">プライム</option>
-                    <option value="standard">スタンダード</option>
-                    <option value="growth">グロース</option>
-                </select>
-                <select id="category-selector" class="dropdown">
-                    <option value="price_up">値上がり率</option>
-                    <option value="price_down">値下がり率</option>
-                    <option value="volume">出来高</option>
-                    <option value="turnover">売買代金</option>
-                </select>
+            <!-- Page B: Volume -->
+            <div class="page" id="page-b">
+                <div class="container">
+                    <div class="page-title">出来高</div>
+                    <section class="card">
+                        <h2><span class="icon">🔥</span>注目銘柄</h2>
+                        <div id="highlights-b" class="highlights-grid"></div>
+                    </section>
+                    <section class="controls">
+                        <div class="filters">
+                            <select id="market-b" class="dropdown">
+                                <option value="all">全市場</option>
+                                <option value="prime">プライム</option>
+                                <option value="standard">スタンダード</option>
+                                <option value="growth">グロース</option>
+                            </select>
+                        </div>
+                    </section>
+                    <section class="table-container">
+                        <table class="ranking-table">
+                            <thead><tr>
+                                <th class="col-rank">順位</th>
+                                <th class="col-name">銘柄</th>
+                                <th class="col-price">PTS株価 / 変化</th>
+                                <th class="col-vol">出来高・代金</th>
+                            </tr></thead>
+                            <tbody id="tbody-b"></tbody>
+                        </table>
+                        <div class="disclaimer">※ 銘柄行をタップすると過去の順位推移グラフを確認できます。</div>
+                    </section>
+                </div>
             </div>
-        </section>
 
-        <!-- Ranking Table -->
-        <section class="table-container">
-            <table class="ranking-table" id="ranking-table">
-                <thead>
-                    <tr>
-                        <th class="col-rank">順位</th>
-                        <th class="col-name">銘柄</th>
-                        <th class="col-price">PTS株価 / 変化</th>
-                        <th class="col-vol">出来高・代金</th>
-                    </tr>
-                </thead>
-                <tbody id="ranking-tbody">
-                    <!-- Javascriptで自動挿入 -->
-                </tbody>
-            </table>
-            <div class="disclaimer">※ 銘柄行をタップすることで過去の順位推移グラフを確認できます。</div>
-        </section>
-    </main>
+            <!-- Page C: Price Up -->
+            <div class="page" id="page-c">
+                <div class="container">
+                    <div class="page-title">値上がり率</div>
+                    <section class="card">
+                        <h2><span class="icon">🔥</span>注目銘柄</h2>
+                        <div id="highlights-c" class="highlights-grid"></div>
+                    </section>
+                    <section class="controls">
+                        <div class="filters">
+                            <select id="market-c" class="dropdown">
+                                <option value="all">全市場</option>
+                                <option value="prime">プライム</option>
+                                <option value="standard">スタンダード</option>
+                                <option value="growth">グロース</option>
+                            </select>
+                        </div>
+                    </section>
+                    <section class="table-container">
+                        <table class="ranking-table">
+                            <thead><tr>
+                                <th class="col-rank">順位</th>
+                                <th class="col-name">銘柄</th>
+                                <th class="col-price">PTS株価 / 変化</th>
+                                <th class="col-vol">出来高・代金</th>
+                            </tr></thead>
+                            <tbody id="tbody-c"></tbody>
+                        </table>
+                        <div class="disclaimer">※ 銘柄行をタップすると過去の順位推移グラフを確認できます。</div>
+                    </section>
+                </div>
+            </div>
 
-    <!-- Modal for 30 days Chart -->
+            <!-- Page D: Price Down -->
+            <div class="page" id="page-d">
+                <div class="container">
+                    <div class="page-title">値下がり率</div>
+                    <section class="card">
+                        <h2><span class="icon">🔥</span>注目銘柄</h2>
+                        <div id="highlights-d" class="highlights-grid"></div>
+                    </section>
+                    <section class="controls">
+                        <div class="filters">
+                            <select id="market-d" class="dropdown">
+                                <option value="all">全市場</option>
+                                <option value="prime">プライム</option>
+                                <option value="standard">スタンダード</option>
+                                <option value="growth">グロース</option>
+                            </select>
+                        </div>
+                    </section>
+                    <section class="table-container">
+                        <table class="ranking-table">
+                            <thead><tr>
+                                <th class="col-rank">順位</th>
+                                <th class="col-name">銘柄</th>
+                                <th class="col-price">PTS株価 / 変化</th>
+                                <th class="col-vol">出来高・代金</th>
+                            </tr></thead>
+                            <tbody id="tbody-d"></tbody>
+                        </table>
+                        <div class="disclaimer">※ 銘柄行をタップすると過去の順位推移グラフを確認できます。</div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- Page E: Turnover -->
+            <div class="page" id="page-e">
+                <div class="container">
+                    <div class="page-title">売買代金</div>
+                    <section class="card">
+                        <h2><span class="icon">🔥</span>注目銘柄</h2>
+                        <div id="highlights-e" class="highlights-grid"></div>
+                    </section>
+                    <section class="controls">
+                        <div class="filters">
+                            <select id="market-e" class="dropdown">
+                                <option value="all">全市場</option>
+                                <option value="prime">プライム</option>
+                                <option value="standard">スタンダード</option>
+                                <option value="growth">グロース</option>
+                            </select>
+                        </div>
+                    </section>
+                    <section class="table-container">
+                        <table class="ranking-table">
+                            <thead><tr>
+                                <th class="col-rank">順位</th>
+                                <th class="col-name">銘柄</th>
+                                <th class="col-price">PTS株価 / 変化</th>
+                                <th class="col-vol">出来高・代金</th>
+                            </tr></thead>
+                            <tbody id="tbody-e"></tbody>
+                        </table>
+                        <div class="disclaimer">※ 銘柄行をタップすると過去の順位推移グラフを確認できます。</div>
+                    </section>
+                </div>
+            </div>
+
+        </div><!-- /page-track -->
+    </div><!-- /page-wrapper -->
+
+    <button class="nav-arrow nav-left hidden" id="nav-left">&#8249;</button>
+    <button class="nav-arrow nav-right" id="nav-right">&#8250;</button>
+
+    <!-- Modal for 30-day chart -->
     <div id="chart-modal" class="modal">
         <div class="modal-content">
             <span class="close-btn" id="modal-close">&times;</span>

@@ -1,5 +1,4 @@
 :root {
-    /* ダークベースの美しいカラースキーム */
     --bg-color: #0d1117;
     --card-bg: #161b22;
     --border-color: #30363d;
@@ -9,6 +8,8 @@
     --up-color: #3fb950;
     --down-color: #f85149;
     --highlight-bg: rgba(88, 166, 255, 0.1);
+    --navbar-height: 51px;
+    --dotnav-height: 36px;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -19,25 +20,78 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
 }
 
-.container { 
-    max-width: 600px; /* スマホや小型ウィジェットを想定した幅 */
-    margin: 0 auto; 
-    padding: 16px; 
-    padding-bottom: 40px; 
-}
-
-/* Navbar */
+/* ── Navbar ── */
 .navbar {
     display: flex; justify-content: space-between; align-items: center;
     padding: 12px 16px; background-color: var(--card-bg);
     border-bottom: 1px solid var(--border-color);
     position: sticky; top: 0; z-index: 100;
+    height: var(--navbar-height);
 }
 .logo { font-size: 18px; font-weight: 700; color: var(--text-main); letter-spacing: 0.5px; }
+.last-updated { font-size: 11px; color: var(--text-muted); }
 
-/* Dropdowns */
+/* ── Dot Navigation ── */
+.dot-nav {
+    display: flex; justify-content: center; align-items: center;
+    gap: 10px; height: var(--dotnav-height);
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky; top: var(--navbar-height); z-index: 90;
+}
+.dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background-color: #4a5568; border: none; cursor: pointer; padding: 0;
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+.dot.active {
+    width: 11px; height: 11px; background-color: #ffffff;
+}
+
+/* ── Page Layout ── */
+.page-wrapper { overflow: hidden; width: 100%; }
+.page-track {
+    display: flex;
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+.page { min-width: 100vw; flex-shrink: 0; }
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 16px;
+    padding-bottom: 60px;
+}
+
+/* ── Page Title (B–E) ── */
+.page-title {
+    font-size: 20px; font-weight: 700;
+    padding: 8px 0 12px;
+    color: var(--text-main);
+}
+
+/* ── PC Navigation Arrows ── */
+.nav-arrow {
+    position: fixed; top: 50%; transform: translateY(-50%);
+    background-color: rgba(255,255,255,0.12); border: none;
+    color: #fff; font-size: 34px;
+    width: 40px; height: 64px;
+    cursor: pointer; border-radius: 6px; z-index: 200;
+    display: flex; align-items: center; justify-content: center;
+    transition: background-color 0.2s, opacity 0.2s;
+    opacity: 1;
+}
+.nav-arrow:hover { background-color: rgba(255,255,255,0.22); }
+.nav-arrow.hidden { opacity: 0; pointer-events: none; }
+.nav-left  { left: 4px; }
+.nav-right { right: 4px; }
+@media (hover: none) { .nav-arrow { display: none; } }
+
+/* ── Dropdowns ── */
 .dropdown {
     background-color: var(--bg-color); color: var(--text-main);
     border: 1px solid var(--border-color); border-radius: 6px;
@@ -47,9 +101,9 @@ body {
     background-repeat: no-repeat; background-position: right 10px top 50%;
     background-size: 10px auto; padding-right: 30px;
 }
-.header-dropdown { padding: 6px 30px 6px 10px; font-size: 13px; font-weight: 600;}
+.header-dropdown { padding: 6px 30px 6px 10px; font-size: 13px; font-weight: 600; }
 
-/* Cards */
+/* ── Cards ── */
 .card {
     background-color: var(--card-bg); border: 1px solid var(--border-color);
     border-radius: 12px; padding: 16px; margin-bottom: 20px;
@@ -59,56 +113,92 @@ body {
 .card .icon { margin-right: 8px; font-size: 18px; }
 .placeholder-text { color: var(--text-muted); font-size: 14px; }
 
-/* Highlights Grid */
+/* ── Highlights Grid (B–E) ── */
 .highlights-grid { display: flex; flex-direction: column; gap: 12px; }
 .highlight-item {
-    background: rgba(48, 54, 61, 0.4); border-left: 3px solid var(--primary);
+    background: rgba(48,54,61,0.4); border-left: 3px solid var(--primary);
     padding: 12px; border-radius: 6px; font-size: 14px;
 }
-.highlight-header { display: flex; justify-content: space-between; margin-bottom: 6px; font-weight: 600;}
+.highlight-header { display: flex; justify-content: space-between; margin-bottom: 6px; font-weight: 600; }
 .highlight-reason { color: var(--text-muted); font-size: 13px; line-height: 1.4; }
 
-/* Controls */
+/* ── Sector (Page A) ── */
+.sector-item {
+    background: rgba(48,54,61,0.4); border-radius: 10px;
+    padding: 12px 14px; margin-bottom: 14px;
+}
+.sector-header {
+    display: flex; align-items: center; gap: 8px; margin-bottom: 10px;
+}
+.sector-rank {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 11px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+}
+.sector-name { font-size: 15px; font-weight: 600; flex: 1; }
+.sector-score { font-size: 11px; color: var(--text-muted); }
+
+.sector-stocks { display: flex; flex-direction: column; gap: 7px; }
+.sector-stock {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 13px;
+}
+.sector-stock-name { flex: 1; font-weight: 500; }
+.sector-stock-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.sector-stock-pct { font-size: 12px; font-weight: 600; min-width: 54px; text-align: right; }
+
+.tag {
+    font-size: 10px; font-weight: 600; padding: 2px 6px;
+    border-radius: 10px; white-space: nowrap;
+}
+.tag-volume    { background: rgba(88,166,255,0.2);  color: #58a6ff; }
+.tag-price_up  { background: rgba(63,185,80,0.2);   color: #3fb950; }
+.tag-price_down{ background: rgba(248,81,73,0.2);   color: #f85149; }
+.tag-turnover  { background: rgba(210,153,255,0.2); color: #d299ff; }
+
+/* ── Controls ── */
 .controls { margin-bottom: 16px; }
 .filters { display: flex; gap: 10px; }
 .filters .dropdown { flex: 1; }
 
-/* Table */
-.table-container { 
+/* ── Ranking Table ── */
+.table-container {
     background-color: var(--card-bg); border: 1px solid var(--border-color);
     border-radius: 12px; overflow: hidden;
 }
 .ranking-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 14px; }
 .ranking-table th {
-    background-color: rgba(48, 54, 61, 0.5); padding: 12px 10px;
-    color: var(--text-muted); font-weight: 500; font-size: 12px; border-bottom: 1px solid var(--border-color);
+    background-color: rgba(48,54,61,0.5); padding: 12px 10px;
+    color: var(--text-muted); font-weight: 500; font-size: 12px;
+    border-bottom: 1px solid var(--border-color);
 }
-.ranking-table td {
-    padding: 12px 10px; border-bottom: 1px solid var(--border-color); vertical-align: middle;
-}
+.ranking-table td { padding: 12px 10px; border-bottom: 1px solid var(--border-color); vertical-align: middle; }
 .ranking-table tbody tr:last-child td { border-bottom: none; }
 .ranking-table tbody tr { transition: background-color 0.2s; cursor: pointer; }
-.ranking-table tbody tr:active, .ranking-table tbody tr:hover { background-color: var(--highlight-bg); }
+.ranking-table tbody tr:active,
+.ranking-table tbody tr:hover { background-color: var(--highlight-bg); }
 
 .disclaimer { font-size: 11px; color: var(--text-muted); padding: 10px; text-align: center; }
 
-/* Table columns */
 .col-rank { width: 44px; text-align: center; color: var(--text-muted); font-weight: 600; }
 .rank-num { background: var(--border-color); color: var(--text-main); font-size: 11px; padding: 3px 7px; border-radius: 10px; }
-.rank-top3 { background: var(--primary); color: #fff;}
+.rank-top3 { background: var(--primary); color: #fff; }
 .col-name { width: auto; }
 .stock-name { font-weight: 600; display: block; margin-bottom: 2px; }
 .stock-code { font-size: 11px; color: var(--text-muted); }
 .col-price { width: 90px; text-align: right; }
 .price-val { font-weight: 500; display: block; }
 .pct-val { font-size: 12px; font-weight: 600; }
-.pct-up { color: var(--up-color); }
+.pct-up   { color: var(--up-color); }
 .pct-down { color: var(--down-color); }
 .col-vol { width: 80px; text-align: right; font-size: 12px; color: var(--text-muted); }
 
-/* Modal */
+/* ── Modal ── */
 .modal {
-    display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%;
+    display: none; position: fixed; z-index: 1000;
+    left: 0; top: 0; width: 100%; height: 100%;
     background-color: rgba(0,0,0,0.7); backdrop-filter: blur(4px);
     align-items: center; justify-content: center;
 }
@@ -121,8 +211,8 @@ body {
 }
 .close-btn { position: absolute; top: 12px; right: 20px; font-size: 26px; color: var(--text-muted); cursor: pointer; }
 .close-btn:hover { color: var(--text-main); }
-#modal-title { font-size: 16px; font-weight: 600; margin-bottom: 16px; margin-right: 30px;}
+#modal-title { font-size: 16px; font-weight: 600; margin-bottom: 16px; margin-right: 30px; }
 .chart-container { position: relative; height: 250px; width: 100%; }
 
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeIn  { from { opacity: 0; }            to { opacity: 1; } }
 @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
