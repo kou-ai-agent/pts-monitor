@@ -3,7 +3,7 @@ name: Daily PTS Monitor Fetch
 on:
   schedule:
     # 月〜金曜の翌営業日 0:30 JST = 火〜土曜 15:30 UTC
-    - cron: '30 15 * * 2-6'
+    - cron: '30 15 * * 1-5'
   workflow_dispatch: # 手動実行用トグル
 
 permissions:
