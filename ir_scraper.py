@@ -1,4 +1,5 @@
 import logging
+import re
 import time
 import requests
 from bs4 import BeautifulSoup
@@ -20,21 +21,40 @@ def _fetch_ir_url(code: str) -> str | None:
         r.encoding = "utf-8"
         soup = BeautifulSoup(r.text, "html.parser")
 
-        # 企業情報セクション内のIRリンクを優先探索
+        # 除外ドメイン（株探ページに混在するサードパーティサイト）
+        EXCLUDE = ["kabutan", "minkabu", "japannext", "hrmos", "twitter", "x.com",
+                   "facebook", "youtube", "instagram", "linkedin"]
+
+        company_url = None
         for a in soup.find_all("a", href=True):
             href = a["href"]
             text = a.get_text(strip=True)
-            # 外部IRページへのリンクを判定
             if not href.startswith("http"):
                 continue
-            if KABUTAN_BASE in href:
+            if any(ex in href for ex in EXCLUDE):
                 continue
-            if any(kw in text for kw in ["IR", "投資家", "ir情報", "IRサイト"]):
-                return href
-            if "/ir" in href.lower() and "kabutan" not in href:
-                return href
+            # 株探は会社公式URLをリンクテキストとURLが同一の形式で表示する
+            if text == href or text.rstrip("/") == href.rstrip("/"):
+                company_url = href.rstrip("/")
+                break
 
-        return None
+        if not company_url:
+            return None
+
+        # 会社サイトのIRページを探す（よくあるパスを順に試す）
+        ir_paths = ["/ir/", "/investors/", "/investor/", "/ir_info/",
+                    "/ir-info/", "/ir.html", "/investor_relations/"]
+        for path in ir_paths:
+            ir_url = company_url + path
+            try:
+                r2 = requests.get(ir_url, headers=HEADERS, timeout=10)
+                if r2.status_code == 200:
+                    return ir_url
+            except Exception:
+                continue
+
+        # IRパスが見つからなければ会社トップを返す
+        return company_url + "/"
     except Exception as e:
         logger.warning(f"Kabutan fetch failed for {code}: {e}")
         return None
@@ -81,12 +101,27 @@ def _fetch_ir_items(ir_url: str) -> list[dict]:
             if items:
                 break
 
-        # フォールバック: ページ全体からアンカーリストを取得
+        # フォールバック1: h3/h4見出しからニュースタイトルを抽出（リンクなしの場合はIRページURLを使用）
         if not items:
-            for a in soup.find_all("a", href=True)[:30]:
+            for tag in soup.find_all(["h3", "h4"]):
+                title = tag.get_text(strip=True)
+                if len(title) < 10:
+                    continue
+                a = tag.find("a") or (tag.parent.find("a") if tag.parent else None)
+                href = a["href"] if a else ""
+                if href and not href.startswith("http"):
+                    from urllib.parse import urljoin
+                    href = urljoin(ir_url, href)
+                items.append({"title": title[:100], "link": href or ir_url, "date": ""})
+                if len(items) >= 3:
+                    break
+
+        # フォールバック2: ページ全体のアンカーから長めのテキストを持つリンクを取得
+        if not items:
+            for a in soup.find_all("a", href=True)[:50]:
                 title = a.get_text(strip=True)
                 href = a["href"]
-                if len(title) < 10:
+                if len(title) < 15:
                     continue
                 if not href.startswith("http"):
                     from urllib.parse import urljoin

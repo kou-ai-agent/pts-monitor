@@ -6,8 +6,8 @@ logger = logging.getLogger(__name__)
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
 RSS_FEEDS = [
-    "https://www.nikkei.com/rss/news.rdf",
-    "https://www.bloomberg.co.jp/feed/podcast/bloomberg-markets-japan.xml",
+    "https://assets.wor.jp/rss/rdf/nikkei/news.rdf",    # 日経新聞（非公式RSS集約）
+    "https://feeds.bloomberg.com/markets/news.rss",      # Bloomberg Markets
 ]
 
 
