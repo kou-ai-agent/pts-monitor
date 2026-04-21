@@ -22,6 +22,7 @@ let state = {
     currentData: null,
     currentPage: 0,
     chartInstance: null,
+    stocksMaster: null,
 };
 
 // ============================================================
@@ -49,8 +50,10 @@ const formatNumber = (n) => new Intl.NumberFormat().format(n);
 const formatPct    = (n) => (n > 0 ? '+' : '') + n.toFixed(2) + '%';
 const formatVolume = (n) => n >= 10000 ? (n / 10000).toFixed(1) + '万' : formatNumber(n);
 
-// TSE industry sector from 4-digit stock code
 function getSector(code) {
+    const master = state.stocksMaster?.stocks[code];
+    if (master?.sector17) return master.sector17;
+    // fallback: estimate from code range
     const n = parseInt(code);
     if (isNaN(n)) return 'その他';
     if (n < 1300)  return '水産・農林・鉱業';
@@ -67,6 +70,10 @@ function getSector(code) {
     if (n < 9300)  return '輸送・電力';
     if (n < 9800)  return '情報・通信';
     return 'サービス';
+}
+
+function getMarket(code) {
+    return state.stocksMaster?.stocks[code]?.market || '';
 }
 
 // ============================================================
@@ -105,6 +112,14 @@ DOM.pageTrack.addEventListener('touchend', (e) => {
 // ============================================================
 async function init() {
     try {
+        // Load stocks master for accurate sector/market lookup (best-effort)
+        try {
+            const mr = await fetch('data/stocks_master.json');
+            if (mr.ok) state.stocksMaster = await mr.json();
+        } catch (e) {
+            console.warn('stocks_master.json unavailable, using fallback sector logic');
+        }
+
         const res = await fetch(`data/index.json?t=${Date.now()}`);
         if (!res.ok) throw new Error('Index not found');
         const idx = await res.json();
@@ -212,7 +227,7 @@ function renderPageA() {
             <div class="sector-stocks">
                 ${stocks.map(s => `
                     <div class="sector-stock">
-                        <a class="sector-stock-name" href="https://finance.yahoo.co.jp/quote/${s.code}.T" target="_blank" rel="noopener noreferrer">${s.code} ${s.name}</a>
+                        <a class="sector-stock-name" href="https://finance.yahoo.co.jp/quote/${s.code}.T" target="_blank" rel="noopener noreferrer">${[getMarket(s.code), s.code, s.name].filter(Boolean).join(' ')}</a>
                         <span class="sector-stock-tags">
                             ${s.appearedIn.map(c => `<span class="tag tag-${c}">${CAT_LABELS[c]}</span>`).join('')}
                         </span>
@@ -229,8 +244,12 @@ function computeSectorScores(rankings) {
     const sectorScores  = {};
     const sectorStocks  = {};
 
+    const isEtf = state.stocksMaster
+        ? (code) => !state.stocksMaster.stocks[code]          // not in master = ETF/ETN/foreign
+        : (code) => /^1\d{3}$/.test(code);                   // fallback: code-range heuristic
+
     for (const [cat, weight] of Object.entries(SECTOR_WEIGHTS)) {
-        const list = (rankings[cat]?.all || []).filter(item => !/^1\d{3}$/.test(item.code));
+        const list = (rankings[cat]?.all || []).filter(item => !isEtf(item.code));
         list.slice(0, 10).forEach((item, idx) => {
             const sector = getSector(item.code);
             const score  = (10 - idx) * weight;
