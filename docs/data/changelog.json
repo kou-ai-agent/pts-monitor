@@ -47,7 +47,7 @@
     "version": "v1.0",
     "changes": [
       "PTSモニター初回リリース",
-      "株探スクレイピングによるPTSデータ取得",
+      "PTSデータの自動取得・集計",
       "Claude APIによるAI分析（サマリー・注目銘柄）",
       "Cloudflare Pagesでの公開"
     ]
