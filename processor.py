@@ -69,18 +69,21 @@ def save_daily_json(target_date: str, data: dict) -> None:
     with open(file_path, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
+_DATE_FILENAME_RE = __import__('re').compile(r'^\d{4}-\d{2}-\d{2}$')
+
 def _update_index() -> None:
     """
     index.jsonを更新し、保持されているすべての日付をリストアップする
     """
     index_path = os.path.join(DATA_DIR, "index.json")
     dates = []
-    
+
     if os.path.exists(DATA_DIR):
         for filename in os.listdir(DATA_DIR):
-            if filename.endswith(".json") and filename != "index.json":
-                date_str = filename.replace(".json", "")
-                dates.append(date_str)
+            if filename.endswith(".json"):
+                date_str = filename[:-5]
+                if _DATE_FILENAME_RE.match(date_str):
+                    dates.append(date_str)
                 
     dates.sort(reverse=True) # 最新の日付が先頭
     

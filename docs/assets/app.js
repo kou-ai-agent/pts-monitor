@@ -32,7 +32,7 @@ let state = {
 // DOM
 // ============================================================
 const DOM = {
-    dateSelector:      document.getElementById('date-selector'),
+    dateBtn:           document.getElementById('date-btn'),
     lastUpdated:       document.getElementById('last-updated'),
     summaryText:       document.getElementById('ai-summary-text'),
     sectorContainer:   document.getElementById('sector-container'),
@@ -50,6 +50,32 @@ const DOM = {
     changelogView:     document.getElementById('changelog-view'),
     changelogContainer:document.getElementById('changelog-container'),
 };
+
+const calDOM = {
+    btn:         document.getElementById('date-btn'),
+    popup:       document.getElementById('calendar-popup'),
+    ymBtn:       document.getElementById('cal-ym-btn'),
+    prev:        document.getElementById('cal-prev'),
+    next:        document.getElementById('cal-next'),
+    grid:        document.getElementById('cal-grid'),
+    dateDisplay: document.getElementById('cal-date-display'),
+    drumOverlay: document.getElementById('cal-drum-overlay'),
+    drumYear:    document.getElementById('drum-year'),
+    drumMonth:   document.getElementById('drum-month'),
+    drumOk:      document.getElementById('drum-ok'),
+    drumCancel:  document.getElementById('drum-cancel'),
+};
+
+const calState = {
+    isOpen:    false,
+    viewYear:  2026,
+    viewMonth: 4,
+    drumYear:  2026,
+    drumMonth: 4,
+};
+
+const DRUM_ITEM_H = 44;
+const DOW_JP = ['日', '月', '火', '水', '木', '金', '土'];
 
 // ============================================================
 // Utilities
@@ -134,23 +160,21 @@ async function init() {
             console.warn('stocks_master.json unavailable, using fallback sector logic');
         }
 
+        const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
         const res = await fetch(`data/index.json?t=${Date.now()}`);
         if (!res.ok) throw new Error('Index not found');
         const idx = await res.json();
-        state.availableDates = idx.dates || [];
+        state.availableDates = (idx.dates || []).filter(d => DATE_RE.test(d));
 
         if (state.availableDates.length > 0) {
-            populateDateSelector();
             state.currentDate = state.availableDates[0];
+            calDOM.btn.textContent = state.currentDate.replace(/-/g, '/');
             await loadDateData(state.currentDate);
         } else {
             DOM.summaryText.innerText = 'データがありません。';
         }
 
-        DOM.dateSelector.addEventListener('change', (e) => {
-            state.currentDate = e.target.value;
-            loadDateData(state.currentDate);
-        });
+        initCalendar();
         DOM.dots.forEach((dot, i) => dot.addEventListener('click', () => goToPage(i)));
         DOM.navLeft.addEventListener('click',  () => goToPage(state.currentPage - 1));
         DOM.navRight.addEventListener('click', () => goToPage(state.currentPage + 1));
@@ -175,16 +199,6 @@ async function init() {
         console.error(e);
         DOM.summaryText.innerText = 'データの読み込みに失敗しました。';
     }
-}
-
-function populateDateSelector() {
-    DOM.dateSelector.innerHTML = '';
-    state.availableDates.forEach(date => {
-        const opt = document.createElement('option');
-        opt.value = date;
-        opt.textContent = date.replace(/-/g, '/');
-        DOM.dateSelector.appendChild(opt);
-    });
 }
 
 // ============================================================
@@ -480,6 +494,201 @@ function renderChangelog() {
 }
 
 function closeModal() { DOM.modal.classList.remove('show'); }
+
+// ============================================================
+// Calendar
+// ============================================================
+function fmtBtn(ds) { return ds.replace(/-/g, '/'); }
+
+function fmtJP(ds) {
+    const [y, m, d] = ds.split('-').map(Number);
+    return `${y}年${m}月${d}日(${DOW_JP[new Date(y, m - 1, d).getDay()]})`;
+}
+
+function openCalendar() {
+    if (state.currentDate) {
+        const [y, m] = state.currentDate.split('-').map(Number);
+        calState.viewYear = y;
+        calState.viewMonth = m;
+    }
+    renderCalendar();
+    calDOM.popup.classList.remove('hidden');
+    calState.isOpen = true;
+}
+
+function closeCalendar() {
+    calDOM.popup.classList.add('hidden');
+    calState.isOpen = false;
+}
+
+function renderCalendar() {
+    const { viewYear, viewMonth } = calState;
+    calDOM.ymBtn.textContent = `${viewYear}年${viewMonth}月 ›`;
+
+    const firstDow  = (new Date(viewYear, viewMonth - 1, 1).getDay() + 6) % 7; // 0=Mon
+    const daysInMon = new Date(viewYear, viewMonth, 0).getDate();
+    const today     = new Date(); today.setHours(0, 0, 0, 0);
+    const available = new Set(state.availableDates);
+
+    calDOM.grid.innerHTML = '';
+
+    for (let i = 0; i < firstDow; i++) {
+        const el = document.createElement('div');
+        el.className = 'cal-day';
+        calDOM.grid.appendChild(el);
+    }
+
+    for (let day = 1; day <= daysInMon; day++) {
+        const ds       = `${viewYear}-${String(viewMonth).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
+        const cellDate = new Date(viewYear, viewMonth - 1, day);
+        const dowMon   = (cellDate.getDay() + 6) % 7; // 0=Mon 5=Sat 6=Sun
+
+        const btn = document.createElement('button');
+        btn.className = 'cal-day';
+        btn.textContent = day;
+
+        if (cellDate > today || !available.has(ds)) {
+            btn.classList.add('disabled');
+            btn.disabled = true;
+        } else {
+            btn.classList.add('available');
+            btn.addEventListener('click', (e) => { e.stopPropagation(); selectDay(ds); });
+        }
+        if (ds === state.currentDate)              btn.classList.add('selected');
+        if (cellDate.getTime() === today.getTime()) btn.classList.add('today');
+        if (dowMon === 5) btn.classList.add('sat');
+        if (dowMon === 6) btn.classList.add('sun');
+
+        calDOM.grid.appendChild(btn);
+    }
+
+    if (state.currentDate) setCalFooter(state.currentDate);
+}
+
+function selectDay(ds) {
+    state.currentDate = ds;
+    calDOM.btn.textContent = fmtBtn(ds);
+    renderCalendar();
+    loadDateData(ds);
+    setTimeout(closeCalendar, 150);
+}
+
+function setCalFooter(ds) {
+    const el = calDOM.dateDisplay;
+    el.textContent = fmtJP(ds);
+    el.onclick = () => startDateEdit(ds);
+}
+
+function startDateEdit(currentDs) {
+    const el = calDOM.dateDisplay;
+    el.textContent = '';
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.className = 'cal-date-input';
+    input.value = currentDs.replace(/-/g, '/');
+    input.maxLength = 10;
+    el.appendChild(input);
+    input.focus();
+    input.select();
+
+    let confirmed = false;
+    const confirm = () => {
+        if (confirmed) return;
+        confirmed = true;
+        const match = input.value.trim().match(/^(\d{4})\/(\d{2})\/(\d{2})$/);
+        if (match) {
+            const ds = `${match[1]}-${match[2]}-${match[3]}`;
+            if (state.availableDates.includes(ds)) { selectDay(ds); return; }
+        }
+        setCalFooter(state.currentDate || currentDs);
+    };
+
+    input.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); confirm(); } });
+    input.addEventListener('blur', confirm);
+    input.addEventListener('click', (e) => e.stopPropagation());
+}
+
+// ── Drum Roll ──────────────────────────────────────────────
+function openDrumRoll() {
+    calState.drumYear  = calState.viewYear;
+    calState.drumMonth = calState.viewMonth;
+
+    const maxYear = new Date().getFullYear() + 1;
+    const years   = [];
+    for (let y = 2020; y <= maxYear; y++) years.push({ value: y, label: `${y}年` });
+    const months = Array.from({ length: 12 }, (_, i) => ({ value: i + 1, label: `${i + 1}月` }));
+
+    setupDrumCol(calDOM.drumYear,  years,  calState.drumYear - 2020, v => { calState.drumYear  = v; });
+    setupDrumCol(calDOM.drumMonth, months, calState.drumMonth - 1,   v => { calState.drumMonth = v; });
+
+    calDOM.drumOverlay.classList.remove('hidden');
+}
+
+function closeDrumRoll() {
+    calDOM.drumOverlay.classList.add('hidden');
+}
+
+function setupDrumCol(el, items, initialIdx, onChange) {
+    el.innerHTML = '';
+
+    const pad = () => { const p = document.createElement('div'); p.className = 'drum-pad'; el.appendChild(p); };
+    pad(); pad();
+    items.forEach((item, i) => {
+        const div = document.createElement('div');
+        div.className = 'drum-item' + (i === initialIdx ? ' selected' : '');
+        div.textContent = item.label;
+        el.appendChild(div);
+    });
+    pad(); pad();
+
+    requestAnimationFrame(() => { el.scrollTop = initialIdx * DRUM_ITEM_H; });
+
+    let timer;
+    el.addEventListener('scroll', () => {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            const idx = Math.max(0, Math.min(items.length - 1, Math.round(el.scrollTop / DRUM_ITEM_H)));
+            onChange(items[idx].value);
+            el.querySelectorAll('.drum-item').forEach((d, i) => d.classList.toggle('selected', i === idx));
+            el.scrollTo({ top: idx * DRUM_ITEM_H, behavior: 'smooth' });
+        }, 80);
+    });
+}
+
+function initCalendar() {
+    calDOM.btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        calState.isOpen ? closeCalendar() : openCalendar();
+    });
+
+    calDOM.ymBtn.addEventListener('click', (e) => { e.stopPropagation(); openDrumRoll(); });
+
+    calDOM.prev.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (--calState.viewMonth < 1)  { calState.viewMonth = 12; calState.viewYear--; }
+        renderCalendar();
+    });
+
+    calDOM.next.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (++calState.viewMonth > 12) { calState.viewMonth = 1;  calState.viewYear++; }
+        renderCalendar();
+    });
+
+    calDOM.popup.addEventListener('click', (e) => e.stopPropagation());
+
+    calDOM.drumOk.addEventListener('click', () => {
+        calState.viewYear  = calState.drumYear;
+        calState.viewMonth = calState.drumMonth;
+        closeDrumRoll();
+        renderCalendar();
+    });
+
+    calDOM.drumCancel.addEventListener('click', (e) => { e.stopPropagation(); closeDrumRoll(); });
+    calDOM.drumOverlay.addEventListener('click', (e) => { if (e.target === calDOM.drumOverlay) closeDrumRoll(); });
+
+    document.addEventListener('click', () => { if (calState.isOpen) closeCalendar(); });
+}
 
 // ============================================================
 // Boot

@@ -24,7 +24,7 @@
             <button class="app-menu-item" data-view="changelog">更新履歴</button>
         </div>
         <span id="last-updated" class="last-updated"></span>
-        <select id="date-selector" class="dropdown header-dropdown"></select>
+        <button id="date-btn" class="date-btn"></button>
     </header>
 
     <nav class="dot-nav" id="dot-nav">
@@ -204,6 +204,40 @@
             <h3 id="modal-title">銘柄名推移</h3>
             <div class="chart-container">
                 <canvas id="history-chart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Calendar Popup -->
+    <div id="calendar-popup" class="calendar-popup hidden">
+        <div class="cal-header">
+            <button id="cal-ym-btn" class="cal-ym-btn"></button>
+            <div class="cal-arrows">
+                <button id="cal-prev" class="cal-nav-btn">&#8249;</button>
+                <button id="cal-next" class="cal-nav-btn">&#8250;</button>
+            </div>
+        </div>
+        <div class="cal-weekdays">
+            <span>月</span><span>火</span><span>水</span><span>木</span><span>金</span>
+            <span class="cal-sat">土</span><span class="cal-sun">日</span>
+        </div>
+        <div id="cal-grid" class="cal-grid"></div>
+        <div class="cal-footer">
+            <div id="cal-date-display" class="cal-date-display"></div>
+        </div>
+    </div>
+
+    <!-- Drum Roll Overlay -->
+    <div id="cal-drum-overlay" class="cal-drum-overlay hidden">
+        <div class="cal-drum-panel">
+            <div class="cal-drum-inner">
+                <div id="drum-year" class="drum-col"></div>
+                <div id="drum-month" class="drum-col"></div>
+                <div class="drum-selector-bar"></div>
+            </div>
+            <div class="drum-actions">
+                <button id="drum-cancel">キャンセル</button>
+                <button id="drum-ok" class="drum-btn-ok">確定</button>
             </div>
         </div>
     </div>

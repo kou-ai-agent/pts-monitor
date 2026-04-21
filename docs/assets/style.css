@@ -273,3 +273,172 @@ body {
 
 @keyframes fadeIn  { from { opacity: 0; }            to { opacity: 1; } }
 @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+/* ── Date Button ── */
+.date-btn {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    font-size: 13px; font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 6px; cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.15s;
+    font-family: inherit;
+}
+.date-btn:hover { background-color: rgba(255,255,255,0.08); }
+
+/* ── Calendar Popup ── */
+.calendar-popup {
+    position: fixed;
+    top: calc(var(--navbar-height) + 8px);
+    right: 8px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 12px;
+    z-index: 500;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    animation: fadeIn 0.15s;
+}
+.calendar-popup.hidden { display: none; }
+
+.cal-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 10px;
+}
+.cal-ym-btn {
+    background: none; border: none;
+    color: var(--text-main);
+    font-size: 15px; font-weight: 600;
+    cursor: pointer; padding: 4px 8px;
+    border-radius: 6px; font-family: inherit;
+    transition: background-color 0.15s;
+}
+.cal-ym-btn:hover { background-color: rgba(255,255,255,0.08); }
+
+.cal-arrows { display: flex; gap: 4px; }
+.cal-nav-btn {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    width: 28px; height: 28px;
+    border-radius: 6px; cursor: pointer;
+    font-size: 18px; font-family: inherit;
+    display: flex; align-items: center; justify-content: center;
+    transition: background-color 0.15s;
+}
+.cal-nav-btn:hover { background-color: rgba(255,255,255,0.08); }
+
+.cal-weekdays {
+    display: grid; grid-template-columns: repeat(7, 1fr);
+    text-align: center; font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 4px; padding: 0 2px;
+}
+.cal-weekdays .cal-sat { color: var(--primary); }
+.cal-weekdays .cal-sun { color: var(--down-color); }
+
+.cal-grid {
+    display: grid; grid-template-columns: repeat(7, 1fr);
+    gap: 2px; padding: 0 2px;
+}
+.cal-day {
+    aspect-ratio: 1;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; border-radius: 50%;
+    border: none; background: none;
+    color: var(--text-muted); opacity: 0.3;
+    cursor: default; padding: 0; line-height: 1;
+    font-family: inherit;
+}
+.cal-day.available {
+    color: var(--text-main); opacity: 1; cursor: pointer;
+    transition: background-color 0.15s;
+}
+.cal-day.available:hover:not(.selected) { background-color: rgba(255,255,255,0.1); }
+.cal-day.selected {
+    background-color: var(--primary) !important;
+    color: #fff !important; font-weight: 700; opacity: 1 !important;
+}
+.cal-day.today:not(.selected) {
+    border: 1px solid var(--primary); opacity: 1; color: var(--primary);
+}
+.cal-day.sat.available:not(.selected) { color: var(--primary); }
+.cal-day.sun.available:not(.selected) { color: var(--down-color); }
+
+.cal-footer {
+    margin-top: 10px; padding-top: 8px;
+    border-top: 1px solid var(--border-color);
+    display: flex; justify-content: flex-end;
+}
+.cal-date-display {
+    font-size: 13px; color: var(--text-main);
+    cursor: pointer; padding: 5px 8px;
+    border-radius: 6px; min-width: 120px; text-align: right;
+    transition: background-color 0.15s;
+}
+.cal-date-display:hover { background-color: rgba(255,255,255,0.06); }
+.cal-date-input {
+    background: none; border: 1px solid var(--primary);
+    color: var(--text-main);
+    border-radius: 6px; padding: 5px 8px;
+    font-size: 13px; width: 120px; text-align: center;
+    outline: none; font-family: inherit;
+}
+
+/* ── Drum Roll Overlay ── */
+.cal-drum-overlay {
+    position: fixed; inset: 0;
+    background-color: rgba(0,0,0,0.65);
+    z-index: 600;
+    display: flex; align-items: center; justify-content: center;
+}
+.cal-drum-overlay.hidden { display: none; }
+
+.cal-drum-panel {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px; padding: 16px; width: 240px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    animation: slideUp 0.2s cubic-bezier(0.16,1,0.3,1);
+}
+.cal-drum-inner {
+    position: relative; display: flex;
+    height: 220px; margin-bottom: 14px; overflow: hidden; border-radius: 8px;
+}
+.drum-col {
+    flex: 1; overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    -ms-overflow-style: none; scrollbar-width: none;
+    height: 220px;
+}
+.drum-col::-webkit-scrollbar { display: none; }
+.drum-pad   { height: 44px; scroll-snap-align: start; }
+.drum-item  {
+    height: 44px; display: flex; align-items: center; justify-content: center;
+    font-size: 15px; color: var(--text-muted);
+    cursor: pointer; user-select: none; scroll-snap-align: start;
+    transition: color 0.1s, font-size 0.1s, font-weight 0.1s;
+}
+.drum-item.selected { color: var(--text-main); font-weight: 700; font-size: 17px; }
+.drum-selector-bar {
+    position: absolute; top: 88px; left: 0; right: 0; height: 44px;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    pointer-events: none; z-index: 2;
+}
+.drum-actions { display: flex; justify-content: flex-end; gap: 8px; }
+.drum-actions button {
+    background: none; border: 1px solid var(--border-color);
+    color: var(--text-muted); padding: 7px 18px;
+    border-radius: 8px; font-size: 14px; cursor: pointer;
+    font-family: inherit; transition: background-color 0.15s;
+}
+.drum-actions button:hover { background-color: rgba(255,255,255,0.08); }
+.drum-btn-ok {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important; color: #fff !important;
+}
+.drum-btn-ok:hover { opacity: 0.85; }
