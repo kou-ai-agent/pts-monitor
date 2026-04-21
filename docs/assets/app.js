@@ -23,24 +23,32 @@ let state = {
     currentPage: 0,
     chartInstance: null,
     stocksMaster: null,
+    changelog: [],
+    view: 'main',       // 'main' | 'changelog'
+    menuOpen: false,
 };
 
 // ============================================================
 // DOM
 // ============================================================
 const DOM = {
-    dateSelector:    document.getElementById('date-selector'),
-    lastUpdated:     document.getElementById('last-updated'),
-    summaryText:     document.getElementById('ai-summary-text'),
-    sectorContainer: document.getElementById('sector-container'),
-    pageTrack:       document.getElementById('page-track'),
-    dots:            document.querySelectorAll('.dot'),
-    navLeft:         document.getElementById('nav-left'),
-    navRight:        document.getElementById('nav-right'),
-    modal:           document.getElementById('chart-modal'),
-    modalClose:      document.getElementById('modal-close'),
-    modalTitle:      document.getElementById('modal-title'),
-    chartCanvas:     document.getElementById('history-chart'),
+    dateSelector:      document.getElementById('date-selector'),
+    lastUpdated:       document.getElementById('last-updated'),
+    summaryText:       document.getElementById('ai-summary-text'),
+    sectorContainer:   document.getElementById('sector-container'),
+    pageTrack:         document.getElementById('page-track'),
+    dots:              document.querySelectorAll('.dot'),
+    dotNav:            document.getElementById('dot-nav'),
+    navLeft:           document.getElementById('nav-left'),
+    navRight:          document.getElementById('nav-right'),
+    modal:             document.getElementById('chart-modal'),
+    modalClose:        document.getElementById('modal-close'),
+    modalTitle:        document.getElementById('modal-title'),
+    chartCanvas:       document.getElementById('history-chart'),
+    logo:              document.getElementById('logo'),
+    appMenu:           document.getElementById('app-menu'),
+    changelogView:     document.getElementById('changelog-view'),
+    changelogContainer:document.getElementById('changelog-container'),
 };
 
 // ============================================================
@@ -112,6 +120,12 @@ DOM.pageTrack.addEventListener('touchend', (e) => {
 // ============================================================
 async function init() {
     try {
+        // Load changelog (best-effort)
+        try {
+            const cr = await fetch('data/changelog.json');
+            if (cr.ok) state.changelog = await cr.json();
+        } catch (e) {}
+
         // Load stocks master for accurate sector/market lookup (best-effort)
         try {
             const mr = await fetch('data/stocks_master.json');
@@ -142,6 +156,19 @@ async function init() {
         DOM.navRight.addEventListener('click', () => goToPage(state.currentPage + 1));
         DOM.modalClose.addEventListener('click', closeModal);
         window.addEventListener('click', (e) => { if (e.target === DOM.modal) closeModal(); });
+
+        // Logo menu
+        DOM.logo.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMenu(!state.menuOpen);
+        });
+        DOM.appMenu.addEventListener('click', (e) => {
+            const item = e.target.closest('.app-menu-item');
+            if (!item) return;
+            toggleMenu(false);
+            switchView(item.dataset.view);
+        });
+        document.addEventListener('click', () => toggleMenu(false));
 
         goToPage(0);
     } catch (e) {
@@ -405,6 +432,50 @@ function renderChart(labels, dataPoints) {
                 tooltip: { callbacks: { label: c => c.parsed.y === 101 ? '順位: 圏外' : '順位: ' + c.parsed.y + '位' } }
             }
         }
+    });
+}
+
+// ============================================================
+// Menu & View Switching
+// ============================================================
+function toggleMenu(open) {
+    state.menuOpen = open;
+    DOM.appMenu.classList.toggle('hidden', !open);
+}
+
+function switchView(view) {
+    state.view = view;
+    const isChangelog = view === 'changelog';
+    DOM.changelogView.classList.toggle('hidden', !isChangelog);
+    document.querySelector('.page-wrapper').classList.toggle('hidden', isChangelog);
+    DOM.dotNav.classList.toggle('hidden', isChangelog);
+    // nav arrows: force display:none in changelog mode, restore goToPage logic otherwise
+    DOM.navLeft.style.display  = isChangelog ? 'none' : '';
+    DOM.navRight.style.display = isChangelog ? 'none' : '';
+    if (!isChangelog) goToPage(state.currentPage);
+    if (isChangelog) renderChangelog();
+}
+
+function renderChangelog() {
+    DOM.changelogContainer.innerHTML = '';
+    const title = document.createElement('div');
+    title.className = 'page-title';
+    title.textContent = '更新履歴';
+    DOM.changelogContainer.appendChild(title);
+
+    state.changelog.forEach(entry => {
+        const el = document.createElement('div');
+        el.className = 'changelog-entry';
+        el.innerHTML = `
+            <div class="changelog-header">
+                <span class="changelog-version">${entry.version}</span>
+                <span class="changelog-date">${entry.date}</span>
+            </div>
+            <ul class="changelog-list">
+                ${entry.changes.map(c => `<li>${c}</li>`).join('')}
+            </ul>
+        `;
+        DOM.changelogContainer.appendChild(el);
     });
 }
 

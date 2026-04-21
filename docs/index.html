@@ -18,18 +18,27 @@
 </head>
 <body>
     <header class="navbar">
-        <div class="logo">PTS Monitor</div>
+        <button class="logo" id="logo">PTS Monitor</button>
+        <div id="app-menu" class="app-menu hidden">
+            <button class="app-menu-item" data-view="main">PTSモニター</button>
+            <button class="app-menu-item" data-view="changelog">更新履歴</button>
+        </div>
         <span id="last-updated" class="last-updated"></span>
         <select id="date-selector" class="dropdown header-dropdown"></select>
     </header>
 
-    <nav class="dot-nav">
+    <nav class="dot-nav" id="dot-nav">
         <button class="dot active" data-page="0" title="サマリー"></button>
         <button class="dot" data-page="1" title="出来高"></button>
         <button class="dot" data-page="2" title="値上がり率"></button>
         <button class="dot" data-page="3" title="値下がり率"></button>
         <button class="dot" data-page="4" title="売買代金"></button>
     </nav>
+
+    <!-- Changelog View -->
+    <div id="changelog-view" class="changelog-view hidden">
+        <div class="container" id="changelog-container"></div>
+    </div>
 
     <div class="page-wrapper">
         <div class="page-track" id="page-track">
