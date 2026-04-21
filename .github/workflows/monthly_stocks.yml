@@ -1,0 +1,37 @@
+name: Monthly JPX Stocks List Download
+
+on:
+  schedule:
+    # JST 10:00 = UTC 01:00、毎日実行してPython側で4営業日判定
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  download-stocks-list:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests jpholiday pytz
+
+      - name: Run download script
+        run: python download_stocks_list.py
+
+      - name: Commit and push if file was downloaded
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Automated monthly JPX stocks list download"
+          file_pattern: "StocksList/*.xls"
