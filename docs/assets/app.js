@@ -212,7 +212,7 @@ function renderPageA() {
             <div class="sector-stocks">
                 ${stocks.map(s => `
                     <div class="sector-stock">
-                        <span class="sector-stock-name">${s.name}</span>
+                        <a class="sector-stock-name" href="https://finance.yahoo.co.jp/quote/${s.code}.T" target="_blank" rel="noopener noreferrer">${s.code} ${s.name}</a>
                         <span class="sector-stock-tags">
                             ${s.appearedIn.map(c => `<span class="tag tag-${c}">${CAT_LABELS[c]}</span>`).join('')}
                         </span>
