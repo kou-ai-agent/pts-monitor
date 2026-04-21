@@ -1,6 +1,7 @@
 import os
 import json
 import logging
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 try:
     from anthropic import Anthropic
@@ -10,6 +11,9 @@ except ImportError:
     sys.exit(1)
 
 from processor import load_daily_json, save_daily_json
+from tdnet_scraper import fetch_tdnet
+from news_scraper import fetch_news
+from ir_scraper import fetch_ir
 
 logger = logging.getLogger(__name__)
 
@@ -90,6 +94,62 @@ def _generate_summary(client: Anthropic, rankings: dict) -> str:
         logger.error(f"Summary generation error ({type(e).__name__}): {e}")
         return "AIサマリーの生成に失敗しました。"
 
+def _fetch_external_info(codes: list, company_names: dict) -> dict:
+    """TDNET・ニュース・IRを並列取得する。失敗しても他のソースは続行。"""
+    results = {}
+
+    def run(key, fn, *args):
+        try:
+            return key, fn(*args)
+        except Exception as e:
+            logger.error(f"{key} fetch failed: {e}")
+            empty = {c: {"status": "error"} for c in codes}
+            return key, empty
+
+    with ThreadPoolExecutor(max_workers=3) as executor:
+        futures = [
+            executor.submit(run, "tdnet", fetch_tdnet, codes),
+            executor.submit(run, "news",  fetch_news,  codes, company_names),
+            executor.submit(run, "ir",    fetch_ir,    codes),
+        ]
+        for f in as_completed(futures):
+            key, data = f.result()
+            results[key] = data
+
+    return results
+
+
+def _format_external_context(highlights: list, external: dict) -> str:
+    """外部情報をプロンプト用テキストに整形する。"""
+    lines = ["【外部情報】"]
+    for h in highlights:
+        code, name = h["code"], h["name"]
+        lines.append(f"\n■ {code} {name}")
+
+        tdnet = external.get("tdnet", {}).get(code, {"status": "error", "disclosures": []})
+        lines.append(f"  TDNET: {tdnet['status']}")
+        for d in tdnet.get("disclosures", [])[:3]:
+            lines.append(f"    - {d['date']} {d['time']} 「{d['title']}」(PDF: {d['pdf_url']})")
+
+        news = external.get("news", {}).get(code, {"status": "error", "articles": []})
+        lines.append(f"  ニュース: {news['status']}")
+        for a in news.get("articles", [])[:3]:
+            lines.append(f"    - 「{a['title']}」({a['link']})")
+
+        ir = external.get("ir", {}).get(code, {"status": "error", "items": []})
+        lines.append(f"  IR: {ir['status']}")
+        for item in ir.get("items", [])[:3]:
+            lines.append(f"    - 「{item['title']}」({item['link']})")
+
+    lines += [
+        "\n【ステータス定義】",
+        "- found：情報あり",
+        "- not_found：取得できたが該当情報なし",
+        "- error：取得不可",
+    ]
+    return "\n".join(lines)
+
+
 def _generate_highlights(client: Anthropic, rankings: dict) -> list:
     logger.info("Generating AI Highlights...")
     
@@ -147,6 +207,15 @@ split_suspected=trueの銘柄は株式分割の可能性があるため、急騰
   }}
 ]
 """
+    def _parse_json_response(text: str) -> list:
+        text = text.strip()
+        if text.startswith("```json"):
+            text = text.replace("```json\n", "").replace("\n```", "")
+        elif text.startswith("```"):
+            text = text.replace("```\n", "").replace("\n```", "")
+        return json.loads(text)
+
+    # Pass 1: 注目銘柄選定
     try:
         response = client.messages.create(
             model=MODEL_NAME,
@@ -154,17 +223,66 @@ split_suspected=trueの銘柄は株式分割の可能性があるため、急騰
             temperature=0.7,
             messages=[{"role": "user", "content": prompt}]
         )
-        result_text = response.content[0].text.strip()
-        
-        if result_text.startswith("```json"):
-            result_text = result_text.replace("```json\n", "").replace("\n```", "")
-        elif result_text.startswith("```"):
-            result_text = result_text.replace("```\n", "").replace("\n```", "")
-            
-        return json.loads(result_text)
+        highlights = _parse_json_response(response.content[0].text)
     except Exception as e:
-        logger.error(f"Highlights generation error ({type(e).__name__}): {e}")
+        logger.error(f"Highlights pass1 error ({type(e).__name__}): {e}")
         return []
+
+    if not highlights:
+        return []
+
+    # Pass 2: 外部情報取得 → reason強化
+    codes = [h["code"] for h in highlights]
+    company_names = {h["code"]: h["name"] for h in highlights}
+
+    logger.info(f"Fetching external info for {codes} ...")
+    external = _fetch_external_info(codes, company_names)
+
+    # external_info_status を各highlightに付与
+    for h in highlights:
+        code = h["code"]
+        h["external_info_status"] = {
+            "tdnet": external.get("tdnet", {}).get(code, {}).get("status", "error"),
+            "news":  external.get("news",  {}).get(code, {}).get("status", "error"),
+            "ir":    external.get("ir",    {}).get(code, {}).get("status", "error"),
+        }
+
+    ext_context = _format_external_context(highlights, external)
+
+    prompt_pass2 = f"""
+あなたは優秀な株式相場アナリストです。
+以下の「注目銘柄リスト（Pass1）」に、「外部情報」を加味してreasonフィールドのみを更新してください。
+
+【注目銘柄リスト（Pass1）】
+{json.dumps(highlights, ensure_ascii=False)}
+
+{ext_context}
+
+【更新ルール】
+- 外部情報（TDNET・ニュース・IR）にfoundな情報があればreasonに組み込んでください
+- 情報がnot_foundまたはerrorの場合はPass1のreasonをそのまま維持してください
+- code・name・selection_basis・rank_today・category・external_info_statusは変更しないでください
+- 推定・仮説は「〜と推定」「〜の可能性」と明示してください
+
+以下のJSONフォーマットの「純粋な配列のみ」を出力してください。Markdown装飾(```json等)は絶対に含まないでください。
+"""
+    try:
+        response2 = client.messages.create(
+            model=MODEL_NAME,
+            max_tokens=2000,
+            temperature=0.5,
+            messages=[{"role": "user", "content": prompt_pass2}]
+        )
+        enriched = _parse_json_response(response2.content[0].text)
+        # external_info_statusをPass1の値で上書き保証
+        status_map = {h["code"]: h["external_info_status"] for h in highlights}
+        for h in enriched:
+            if h["code"] in status_map:
+                h["external_info_status"] = status_map[h["code"]]
+        return enriched
+    except Exception as e:
+        logger.error(f"Highlights pass2 error ({type(e).__name__}): {e}")
+        return highlights  # Pass1結果にフォールバック
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
