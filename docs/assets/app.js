@@ -84,6 +84,15 @@ const formatNumber = (n) => new Intl.NumberFormat().format(n);
 const formatPct    = (n) => (n > 0 ? '+' : '') + n.toFixed(2) + '%';
 const formatVolume = (n) => n >= 10000 ? (n / 10000).toFixed(1) + '万' : formatNumber(n);
 
+// ETF/ETN detection: codes absent from stocks_master are funds/foreign listings,
+// not regular stocks. Codes in master with sector17='-' are also excluded.
+function isEtf(code) {
+    if (!state.stocksMaster) return /^1\d{3}$/.test(code);
+    const master = state.stocksMaster.stocks[code];
+    if (!master) return true;
+    return master.sector17 === '-';
+}
+
 function getSector(code) {
     const master = state.stocksMaster?.stocks[code];
     if (master?.sector17) return master.sector17;
@@ -285,10 +294,6 @@ function computeSectorScores(rankings) {
     const sectorScores  = {};
     const sectorStocks  = {};
 
-    const isEtf = state.stocksMaster
-        ? (code) => !state.stocksMaster.stocks[code]          // not in master = ETF/ETN/foreign
-        : (code) => /^1\d{3}$/.test(code);                   // fallback: code-range heuristic
-
     for (const [cat, weight] of Object.entries(SECTOR_WEIGHTS)) {
         const list = (rankings[cat]?.all || []).filter(item => !isEtf(item.code));
         list.slice(0, 10).forEach((item, idx) => {
@@ -354,7 +359,7 @@ function renderRankingTable(pageId, cat, market) {
     if (!tbody || !state.currentData?.rankings) return;
 
     let list = [];
-    try { list = (state.currentData.rankings[cat][market] || []).filter(item => !/^1\d{3}$/.test(item.code)); } catch (e) {}
+    try { list = (state.currentData.rankings[cat][market] || []).filter(item => !isEtf(item.code)); } catch (e) {}
 
     tbody.innerHTML = '';
     if (list.length === 0) {
