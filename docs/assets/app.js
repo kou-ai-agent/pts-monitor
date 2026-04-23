@@ -329,6 +329,33 @@ function renderRankingPage(pageId, cat) {
     }
 }
 
+function buildInfoBadges(item) {
+    const status = item.external_info_status;
+    if (!status) return '';
+
+    const sources = [
+        { key: 'tdnet', label: 'TDNET', url: item.tdnet_url },
+        { key: 'news',  label: 'ニュース', url: item.news_url },
+        { key: 'ir',    label: 'IR',    url: item.ir_url },
+    ];
+
+    const badges = sources.map(({ key, label, url }) => {
+        const s = status[key];
+        if (s === 'found') {
+            const href = url ? ` href="${url}" target="_blank" rel="noopener noreferrer"` : '';
+            const tag  = url ? 'a' : 'span';
+            return `<${tag} class="info-badge info-badge--found"${href}>${label}</${tag}>`;
+        } else if (s === 'not_found') {
+            return `<span class="info-badge info-badge--not-found">${label}情報なし</span>`;
+        } else if (s === 'error') {
+            return `<span class="info-badge info-badge--error">${label}取得不可</span>`;
+        }
+        return '';
+    }).join('');
+
+    return `<div class="info-badges">${badges}</div>`;
+}
+
 function renderPageHighlights(pageId, cat) {
     const container = document.getElementById(`highlights-${pageId}`);
     if (!container) return;
@@ -349,6 +376,7 @@ function renderPageHighlights(pageId, cat) {
                 <span>${item.name} <span style="font-size:12px;color:var(--text-muted)">(${item.code})</span></span>
             </div>
             <div class="highlight-reason">${item.reason}</div>
+            ${buildInfoBadges(item)}
         `;
         container.appendChild(div);
     });

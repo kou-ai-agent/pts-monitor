@@ -238,14 +238,27 @@ split_suspected=trueの銘柄は株式分割の可能性があるため、急騰
     logger.info(f"Fetching external info for {codes} ...")
     external = _fetch_external_info(codes, company_names)
 
-    # external_info_status を各highlightに付与
+    # external_info_status を各highlightに付与、UIリンク用URLも保存
     for h in highlights:
         code = h["code"]
+        tdnet_data = external.get("tdnet", {}).get(code, {})
+        news_data  = external.get("news",  {}).get(code, {})
+        ir_data    = external.get("ir",    {}).get(code, {})
+
         h["external_info_status"] = {
-            "tdnet": external.get("tdnet", {}).get(code, {}).get("status", "error"),
-            "news":  external.get("news",  {}).get(code, {}).get("status", "error"),
-            "ir":    external.get("ir",    {}).get(code, {}).get("status", "error"),
+            "tdnet": tdnet_data.get("status", "error"),
+            "news":  news_data.get("status", "error"),
+            "ir":    ir_data.get("status", "error"),
         }
+        disclosures = tdnet_data.get("disclosures", [])
+        if disclosures:
+            h["tdnet_url"] = disclosures[0].get("pdf_url", "")
+        articles = news_data.get("articles", [])
+        if articles:
+            h["news_url"] = articles[0].get("link", "")
+        ir_url = ir_data.get("ir_url")
+        if ir_url:
+            h["ir_url"] = ir_url
 
     ext_context = _format_external_context(highlights, external)
 
