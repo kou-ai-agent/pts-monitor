@@ -134,34 +134,50 @@ function goToPage(idx) {
 // ============================================================
 // Swipe (touch)
 // ============================================================
-let touchStartX = 0;
-let touchStartY = 0;
-let isHorizontalSwipe = null; // null=未確定, true=水平, false=垂直
+let swipeStartX = 0;
+let swipeStartY = 0;
+let isSwiping = null; // null=未確定, true=水平スワイプ中, false=垂直スクロール中
 
-DOM.pageTrack.addEventListener('touchstart', (e) => {
-    touchStartX = e.touches[0].clientX;
-    touchStartY = e.touches[0].clientY;
-    isHorizontalSwipe = null;
-}, { passive: true });
+function onSwipeTouchStart(e) {
+    swipeStartX = e.touches[0].clientX;
+    swipeStartY = e.touches[0].clientY;
+    isSwiping = null;
+}
 
-DOM.pageTrack.addEventListener('touchmove', (e) => {
-    if (isHorizontalSwipe === null) {
-        const dx = Math.abs(e.touches[0].clientX - touchStartX);
-        const dy = Math.abs(e.touches[0].clientY - touchStartY);
-        if (dx > 5 || dy > 5) {
-            isHorizontalSwipe = dx > dy;
-        }
+function onSwipeTouchMove(e) {
+    if (isSwiping === null) {
+        const dx = Math.abs(e.touches[0].clientX - swipeStartX);
+        const dy = Math.abs(e.touches[0].clientY - swipeStartY);
+        if (dx > 5 || dy > 5) isSwiping = dx > dy;
     }
-    if (isHorizontalSwipe) e.preventDefault();
-}, { passive: false });
+    if (isSwiping) e.preventDefault();
+}
 
-DOM.pageTrack.addEventListener('touchend', (e) => {
-    const dx = e.changedTouches[0].clientX - touchStartX;
-    if (isHorizontalSwipe && Math.abs(dx) >= 30) {
+function onSwipeTouchEnd(e) {
+    const dx = e.changedTouches[0].clientX - swipeStartX;
+    if (isSwiping && Math.abs(dx) >= 30) {
         goToPage(state.currentPage + (dx < 0 ? 1 : -1));
     }
-    isHorizontalSwipe = null;
-});
+    isSwiping = null;
+}
+
+function onSwipeTouchCancel() {
+    isSwiping = null;
+}
+
+function initSwipeListeners() {
+    const el = DOM.pageTrack;
+    el.removeEventListener('touchstart',  onSwipeTouchStart);
+    el.removeEventListener('touchmove',   onSwipeTouchMove);
+    el.removeEventListener('touchend',    onSwipeTouchEnd);
+    el.removeEventListener('touchcancel', onSwipeTouchCancel);
+    el.addEventListener('touchstart',  onSwipeTouchStart,  { passive: false });
+    el.addEventListener('touchmove',   onSwipeTouchMove,   { passive: false });
+    el.addEventListener('touchend',    onSwipeTouchEnd);
+    el.addEventListener('touchcancel', onSwipeTouchCancel);
+}
+
+initSwipeListeners();
 
 // ============================================================
 // Init
