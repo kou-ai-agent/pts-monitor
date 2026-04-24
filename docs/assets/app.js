@@ -136,19 +136,32 @@ function goToPage(idx) {
 // ============================================================
 let touchStartX = 0;
 let touchStartY = 0;
+let isHorizontalSwipe = null; // null=未確定, true=水平, false=垂直
 
 DOM.pageTrack.addEventListener('touchstart', (e) => {
     touchStartX = e.touches[0].clientX;
     touchStartY = e.touches[0].clientY;
+    isHorizontalSwipe = null;
 }, { passive: true });
+
+DOM.pageTrack.addEventListener('touchmove', (e) => {
+    if (isHorizontalSwipe === null) {
+        const dx = Math.abs(e.touches[0].clientX - touchStartX);
+        const dy = Math.abs(e.touches[0].clientY - touchStartY);
+        if (dx > 5 || dy > 5) {
+            isHorizontalSwipe = dx > dy;
+        }
+    }
+    if (isHorizontalSwipe) e.preventDefault();
+}, { passive: false });
 
 DOM.pageTrack.addEventListener('touchend', (e) => {
     const dx = e.changedTouches[0].clientX - touchStartX;
-    const dy = e.changedTouches[0].clientY - touchStartY;
-    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) {
+    if (isHorizontalSwipe && Math.abs(dx) >= 30) {
         goToPage(state.currentPage + (dx < 0 ? 1 : -1));
     }
-}, { passive: true });
+    isHorizontalSwipe = null;
+});
 
 // ============================================================
 // Init

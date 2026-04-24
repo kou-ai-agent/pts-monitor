@@ -1,6 +1,7 @@
 import os
 import json
 import logging
+import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 try:
@@ -16,6 +17,80 @@ from news_scraper import fetch_news
 from ir_scraper import fetch_ir
 
 logger = logging.getLogger(__name__)
+
+_STOCKS_MASTER_PATH = os.path.join(os.path.dirname(__file__), 'docs', 'data', 'stocks_master.json')
+
+_CAT_LABELS = {
+    'price_up':   '値上がり率',
+    'price_down': '値下がり率',
+    'volume':     '出来高',
+    'turnover':   '売買代金',
+}
+_CAT_RANK_KEY = {
+    'price_up':   'price_up_rank',
+    'price_down': 'price_down_rank',
+    'volume':     'volume_rank',
+    'turnover':   'turnover_rank',
+}
+
+
+def _load_stocks_master() -> dict:
+    try:
+        with open(_STOCKS_MASTER_PATH, encoding='utf-8') as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+
+def _is_etf_agent(code: str, stocks_master: dict) -> bool:
+    if not stocks_master:
+        return bool(re.match(r'^1\d{3}$', code))
+    stocks = stocks_master.get('stocks', {})
+    if code not in stocks:
+        return True
+    return stocks[code].get('sector17') == '-'
+
+
+def _fill_highlights_minimum(highlights: list, rankings: dict, stocks_master: dict, min_count: int = 3) -> list:
+    """各カテゴリの注目銘柄が min_count 件未満の場合、ランキング上位から補完する。"""
+    existing_codes = {h['code'] for h in highlights}
+
+    for cat in ['price_up', 'price_down', 'volume', 'turnover']:
+        cat_count = sum(1 for h in highlights if h.get('category') == cat)
+        if cat_count >= min_count:
+            continue
+
+        needed = min_count - cat_count
+        ranking_items = rankings.get(cat, {}).get('all', [])
+        added = 0
+
+        for i, item in enumerate(ranking_items):
+            if added >= needed:
+                break
+            code = str(item.get('code', ''))
+            if not code or code in existing_codes:
+                continue
+            if item.get('split_suspected'):
+                continue
+            if _is_etf_agent(code, stocks_master):
+                continue
+
+            highlights.append({
+                'code': code,
+                'name': item.get('name', ''),
+                'reason': f"{_CAT_LABELS[cat]}ランキング上位銘柄",
+                'selection_basis': {
+                    'change_pct': item.get('change_pct', 0),
+                    _CAT_RANK_KEY[cat]: i + 1,
+                    'appeared_in': [cat],
+                },
+                'rank_today': i + 1,
+                'category': cat,
+            })
+            existing_codes.add(code)
+            added += 1
+
+    return highlights
 
 # 使用するClaudeモデル（Haikuを指定）
 MODEL_NAME = "claude-haiku-4-5"
@@ -227,6 +302,13 @@ split_suspected=trueの銘柄は株式分割の可能性があるため、急騰
     except Exception as e:
         logger.error(f"Highlights pass1 error ({type(e).__name__}): {e}")
         return []
+
+    if not isinstance(highlights, list):
+        highlights = []
+
+    # 各カテゴリ最低3件補完
+    stocks_master = _load_stocks_master()
+    highlights = _fill_highlights_minimum(highlights, rankings, stocks_master)
 
     if not highlights:
         return []
