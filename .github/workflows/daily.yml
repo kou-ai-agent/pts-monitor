@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
         
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -35,6 +37,11 @@ jobs:
           PTS_LINE_ACCESS_TOKEN: ${{ secrets.PTS_LINE_ACCESS_TOKEN }}
         run: python main.py
         
+      - name: Generate changelog from today's commits
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python changelog_generator.py
+
       - name: Cleanup old data (keep past 30 days)
         run: |
           echo "Cleaning up files older than 30 days in docs/data/ directory..."

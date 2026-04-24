@@ -2,11 +2,10 @@ import sys
 import json
 import random
 import logging
-from datetime import date, timedelta
+from datetime import date
 from pathlib import Path
 
 import requests
-import jpholiday
 import xlrd
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s %(message)s')
@@ -23,24 +22,11 @@ MARKET_MAP = {
 }
 
 
-def is_business_day(d: date) -> bool:
-    return d.weekday() < 5 and not jpholiday.is_holiday(d)
-
-
-def nth_business_day(year: int, month: int, n: int) -> date:
-    d = date(year, month, 1)
-    count = 0
-    while True:
-        if is_business_day(d):
-            count += 1
-            if count == n:
-                return d
-        d += timedelta(days=1)
-
-
-def should_run(today: date) -> bool:
-    target = nth_business_day(today.year, today.month, 4)
-    return today == target
+def already_downloaded_this_month(today: date) -> bool:
+    """今月分（yyyymm始まり）のファイルが StocksList/ に存在するか確認する。"""
+    prefix = today.strftime("%Y%m")
+    SAVE_DIR.mkdir(parents=True, exist_ok=True)
+    return any(f.name.startswith(prefix) for f in SAVE_DIR.iterdir() if f.is_file())
 
 
 def download(save_path: Path) -> bytes:
@@ -57,7 +43,6 @@ def convert_to_json(xls_bytes: bytes) -> dict:
     wb = xlrd.open_workbook(file_contents=xls_bytes)
     ws = wb.sheet_by_index(0)
 
-    # ヘッダー行からインデックスを特定
     headers = [ws.cell_value(0, j) for j in range(ws.ncols)]
     idx = {h: i for i, h in enumerate(headers)}
 
@@ -114,12 +99,11 @@ if __name__ == "__main__":
     today = datetime.now(JST).date()
     logger.info(f"Today (JST): {today}")
 
-    if not should_run(today):
-        target = nth_business_day(today.year, today.month, 4)
-        logger.info(f"Not the 4th business day (target: {target}). Skipping.")
+    if already_downloaded_this_month(today):
+        logger.info(f"Today month {today.strftime('%Y%m')} already downloaded. Skipping.")
         sys.exit(0)
 
-    logger.info("Today is the 4th business day of the month. Running.")
+    logger.info("No download found for this month. Running.")
     filename = f"data_j_{today.strftime('%Y%m%d')}.xls"
     save_path = SAVE_DIR / filename
 

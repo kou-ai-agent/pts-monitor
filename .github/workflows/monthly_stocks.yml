@@ -2,8 +2,8 @@ name: Monthly JPX Stocks List Download
 
 on:
   schedule:
-    # JST 10:00 = UTC 01:00、毎日実行してPython側で4営業日判定
-    - cron: '0 1 * * *'
+    # JST 10:00 = UTC 01:00、毎月11〜15日のみ実行してPython側で取得済み判定
+    - cron: '0 1 11-15 * *'
   workflow_dispatch:
 
 permissions:
@@ -25,7 +25,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests jpholiday pytz
+          pip install requests jpholiday pytz xlrd
 
       - name: Run download script
         run: python download_stocks_list.py
