@@ -424,16 +424,17 @@ function renderRankingTable(pageId, cat, market) {
         return;
     }
 
-    list.forEach(item => {
+    list.forEach((item, i) => {
         const tr = document.createElement('tr');
+        const displayRank = i + 1;
         const pctClass  = item.change_pct > 0 ? 'pct-up' : item.change_pct < 0 ? 'pct-down' : '';
-        const rankClass = item.rank <= 3 ? 'rank-top3' : '';
+        const rankClass = displayRank <= 3 ? 'rank-top3' : '';
         const detailHtml = cat === 'turnover'
             ? `代金<br>${formatVolume(item.turnover / 10000)}億円`
             : `出来高<br>${formatVolume(item.volume)}株`;
 
         tr.innerHTML = `
-            <td class="col-rank"><span class="rank-num ${rankClass}">${item.rank}</span></td>
+            <td class="col-rank"><span class="rank-num ${rankClass}">${displayRank}</span></td>
             <td class="col-name">
                 <span class="stock-name">${item.name}</span>
                 <span class="stock-code">${item.code}</span>
