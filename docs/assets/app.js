@@ -375,7 +375,7 @@ function buildInfoBadges(item) {
             const tag  = url ? 'a' : 'span';
             return `<${tag} class="info-badge info-badge--found"${href}>${label}</${tag}>`;
         } else if (s === 'not_found') {
-            return `<span class="info-badge info-badge--not-found">${label}情報なし</span>`;
+            return `<span class="info-badge info-badge--not-found">${label}なし</span>`;
         } else if (s === 'error') {
             return `<span class="info-badge info-badge--error">${label}取得不可</span>`;
         }
