@@ -113,7 +113,7 @@ body {
 .nav-left  { left: 4px; }
 .nav-right { right: 4px; }
 @media (hover: none) { .nav-arrow { width: 32px; height: 52px; font-size: 26px; } }
-@media (max-width: 768px) { .nav-arrow { top: 66.7%; } }
+@media (max-width: 768px) { .nav-arrow { top: 80%; } }
 
 /* ── Dropdowns ── */
 .dropdown {
