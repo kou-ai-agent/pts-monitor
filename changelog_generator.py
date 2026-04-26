@@ -47,6 +47,26 @@ def get_todays_commits() -> tuple[list[str], str]:
     return filtered, today_jst.strftime("%Y-%m-%d")
 
 
+def get_next_version() -> str:
+    if not CHANGELOG_PATH.exists():
+        return "v1.0"
+    with open(CHANGELOG_PATH, encoding="utf-8") as f:
+        changelog = json.load(f)
+
+    pattern = re.compile(r'^v(\d+)\.(\d+)$')
+    versions = []
+    for entry in changelog:
+        m = pattern.match(entry.get("version", ""))
+        if m:
+            versions.append((int(m.group(1)), int(m.group(2))))
+
+    if not versions:
+        return "v1.0"
+
+    major, minor = max(versions)
+    return f"v{major}.{minor + 1}"
+
+
 def generate_changelog_entry(commits: list[str], today_str: str) -> dict | None:
     client = anthropic.Anthropic()
     commits_text = "\n".join(commits)
@@ -86,7 +106,7 @@ JSON形式のみで回答してください（説明文は不要）：
 
     return {
         "date": today_str,
-        "version": "auto",
+        "version": get_next_version(),
         "changes": result["changes"],
     }
 
