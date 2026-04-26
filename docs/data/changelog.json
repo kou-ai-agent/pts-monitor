@@ -1,7 +1,7 @@
 [
   {
     "date": "2026-04-25",
-    "version": "auto",
+    "version": "v2.3",
     "changes": [
       "not_foundバッジの表示文言を短縮しました（「○○情報なし」→「○○なし」）"
     ]
