@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 logger = logging.getLogger(__name__)
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+MATCH_THRESHOLD = 40
 RSS_FEEDS = [
     "https://assets.wor.jp/rss/rdf/nikkei/news.rdf",    # 日経新聞（非公式RSS集約）
     "https://feeds.bloomberg.com/markets/news.rss",      # Bloomberg Markets
@@ -36,13 +37,31 @@ def _fetch_rss(url: str) -> list[dict]:
         return []
 
 
-def _matches(article: dict, code: str, company_name: str) -> bool:
-    text = f"{article['title']} {article['description']}"
+def _score(article: dict, code: str, company_name: str) -> int:
+    title = article["title"]
+    text = f"{title} {article['description']}"
+    score = 0
+
     if code in text:
-        return True
-    if company_name and company_name in text:
-        return True
-    return False
+        score += 100
+
+    if company_name:
+        if len(company_name) <= 2:
+            if company_name in text:
+                score += 3
+        else:
+            if company_name in title:
+                score += 50
+            variants = [
+                f"株式会社{company_name}",
+                f"{company_name}株式会社",
+                f"{company_name}HD",
+                f"{company_name}ホールディングス",
+            ]
+            if any(v in text for v in variants):
+                score += 40
+
+    return score
 
 
 def fetch_news(codes: list[str], company_names: dict[str, str]) -> dict:
@@ -68,7 +87,7 @@ def fetch_news(codes: list[str], company_names: dict[str, str]) -> dict:
 
     for article in all_articles:
         for code in codes:
-            if _matches(article, code, company_names.get(code, "")):
+            if _score(article, code, company_names.get(code, "")) >= MATCH_THRESHOLD:
                 entry = result[code]
                 entry["status"] = "found"
                 entry["articles"].append({

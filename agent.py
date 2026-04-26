@@ -51,44 +51,121 @@ def _is_etf_agent(code: str, stocks_master: dict) -> bool:
     return stocks[code].get('sector17') == '-'
 
 
-def _fill_highlights_minimum(highlights: list, rankings: dict, stocks_master: dict, min_count: int = 3) -> list:
-    """各カテゴリの注目銘柄が min_count 件未満の場合、ランキング上位から補完する。"""
-    existing_codes = {h['code'] for h in highlights}
+_HISTORICAL_DATA_DIR = os.path.join(os.path.dirname(__file__), 'docs', 'data')
 
-    for cat in ['price_up', 'price_down', 'volume', 'turnover']:
-        cat_count = sum(1 for h in highlights if h.get('category') == cat)
-        if cat_count >= min_count:
+
+def _load_historical_rankings(max_days: int = 30) -> list:
+    """index.jsonから新しい順に最大max_days件のJSONを読み込む。"""
+    index_path = os.path.join(_HISTORICAL_DATA_DIR, 'index.json')
+    try:
+        with open(index_path, encoding='utf-8') as f:
+            dates = json.load(f).get('dates', [])
+    except Exception:
+        return []
+
+    results = []
+    for date in dates[:max_days]:
+        file_path = os.path.join(_HISTORICAL_DATA_DIR, f'{date}.json')
+        try:
+            with open(file_path, encoding='utf-8') as f:
+                results.append(json.load(f))
+        except Exception:
             continue
+    return results
 
-        needed = min_count - cat_count
-        ranking_items = rankings.get(cat, {}).get('all', [])
-        added = 0
 
-        for i, item in enumerate(ranking_items):
-            if added >= needed:
-                break
-            code = str(item.get('code', ''))
-            if not code or code in existing_codes:
-                continue
-            if item.get('split_suspected'):
-                continue
-            if _is_etf_agent(code, stocks_master):
-                continue
+def _supplement_highlights_with_history(
+    client: Anthropic,
+    highlights: list,
+    stocks_master: dict,
+    min_count: int = 3,
+) -> list:
+    """Pass1で3件未満のカテゴリを直近30日の出現頻度をもとにAIで補完する。"""
+    cats = ['price_up', 'price_down', 'volume', 'turnover']
+    cat_counts = {cat: sum(1 for h in highlights if h.get('category') == cat) for cat in cats}
+    needing = {cat: min_count - cnt for cat, cnt in cat_counts.items() if cnt < min_count}
+    if not needing:
+        return highlights
 
-            highlights.append({
-                'code': code,
-                'name': item.get('name', ''),
-                'reason': f"{_CAT_LABELS[cat]}ランキング上位銘柄",
-                'selection_basis': {
-                    'change_pct': item.get('change_pct', 0),
-                    _CAT_RANK_KEY[cat]: i + 1,
-                    'appeared_in': [cat],
-                },
-                'rank_today': i + 1,
+    existing_codes = {h['code'] for h in highlights}
+    historical = _load_historical_rankings(max_days=30)
+    if not historical:
+        logger.warning("No historical data for supplementation.")
+        return highlights
+
+    supplement_candidates = []
+    for cat, needed in needing.items():
+        freq: dict = {}
+        name_map: dict = {}
+        rank_list: dict = {}
+
+        for day_data in historical:
+            items = day_data.get('rankings', {}).get(cat, {}).get('all', [])
+            for i, item in enumerate(items[:30]):
+                code = str(item.get('code', ''))
+                if not code or item.get('split_suspected'):
+                    continue
+                if _is_etf_agent(code, stocks_master):
+                    continue
+                freq[code] = freq.get(code, 0) + 1
+                name_map[code] = item.get('name', code)
+                rank_list.setdefault(code, []).append(i + 1)
+
+        candidates = sorted(
+            [(c, f) for c, f in freq.items() if c not in existing_codes],
+            key=lambda x: x[1],
+            reverse=True,
+        )
+        for code, count in candidates[:needed]:
+            avg_rank = round(sum(rank_list[code]) / len(rank_list[code]), 1)
+            supplement_candidates.append({
                 'category': cat,
+                'code': code,
+                'name': name_map[code],
+                'freq': count,
+                'total_days': len(historical),
+                'avg_rank': avg_rank,
             })
             existing_codes.add(code)
-            added += 1
+
+    if not supplement_candidates:
+        return highlights
+
+    prompt_supplement = (
+        "あなたは優秀な株式相場アナリストです。\n"
+        "以下の「補完候補銘柄リスト」について、直近の出現パターンと傾向に基づいてJSON配列を生成してください。\n\n"
+        "【補完候補銘柄リスト】\n"
+        + json.dumps(supplement_candidates, ensure_ascii=False) + "\n\n"
+        "【各銘柄について生成するフィールド】\n"
+        "- code / name / category: そのまま使用\n"
+        "- reason: 以下の2点を含む2〜3文で記述\n"
+        "  1. 出現パターン（例：「直近30日中14日ランクイン」のようにfreqとtotal_daysの実際の値を使うこと）\n"
+        "  2. 出現傾向から読み取れる示唆（例：「継続的な買い需要が見られる」「特定テーマへの関心が持続している」等）\n"
+        "- selection_basis: avg_rank・freq_days（freq値）・appeared_in（[カテゴリ名, \"historical_supplement\"]）を含める\n"
+        "- rank_today: null\n\n"
+        "以下のJSONフォーマットの「純粋な配列のみ」を出力してください。Markdown装飾(```json等)は絶対に含まないでください。\n\n"
+        '[\n  {\n    "code": "1234",\n    "name": "銘柄名",\n'
+        '    "reason": "直近30日中X日ランクインしており...",\n'
+        '    "selection_basis": {"avg_rank": 5.2, "appeared_in": ["price_up", "historical_supplement"], "freq_days": 14},\n'
+        '    "rank_today": null,\n    "category": "price_up"\n  }\n]'
+    )
+
+    try:
+        response = client.messages.create(
+            model=MODEL_NAME,
+            max_tokens=1500,
+            temperature=0.5,
+            messages=[{"role": "user", "content": prompt_supplement}]
+        )
+        text = response.content[0].text.strip()
+        if text.startswith("```"):
+            text = re.sub(r'^```[^\n]*\n', '', text)
+            text = re.sub(r'\n```$', '', text)
+        supplement_entries = json.loads(text)
+        if isinstance(supplement_entries, list):
+            highlights.extend(supplement_entries)
+    except Exception as e:
+        logger.error(f"Historical supplement error ({type(e).__name__}): {e}")
 
     return highlights
 
@@ -236,16 +313,21 @@ def _generate_highlights(client: Anthropic, rankings: dict) -> list:
     }
     
     prompt = f"""
-あなたは優秀な株式相場アナリストです。以下のPTSランキングデータ（値上がり・値下がり・出来高・売買代金のトップ10）を分析し、**今日最も注目すべき銘柄を最大3〜5つ選定**してください。
+あなたは優秀な株式相場アナリストです。以下のPTSランキングデータ（値上がり・値下がり・出来高・売買代金のトップ10）を分析し、注目銘柄を選定してください。
 
-【split_suspected=trueの銘柄について】
-split_suspected=trueの銘柄は株式分割の可能性があるため、急騰・急落の値動き異常として扱わず、選定対象から外してください。
+【選定数の要件】
+各カテゴリ（price_up・price_down・volume・turnover）からそれぞれ最低3件ずつ選定してください。
+ただし機械的に埋めるのではなく、実際に注目に値する銘柄を選んでください。
+データに十分な候補がある場合は3〜5件選定して構いません。
 
-【除外対象銘柄について】
-以下の銘柄は注目銘柄の選定対象から除外してください：
+【除外対象銘柄について（最優先）】
+以下の銘柄は選定対象から絶対に除外してください：
 - ETF・投資信託・指数連動商品（証券コードが1000〜1999番台、例：日経レバ1570、日経ベア2 1360、日経ブル2 1579）
 - コモディティETF（WTI原油1671、純金信託1540、純銀信託1542など）
 - インバース・レバレッジ型商品全般
+
+【split_suspected=trueの銘柄について】
+split_suspected=trueの銘柄は株式分割の可能性があるため、急騰・急落の値動き異常として扱わず、選定対象から外してください。
 
 【選定理由（reasonフィールド）の必須要素】
 以下の3点を必ず含む2〜3文で記述してください：
@@ -306,9 +388,9 @@ split_suspected=trueの銘柄は株式分割の可能性があるため、急騰
     if not isinstance(highlights, list):
         highlights = []
 
-    # 各カテゴリ最低3件補完
+    # 各カテゴリ最低3件を履歴補完
     stocks_master = _load_stocks_master()
-    highlights = _fill_highlights_minimum(highlights, rankings, stocks_master)
+    highlights = _supplement_highlights_with_history(client, highlights, stocks_master)
 
     if not highlights:
         return []
