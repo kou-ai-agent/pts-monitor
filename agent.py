@@ -383,7 +383,7 @@ split_suspected=trueの銘柄は株式分割の可能性があるため、急騰
         highlights = _parse_json_response(response.content[0].text)
     except Exception as e:
         logger.error(f"Highlights pass1 error ({type(e).__name__}): {e}")
-        return []
+        highlights = []
 
     if not isinstance(highlights, list):
         highlights = []
