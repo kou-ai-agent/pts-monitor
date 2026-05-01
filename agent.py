@@ -153,7 +153,7 @@ def _supplement_highlights_with_history(
     try:
         response = client.messages.create(
             model=MODEL_NAME,
-            max_tokens=1500,
+            max_tokens=3000,
             temperature=0.5,
             messages=[{"role": "user", "content": prompt_supplement}]
         )
@@ -376,7 +376,7 @@ split_suspected=trueの銘柄は株式分割の可能性があるため、急騰
     try:
         response = client.messages.create(
             model=MODEL_NAME,
-            max_tokens=1500,
+            max_tokens=3000,
             temperature=0.7,
             messages=[{"role": "user", "content": prompt}]
         )
@@ -446,7 +446,7 @@ split_suspected=trueの銘柄は株式分割の可能性があるため、急騰
     try:
         response2 = client.messages.create(
             model=MODEL_NAME,
-            max_tokens=2000,
+            max_tokens=3000,
             temperature=0.5,
             messages=[{"role": "user", "content": prompt_pass2}]
         )
