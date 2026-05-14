@@ -1,5 +1,13 @@
 [
   {
+    "date": "2026-05-15",
+    "version": "v2.4",
+    "changes": [
+      "Node.js 24への対応を実施しました",
+      "AI highlights機能のJSONDecodeErrorを修正しました"
+    ]
+  },
+  {
     "date": "2026-04-25",
     "version": "v2.3",
     "changes": [
