@@ -366,11 +366,27 @@ split_suspected=trueの銘柄は株式分割の可能性があるため、急騰
 """
     def _parse_json_response(text: str) -> list:
         text = text.strip()
-        if text.startswith("```json"):
-            text = text.replace("```json\n", "").replace("\n```", "")
-        elif text.startswith("```"):
-            text = text.replace("```\n", "").replace("\n```", "")
-        return json.loads(text)
+        if text.startswith("```"):
+            text = re.sub(r'^```[^\n]*\n?', '', text)
+            text = re.sub(r'\n?```\s*$', '', text).strip()
+        try:
+            return json.loads(text)
+        except json.JSONDecodeError:
+            # 途中切れ配列の復旧: 最後の完全オブジェクトまでで配列を閉じる
+            last_complete = text.rfind('},')
+            if last_complete != -1:
+                recovered = text[:last_complete + 1].strip()
+                if not recovered.startswith('['):
+                    recovered = '[' + recovered
+                recovered += ']'
+                try:
+                    parsed = json.loads(recovered)
+                    if isinstance(parsed, list) and parsed:
+                        logger.warning(f"JSON truncated, recovered {len(parsed)} items")
+                        return parsed
+                except json.JSONDecodeError:
+                    pass
+            raise
 
     # Pass 1: 注目銘柄選定
     try:
@@ -446,7 +462,7 @@ split_suspected=trueの銘柄は株式分割の可能性があるため、急騰
     try:
         response2 = client.messages.create(
             model=MODEL_NAME,
-            max_tokens=3000,
+            max_tokens=4096,
             temperature=0.5,
             messages=[{"role": "user", "content": prompt_pass2}]
         )
