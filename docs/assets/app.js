@@ -277,8 +277,27 @@ function renderAll() {
 // ============================================================
 // Page A: Summary + Sector Scoring
 // ============================================================
+function isRankingsEmpty(rankings) {
+    if (!rankings) return true;
+    return Object.values(rankings).every(markets =>
+        Object.values(markets).every(arr => !arr || arr.length === 0)
+    );
+}
+
 function renderPageA() {
     const d = state.currentData;
+
+    const existingBanner = document.getElementById('rankings-empty-banner');
+    if (existingBanner) existingBanner.remove();
+
+    if (isRankingsEmpty(d.rankings)) {
+        const banner = document.createElement('div');
+        banner.id = 'rankings-empty-banner';
+        banner.className = 'rankings-empty-banner';
+        banner.textContent = '⚠️ 最新PTSランキングデータを取得できませんでした。過去データおよびTDNET等の外部情報をもとに分析しています。';
+        DOM.summaryText.parentNode.insertBefore(banner, DOM.summaryText);
+    }
+
     DOM.summaryText.innerText = d.ai_summary || 'AIサマリーは現在利用できません。';
 
     if (!d.rankings) return;
@@ -436,7 +455,7 @@ function renderRankingTable(pageId, cat, market) {
         tr.innerHTML = `
             <td class="col-rank"><span class="rank-num ${rankClass}">${displayRank}</span></td>
             <td class="col-name">
-                <span class="stock-name">${item.name}</span>
+                <span class="stock-name">${item.name}${item.split_suspected ? ' <span class="split-warning" title="株式分割の可能性あり">⚠️</span>' : ''}</span>
                 <span class="stock-code">${item.code}</span>
             </td>
             <td class="col-price">

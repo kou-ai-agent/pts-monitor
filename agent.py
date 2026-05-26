@@ -237,7 +237,7 @@ def _generate_summary(client: Anthropic, rankings: dict) -> str:
     try:
         response = client.messages.create(
             model=MODEL_NAME,
-            max_tokens=300,
+            max_tokens=4096,
             temperature=0.5,
             messages=[{"role": "user", "content": prompt}]
         )

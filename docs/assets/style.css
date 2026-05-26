@@ -137,6 +137,17 @@ body {
 .card .icon { margin-right: 8px; font-size: 18px; }
 .placeholder-text { color: var(--text-muted); font-size: 14px; }
 
+.rankings-empty-banner {
+    background-color: rgba(210, 153, 40, 0.12);
+    border: 1px solid rgba(210, 153, 40, 0.4);
+    color: #d4a017;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
 /* ── Highlights Grid (B–E) ── */
 .highlights-grid { display: flex; flex-direction: column; gap: 12px; }
 .highlight-item {
@@ -247,6 +258,7 @@ body {
 .rank-top3 { background: var(--primary); color: #fff; }
 .stock-name { font-weight: 600; display: block; margin-bottom: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .stock-code { font-size: 11px; color: var(--text-muted); }
+.split-warning { font-size: 12px; cursor: help; vertical-align: middle; margin-left: 2px; }
 .price-val { font-weight: 500; display: block; }
 .pct-val { font-size: 12px; font-weight: 600; }
 .pct-up   { color: var(--up-color); }
