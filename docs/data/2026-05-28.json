@@ -1,0 +1,280 @@
+{
+  "date": "2026-05-28",
+  "generated_at": "03:10:50",
+  "ai_summary": "申し訳ございませんが、提供いただいたPTSランキングデータが空の状態となっており、具体的な銘柄や数値情報が記載されていません。分析を行うためには、値上がり率上位10、値下がり率上位10、出来高上位10、売買代金上位10のそれぞれのリストに銘柄名と数値が必要です。データをご確認の上、改めてご提供いただければ、セクターローテーションの観点から市場全体の動きと翌日への示唆を含めた分析を提供させていただきます。",
+  "ai_highlights": [
+    {
+      "code": "278A",
+      "name": "テラドローン",
+      "reason": "直近30日中11日ランクインしており、平均順位16.0と中程度の注目度を維持している。価格上昇カテゴリでの継続的な出現から、特定テーマへの関心が持続している。5月22日付でTDNETで海外子会社の火災に関する第五報が開示されており、事業継続性に関する重要な情報開示が行われている。",
+      "selection_basis": {
+        "avg_rank": 16.0,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 11
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260522544978.pdf"
+    },
+    {
+      "code": "4392",
+      "name": "ＦＩＧ",
+      "reason": "直近30日中9日ランクインし、平均順位8.2と高い注目度を示している。価格上昇カテゴリでの安定した出現パターンから、継続的な買い需要が見られる。",
+      "selection_basis": {
+        "avg_rank": 8.2,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 9
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "3823",
+      "name": "ＷＨＤＣ",
+      "reason": "直近30日中8日ランクインしており、平均順位13.1で安定した注目度を保持している。価格上昇トレンドでの定期的な出現により、市場の買い関心が継続している。5月26日付でTDNETで中期経営方針・経営目標および業績予想が公表されており、経営戦略の明確化が市場評価に影響する可能性がある。",
+      "selection_basis": {
+        "avg_rank": 13.1,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 8
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260526548245.pdf"
+    },
+    {
+      "code": "6173",
+      "name": "アクアライン",
+      "reason": "直近30日中9日ランクインし、平均順位4.8と極めて高い注目度を示している。価格下落カテゴリでの強い出現パターンから、市場の売り圧力が顕著である。5月27日付でTDNETで筆頭株主の異動（株式会社SAIASによる株式取得）に関する重要な公表が行われており、経営権の変動が売り圧力の主要因と推定される。",
+      "selection_basis": {
+        "avg_rank": 4.8,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 9
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260527550570.pdf"
+    },
+    {
+      "code": "7421",
+      "name": "カッパクリエ",
+      "reason": "直近30日中7日ランクインし、平均順位2.3と最高水準の注目度を記録している。価格下落カテゴリでの継続的な出現から、強い売り需要が存在する。",
+      "selection_basis": {
+        "avg_rank": 2.3,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 7
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "2656",
+      "name": "ベクターＨＤ",
+      "reason": "直近30日中6日ランクインしており、平均順位15.2で中程度の注目度を維持している。価格下落カテゴリでの定期的な出現により、継続的な売り関心が見られる。5月27日付でTDNETで定時株主総会の開催決定および定款変更、役員選任に関する公表が行われており、経営体制の変更が市場反応に影響する可能性がある。",
+      "selection_basis": {
+        "avg_rank": 15.2,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 6
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260527550145.pdf"
+    },
+    {
+      "code": "8918",
+      "name": "ランド",
+      "reason": "直近30日中27日ランクインし、平均順位2.5と極めて高い注目度を示している。出来高カテゴリでの圧倒的な出現頻度から、市場の強い取引関心が継続している。",
+      "selection_basis": {
+        "avg_rank": 2.5,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 27
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "5856",
+      "name": "ＬＩＥＨ",
+      "reason": "直近30日中27日ランクインしており、平均順位10.9で高い注目度を維持している。出来高カテゴリでの継続的な出現から、安定した取引需要が見られる。5月26日付でTDNETで上場廃止決定および整理銘柄指定に関する重要な公表が行われており、市場流動性の急速な低下と投資家の売却圧力が強まる可能性がある。",
+      "selection_basis": {
+        "avg_rank": 10.9,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 27
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260526549130.pdf"
+    },
+    {
+      "code": "6740",
+      "name": "Ｊディスプレ",
+      "reason": "直近30日中27日ランクインし、平均順位3.4と最高水準の注目度を記録している。出来高カテゴリでの圧倒的な出現パターンから、市場の強い取引関心が継続している。",
+      "selection_basis": {
+        "avg_rank": 3.4,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 27
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "285A",
+      "name": "キオクシア",
+      "reason": "直近30日中27日ランクインし、平均順位1.2と最高水準の注目度を示している。回転売買カテゴリでの圧倒的な出現頻度から、市場の強い売買関心が継続している。",
+      "selection_basis": {
+        "avg_rank": 1.2,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 27
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "9984",
+      "name": "ＳＢＧ",
+      "reason": "直近30日中27日ランクインしており、平均順位5.4と高い注目度を維持している。回転売買カテゴリでの継続的な出現から、安定した売買需要が見られる。5月27日付でTDNETで連結子会社（LINE MAN）の株式取得に関するタイ当局の許認可取得状況が公表されており、海外事業展開の進捗が投資家の売買判断に影響する可能性がある。",
+      "selection_basis": {
+        "avg_rank": 5.4,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 27
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260527550260.pdf"
+    },
+    {
+      "code": "6857",
+      "name": "アドテスト",
+      "reason": "直近30日中27日ランクインし、平均順位6.4で高い注目度を示している。回転売買カテゴリでの圧倒的な出現パターンから、市場の強い売買関心が継続している。5月27日付でTDNETで事後交付型譲渡制限付株式ユニット制度に基づく自己株式処分の払込完了が公表されており、ストックオプション関連の資本政策実行が投資家の売買活動を促進している可能性がある。",
+      "selection_basis": {
+        "avg_rank": 6.4,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 27
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260526547659.pdf"
+    }
+  ],
+  "rankings": {
+    "price_up": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "price_down": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "volume": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "turnover": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    }
+  }
+}
