@@ -2,12 +2,12 @@ name: Daily PTS Monitor Fetch
 
 on:
   schedule:
-    # 平日 0:30 JST = 15:30 UTC (日曜〜木曜 UTC = 月〜金 JST)
-    - cron: '30 15 * * 0-4'
+    # 平日 0:30 JST = 15:30 UTC（月〜金 JST = 火〜土 UTC）
+    - cron: '30 15 * * 1-5'
     # 1:30 JST = 16:30 UTC（リトライ1回目）
-    - cron: '30 16 * * 0-4'
+    - cron: '30 16 * * 1-5'
     # 2:30 JST = 17:30 UTC（リトライ2回目）
-    - cron: '30 17 * * 0-4'
+    - cron: '30 17 * * 1-5'
   workflow_dispatch: # 手動実行用トグル
 
 permissions:
@@ -16,45 +16,44 @@ permissions:
 jobs:
   run-batch:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
-        
+        uses: actions/checkout@v6.0.2
+        with:
+          fetch-depth: 0
+
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6.2.0
         with:
           python-version: '3.11'
-          
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          
-      - name: Run daily pipeline (Scraper -> Processor -> AI Agent)
+          pip install anthropic
+
+      - name: Run daily pipeline (Scraper -> Processor -> AI Agent -> Notifier)
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          PTS_DISCORD_WEBHOOK_URL: ${{ secrets.PTS_DISCORD_WEBHOOK_URL }}
+          PTS_SLACK_WEBHOOK_URL: ${{ secrets.PTS_SLACK_WEBHOOK_URL }}
+          PTS_LINE_ACCESS_TOKEN: ${{ secrets.PTS_LINE_ACCESS_TOKEN }}
         run: python main.py
-        
+
+      - name: Generate changelog from today's commits
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python changelog_generator.py
+
       - name: Cleanup old data (keep past 30 days)
         run: |
           echo "Cleaning up files older than 30 days in docs/data/ directory..."
-          # index.json を除外し、作成から30日が経過したjsonを削除
           find docs/data -name "*.json" ! -name "index.json" -mtime +30 -exec rm {} \;
-        
+
       - name: Commit and Push changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7.1.0
         with:
           commit_message: "Automated daily PTS data update"
           file_pattern: "docs/data/*.json"
-
-      - name: Write workflow summary
-        if: always()
-        run: |
-          echo "## PTS Monitor Daily Run Summary" >> $GITHUB_STEP_SUMMARY
-          echo "| 項目 | 値 |" >> $GITHUB_STEP_SUMMARY
-          echo "|------|-----|" >> $GITHUB_STEP_SUMMARY
-          echo "| **ステータス** | ${{ job.status }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| **実行日時 (JST)** | $(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M') |" >> $GITHUB_STEP_SUMMARY
-          echo "| **トリガー** | ${{ github.event_name }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| **コミットSHA** | ${{ github.sha }} |" >> $GITHUB_STEP_SUMMARY

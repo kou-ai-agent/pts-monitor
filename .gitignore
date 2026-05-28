@@ -7,3 +7,7 @@ env/
 venv/
 .DS_Store
 スクリーンショット/
+.claude/
+*.docx
+*.xls
+*.xlsx

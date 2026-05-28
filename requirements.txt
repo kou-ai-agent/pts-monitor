@@ -2,4 +2,5 @@ requests
 beautifulsoup4
 anthropic
 lxml
-playwright
+jpholiday
+pytz

@@ -55,18 +55,23 @@ def fetch_ranking(date: str, category: str, market: str) -> List[Dict]:
     market_val = MARKET_MAP.get(market, "0")
     
     headers = {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "Accept-Language": "ja,en-US;q=0.7,en;q=0.3",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Referer": "https://kabutan.jp/",
+        "Connection": "keep-alive",
     }
 
     results = []
-    
+
     # 株探は1ページあたり15件。100位までのためには最大7ページ分を読み込む
     for page in range(1, 8):
         url = f"https://kabutan.jp/warning/{path}?market={market_val}&page={page}"
-        
+        time.sleep(1.5) # 仕様書のサーバ負荷低減: 最低1.5秒空ける
+
         try:
             logger.info(f"Fetching from: {url}")
-            time.sleep(1.5) # 仕様書のサーバ負荷低減: 最低1.5秒空ける
             response = requests.get(url, headers=headers, timeout=10)
             response.raise_for_status()
             
