@@ -1,0 +1,274 @@
+{
+  "date": "2026-06-05",
+  "generated_at": "02:58:53",
+  "ai_summary": "申し訳ございませんが、提供いただいたPTSランキングデータが空欄となっており、具体的な銘柄情報や数値が記載されていません。分析を行うためには、値上がり率上位10、値下がり率上位10、出来高上位10、売買代金上位10の各カテゴリーにおける具体的な銘柄名と数値が必要です。\n\nデータをご確認いただき、再度ご提供いただければ、セクターローテーション、資金フローの観点から市場全体の解釈と翌日の現物市場への示唆を含めた分析を提供させていただきます。",
+  "ai_highlights": [
+    {
+      "code": "4392",
+      "name": "ＦＩＧ",
+      "reason": "直近30日中10日ランクインしており、平均ランク8.2と上位に位置している。継続的な買い需要が見られ、価格上昇トレンドの強さが示唆される。",
+      "selection_basis": {
+        "avg_rank": 8.2,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 10
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "278A",
+      "name": "テラドローン",
+      "reason": "直近30日中10日ランクインしており、ドローン関連テーマへの持続的な関心が確認できる。平均ランク15.7と安定した出現パターンを示している。",
+      "selection_basis": {
+        "avg_rank": 15.7,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 10
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "7236",
+      "name": "ティラド",
+      "reason": "直近30日中8日ランクインし、平均ランク14.6と比較的上位での出現が続いている。特定テーマへの継続的な投資家関心が示唆される。",
+      "selection_basis": {
+        "avg_rank": 14.6,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 8
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "6173",
+      "name": "アクアライン",
+      "reason": "直近30日中9日ランクインしており、平均ランク4.8と極めて上位での出現を示している。継続的な売却圧力が強く作用していることが示唆される。",
+      "selection_basis": {
+        "avg_rank": 4.8,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 9
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "3681",
+      "name": "ブイキューブ",
+      "reason": "直近30日中6日ランクインしており、平均ランク10.0と中程度の位置を保っている。段階的な下落トレンドが形成されている可能性がある。",
+      "selection_basis": {
+        "avg_rank": 10.0,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 6
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "9021",
+      "name": "ＪＲ西日本",
+      "reason": "直近30日中5日ランクインしており、平均ランク8.0と上位での出現にとどまっている。セクター固有の調整局面が示唆される。",
+      "selection_basis": {
+        "avg_rank": 8.0,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "8918",
+      "name": "ランド",
+      "reason": "直近30日中23日ランクインしており、平均ランク2.4と極めて高い出現頻度と上位性を示している。市場内での圧倒的な取引需要が継続している。",
+      "selection_basis": {
+        "avg_rank": 2.4,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 23
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "5856",
+      "name": "ＬＩＥＨ",
+      "reason": "直近30日中23日ランクインしており、平均ランク10.8と安定した高い取引量を記録している。継続的な市場参加者の関心が確認できる。",
+      "selection_basis": {
+        "avg_rank": 10.8,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 23
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "9432",
+      "name": "ＮＴＴ",
+      "reason": "直近30日中23日ランクインしており、平均ランク7.0と上位での安定した取引量を示している。大型銘柄としての流動性の高さが継続している。",
+      "selection_basis": {
+        "avg_rank": 7.0,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 23
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "285A",
+      "name": "キオクシア",
+      "reason": "直近30日中23日ランクインしており、平均ランク1.1と圧倒的に最上位での出現を示している。市場内での極めて高い売買回転率が継続している。",
+      "selection_basis": {
+        "avg_rank": 1.1,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 23
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "9984",
+      "name": "ＳＢＧ",
+      "reason": "直近30日中23日ランクインしており、平均ランク5.3と上位での安定した売買回転を記録している。機関投資家による継続的なポジション調整が示唆される。2026年6月4日付けでT&Dフィナンシャル生命保険株式会社の子会社化に関するお知らせが開示されており、グループ再編による戦略的な経営判断が示唆される。",
+      "selection_basis": {
+        "avg_rank": 5.3,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 23
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260604562772.pdf"
+    },
+    {
+      "code": "5803",
+      "name": "フジクラ",
+      "reason": "直近30日中23日ランクインしており、平均ランク5.9と上位での高い売買回転が継続している。市場内での活発な取引関心が持続している。",
+      "selection_basis": {
+        "avg_rank": 5.9,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 23
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    }
+  ],
+  "rankings": {
+    "price_up": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "price_down": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "volume": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "turnover": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    }
+  }
+}
