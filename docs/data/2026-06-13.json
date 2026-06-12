@@ -1,0 +1,277 @@
+{
+  "date": "2026-06-13",
+  "generated_at": "02:47:48",
+  "ai_summary": "申し訳ございませんが、分析に必要なPTSランキングデータが提供されていません。値上がり率上位10、値下がり率上位10、出来高上位10、売買代金上位10のいずれも空欄となっております。\n\n具体的な銘柄名、騰落率、出来高、売買代金などのデータをご提供いただければ、セクターローテーションの観点から市場全体の資金フローを分析し、翌日の現物市場への示唆を含めた解釈を提供させていただきます。",
+  "ai_highlights": [
+    {
+      "code": "4392",
+      "name": "ＦＩＧ",
+      "reason": "直近30日中10日ランクインしており、price_up銘柄の中で最も高い出現頻度を示しています。平均ランク8.2という上位での安定した登場により、継続的な買い需要と上昇トレンドの強さが示唆されます。",
+      "selection_basis": {
+        "avg_rank": 8.2,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 10
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "285A",
+      "name": "キオクシア",
+      "reason": "直近30日中6日ランクインし、price_up銘柄として安定した出現パターンを示しています。平均ランク21.5での継続的な登場は、特定テーマ（半導体関連）への市場の持続的な関心を反映しています。2026年6月12日付TDnetで役員株式報酬制度の改定訂正が公開されており、経営体制の継続的な最適化が進められていると推定されます。",
+      "selection_basis": {
+        "avg_rank": 21.5,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 6
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260612569674.pdf"
+    },
+    {
+      "code": "6232",
+      "name": "ＡＣＳＬ",
+      "reason": "直近30日中6日ランクインし、キオクシアと同等の出現頻度を持つprice_up銘柄です。平均ランク21.5での安定した登場は、成長セクターへの投資家の継続的な関心を示しています。",
+      "selection_basis": {
+        "avg_rank": 21.5,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 6
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "6173",
+      "name": "アクアライン",
+      "reason": "直近30日中5日ランクインし、price_down銘柄の中で最も上位（平均ランク6.2）での登場を示しています。下げ圧力が強い銘柄として注視され、市場の調整局面での重要な指標となっています。",
+      "selection_basis": {
+        "avg_rank": 6.2,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "3681",
+      "name": "ブイキューブ",
+      "reason": "直近30日中5日ランクインし、price_down銘柄として平均ランク11.8での登場を示しています。リモートワーク関連銘柄の調整局面における注目度の高さが示唆されます。",
+      "selection_basis": {
+        "avg_rank": 11.8,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "7859",
+      "name": "アルメディオ",
+      "reason": "直近30日中5日ランクインし、price_down銘柄として平均ランク24.4での登場を示しています。医療関連銘柄の調整局面での継続的な売り圧力が観察されます。2026年6月12日付TDnetで2026年3月期決算短信の数値データ訂正が公開されており、決算内容の修正が行われたと推定されます。",
+      "selection_basis": {
+        "avg_rank": 24.4,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260609566183.pdf"
+    },
+    {
+      "code": "8918",
+      "name": "ランド",
+      "reason": "直近30日中22日ランクインし、volume銘柄の中で最も高い出現頻度と最上位の平均ランク2.8を示しています。極めて高い取引量の継続と市場の強い関心が示唆されます。",
+      "selection_basis": {
+        "avg_rank": 2.8,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 22
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "6740",
+      "name": "Ｊディスプレ",
+      "reason": "直近30日中22日ランクインし、volume銘柄として平均ランク4.0での安定した上位登場を示しています。ディスプレイ関連セクターへの継続的で強い取引需要が観察されます。",
+      "selection_basis": {
+        "avg_rank": 4.0,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 22
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "5856",
+      "name": "ＬＩＥＨ",
+      "reason": "直近30日中22日ランクインし、volume銘柄として平均ランク8.9での高い出現頻度を示しています。安定した取引量の高さと市場参加者の継続的な関心が示唆されます。2026年6月10日付TDnetで上場廃止後の株式取り扱いに関するお知らせが公開されており、上場廃止が予定されていると推定されます。",
+      "selection_basis": {
+        "avg_rank": 8.9,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 22
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260610567555.pdf"
+    },
+    {
+      "code": "9984",
+      "name": "ＳＢＧ",
+      "reason": "直近30日中22日ランクインし、turnover銘柄として平均ランク4.9での最上位登場を示しています。大型優良銘柄としての継続的で安定した売買高が市場の強い流動性需要を反映しています。2026年6月10日付TDnetで2021年発行米ドル建普通社債の期限前償還完了が公開されており、財務構造の最適化が進められていると推定されます。",
+      "selection_basis": {
+        "avg_rank": 4.9,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 22
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260609566742.pdf"
+    },
+    {
+      "code": "5803",
+      "name": "フジクラ",
+      "reason": "直近30日中22日ランクインし、turnover銘柄として平均ランク6.2での安定した上位登場を示しています。電線・ケーブル関連銘柄の継続的で強い売買需要が観察されます。",
+      "selection_basis": {
+        "avg_rank": 6.2,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 22
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "6857",
+      "name": "アドテスト",
+      "reason": "直近30日中22日ランクインし、turnover銘柄として平均ランク8.4での高い出現頻度を示しています。半導体検査関連銘柄の継続的な売買高から、産業用機器セクターへの市場の強い関心が示唆されます。",
+      "selection_basis": {
+        "avg_rank": 8.4,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 22
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    }
+  ],
+  "rankings": {
+    "price_up": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "price_down": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "volume": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "turnover": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    }
+  }
+}
