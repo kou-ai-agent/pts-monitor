@@ -1,0 +1,277 @@
+{
+  "date": "2026-06-18",
+  "generated_at": "03:02:15",
+  "ai_summary": "申し訳ございませんが、ご提供いただいたPTSランキングデータが空欄となっており、具体的な銘柄情報や数値が記載されていません。正確な市場分析を行うには、値上がり率上位10、値下がり率上位10、出来高上位10、売買代金上位10の各データが必要です。データを再度ご確認いただき、具体的な銘柄名と数値をお知らせいただければ、セクターローテーションの観点から市場全体の資金流動を分析し、翌日の現物市場への示唆を含めた解釈をお示しいたします。",
+  "ai_highlights": [
+    {
+      "code": "4392",
+      "name": "ＦＩＧ",
+      "reason": "直近30日中10日ランクインしており、平均ランク8.2と高い位置での出現が特徴です。継続的な買い需要が見られ、上昇トレンドの強さを示唆しています。",
+      "selection_basis": {
+        "avg_rank": 8.2,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 10
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "285A",
+      "name": "キオクシア",
+      "reason": "直近30日中7日ランクインし、平均ランク22.7と安定した出現を示しています。半導体関連テーマへの継続的な関心が持続している可能性があります。2026年6月12日付でTDnetで役員株式報酬制度改定の訂正公告が開示されており、経営施策の継続的な推進が示唆されています。",
+      "selection_basis": {
+        "avg_rank": 22.7,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 7
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260612569674.pdf"
+    },
+    {
+      "code": "6659",
+      "name": "メディアＬ",
+      "reason": "直近30日中5日ランクインし、平均ランク16.4での出現が確認されています。特定セクターへの選別的な買い関心が形成されている状況を示唆しています。",
+      "selection_basis": {
+        "avg_rank": 16.4,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "5856",
+      "name": "ＬＩＥＨ",
+      "reason": "直近30日中5日ランクインし、平均ランク6.6と高い位置での下落が注目されています。売却圧力の継続性が見られ、弱気トレンドの強さを示唆しています。",
+      "selection_basis": {
+        "avg_rank": 6.6,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "3929",
+      "name": "Ｓワイヤー",
+      "reason": "直近30日中5日ランクインし、平均ランク17.8での下落パターンが確認されています。特定の弱気要因に対する市場の反応が継続している可能性があります。",
+      "selection_basis": {
+        "avg_rank": 17.8,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "3681",
+      "name": "ブイキューブ",
+      "reason": "直近30日中5日ランクインし、平均ランク11.8での出現が見られています。下落トレンドの中でも一定の売却圧力が継続している状況を示唆しています。2026年6月15日付でTDnetで臨時株主総会の決議結果が開示されており、企業統治面での重要な決定が実行されたと推定されます。",
+      "selection_basis": {
+        "avg_rank": 11.8,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260615570707.pdf"
+    },
+    {
+      "code": "6740",
+      "name": "Ｊディスプレ",
+      "reason": "直近30日中20日ランクインし、平均ランク4.1と極めて高い位置での出現が特徴です。継続的で強い売買需要が集中しており、市場の注目度が非常に高い状態が続いています。",
+      "selection_basis": {
+        "avg_rank": 4.1,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 20
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "9432",
+      "name": "ＮＴＴ",
+      "reason": "直近30日中20日ランクインし、平均ランク6.5での安定した高出現を示しています。大型銘柄としての継続的な売買関心が強く、市場流動性の中心的な役割を担っている可能性があります。",
+      "selection_basis": {
+        "avg_rank": 6.5,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 20
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "3350",
+      "name": "メタプラ",
+      "reason": "直近30日中20日ランクインし、平均ランク13.6での出現が確認されています。メタバース関連テーマへの継続的な売買関心が維持されており、トレンドテーマとしての人気が持続しています。2026年6月12日付でTDnetでSiiibo証券株式の取得及び商号変更（メタプラネット証券）に関するお知らせが開示されており、事業拡張による成長戦略の推進が示唆されています。",
+      "selection_basis": {
+        "avg_rank": 13.6,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 20
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260612569943.pdf"
+    },
+    {
+      "code": "9984",
+      "name": "ＳＢＧ",
+      "reason": "直近30日中20日ランクインし、平均ランク4.7と極めて高い位置での出現が特徴です。大型通信セクターの中核銘柄として、継続的で強い売買回転が見られており、市場の主要な流動性源となっています。",
+      "selection_basis": {
+        "avg_rank": 4.7,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 20
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "5016",
+      "name": "ＪＸ金属",
+      "reason": "直近30日中20日ランクインし、平均ランク13.8での安定した出現を示しています。素材セクターへの継続的な売買回転が見られ、商品価格連動テーマへの関心が持続している状況を示唆しています。2026年6月12日付でTDnetで自己株式消却に関するお知らせの訂正が開示されており、資本政策の継続的な実行が示唆されています。",
+      "selection_basis": {
+        "avg_rank": 13.8,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 20
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260612569751.pdf"
+    },
+    {
+      "code": "6857",
+      "name": "アドテスト",
+      "reason": "直近30日中20日ランクインし、平均ランク8.8での高い出現頻度が確認されています。半導体関連装置メーカーとしての継続的な売買需要が見られ、業界テーマへの強い関心が維持されています。",
+      "selection_basis": {
+        "avg_rank": 8.8,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 20
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    }
+  ],
+  "rankings": {
+    "price_up": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "price_down": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "volume": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "turnover": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    }
+  }
+}
