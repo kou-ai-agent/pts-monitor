@@ -1,0 +1,275 @@
+{
+  "date": "2026-06-19",
+  "generated_at": "03:14:41",
+  "ai_summary": "申し訳ございませんが、提供いただいたデータが空欄になっており、具体的な銘柄や数値情報がありません。分析を行うには、値上がり率上位10、値下がり率上位10、出来高上位10、売買代金上位10の各ランキングに含まれる銘柄名と数値が必要です。データをご確認の上、再度ご提供いただければ、セクターローテーションの観点から市場全体の資金フローを分析し、翌日の現物市場への示唆を含めた解釈をお示しできます。",
+  "ai_highlights": [
+    {
+      "code": "4392",
+      "name": "ＦＩＧ",
+      "reason": "直近30日中9日ランクインしており、平均ランク8.8と極めて高い位置での出現が特徴です。継続的な買い需要と上昇トレンドへの強い市場関心が見られます。",
+      "selection_basis": {
+        "avg_rank": 8.8,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 9
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "285A",
+      "name": "キオクシア",
+      "reason": "直近30日中7日ランクインし、平均ランク22.7で安定した出現パターンを示しています。特定セクターへの継続的な買い関心が持続している状況が伺えます。",
+      "selection_basis": {
+        "avg_rank": 22.7,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 7
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "6659",
+      "name": "メディアＬ",
+      "reason": "直近30日中5日ランクインし、平均ランク16.4での出現を記録しています。上昇トレンド銘柄として定期的な買い需要が確認されます。",
+      "selection_basis": {
+        "avg_rank": 16.4,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "5856",
+      "name": "ＬＩＥＨ",
+      "reason": "直近30日中5日ランクインし、平均ランク6.6と高い位置での出現が特徴です。下落トレンド銘柄として強い売却圧力と市場の警戒感が継続しています。",
+      "selection_basis": {
+        "avg_rank": 6.6,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "3929",
+      "name": "Ｓワイヤー",
+      "reason": "直近30日中5日ランクインし、平均ランク17.8での出現を示しています。下落トレンド銘柄として定期的な売却圧力が見られます。",
+      "selection_basis": {
+        "avg_rank": 17.8,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "3681",
+      "name": "ブイキューブ",
+      "reason": "直近30日中5日ランクインし、平均ランク11.8と比較的高い位置での出現が特徴です。下落トレンド銘柄として継続的な売却圧力が確認されます。2026年6月15日に臨時株主総会の決議結果が公表されており、企業統治面での動きが注視される状況と推定されます。",
+      "selection_basis": {
+        "avg_rank": 11.8,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260615570707.pdf"
+    },
+    {
+      "code": "8918",
+      "name": "ランド",
+      "reason": "直近30日中20日ランクインし、平均ランク4.2と極めて高い位置での頻出が顕著です。取引量の大幅な増加が継続しており、市場の強い関心が持続しています。",
+      "selection_basis": {
+        "avg_rank": 4.2,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 20
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "6740",
+      "name": "Ｊディスプレ",
+      "reason": "直近30日中20日ランクインし、平均ランク4.2と極めて高い位置での安定した出現が見られます。取引量の継続的な増加が市場の高い関心を示しています。",
+      "selection_basis": {
+        "avg_rank": 4.2,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 20
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "9432",
+      "name": "ＮＴＴ",
+      "reason": "直近30日中20日ランクインし、平均ランク6.5での頻出を記録しています。取引量の大幅な増加が継続的に観測され、市場の強い関心が維持されています。",
+      "selection_basis": {
+        "avg_rank": 6.5,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 20
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "9984",
+      "name": "ＳＢＧ",
+      "reason": "直近30日中20日ランクインし、平均ランク4.7と極めて高い位置での出現が特徴です。売買代金の継続的な増加が見られ、市場の強い注目が持続しています。",
+      "selection_basis": {
+        "avg_rank": 4.7,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 20
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "6857",
+      "name": "アドテスト",
+      "reason": "直近30日中20日ランクインし、平均ランク8.9での安定した出現を示しています。売買代金の継続的な増加が観測され、市場の高い関心が確認されます。",
+      "selection_basis": {
+        "avg_rank": 8.9,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 20
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "5016",
+      "name": "ＪＸ金属",
+      "reason": "直近30日中20日ランクインし、平均ランク13.8での頻出が見られます。売買代金の継続的な増加が市場の関心を示しており、特定テーマへの需要が持続しています。2026年6月18日に自己株式の公開買付けの結果及び取得終了が公表されており、資本政策の実行完了により株価変動への影響が注視される状況と推定されます。",
+      "selection_basis": {
+        "avg_rank": 13.8,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 20
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260618573662.pdf"
+    }
+  ],
+  "rankings": {
+    "price_up": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "price_down": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "volume": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "turnover": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    }
+  }
+}
