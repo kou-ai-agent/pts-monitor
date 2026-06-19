@@ -1,0 +1,277 @@
+{
+  "date": "2026-06-20",
+  "generated_at": "02:30:06",
+  "ai_summary": "申し訳ございませんが、提供していただいたPTSランキングデータが空欄となっており、具体的な銘柄や数値情報が記載されていません。分析を実施するには、値上がり率上位10、値下がり率上位10、出来高上位10、売買代金上位10の各項目に銘柄名と数値が必要です。データをご確認いただき、改めてご提供いただければ、セクターローテーションの観点から市場全体の資金フローを分析し、翌日の現物市場への示唆をお示しできます。",
+  "ai_highlights": [
+    {
+      "code": "4392",
+      "name": "ＦＩＧ",
+      "reason": "直近30日中8日ランクインしており、平均ランク9.6と高い位置を維持している。継続的な買い需要が見られ、価格上昇トレンドの強さが示唆される。",
+      "selection_basis": {
+        "avg_rank": 9.6,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 8
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "285A",
+      "name": "キオクシア",
+      "reason": "直近30日中7日ランクインし、平均ランク21.6で安定した出現パターンを示している。メモリ関連セクターへの継続的な関心が持続している。",
+      "selection_basis": {
+        "avg_rank": 21.6,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 7
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "6659",
+      "name": "メディアＬ",
+      "reason": "直近30日中5日ランクインし、平均ランク16.4で上昇トレンドを示している。特定テーマへの関心が持続している。",
+      "selection_basis": {
+        "avg_rank": 16.4,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "3645",
+      "name": "メディカルＮ",
+      "reason": "直近30日中5日ランクインし、平均ランク19.4で下落トレンドが継続している。医療関連セクターの調整局面が続いている。",
+      "selection_basis": {
+        "avg_rank": 19.4,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "5856",
+      "name": "ＬＩＥＨ",
+      "reason": "直近30日中5日ランクインし、平均ランク6.6と高い位置での下落が注目される。売り圧力が強い局面が見られている。",
+      "selection_basis": {
+        "avg_rank": 6.6,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "3929",
+      "name": "Ｓワイヤー",
+      "reason": "直近30日中5日ランクインし、平均ランク17.8で下落トレンドを示している。特定セクターの調整が継続している。",
+      "selection_basis": {
+        "avg_rank": 17.8,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "6740",
+      "name": "Ｊディスプレ",
+      "reason": "直近30日中20日ランクインし、平均ランク4.0で極めて高い位置を維持している。極めて高い取引量が継続的に注目されている。2026年6月19日付でTDnetで新株予約権の一部行使が公開されており、資本政策の実行が進行中と推定される。",
+      "selection_basis": {
+        "avg_rank": 4.0,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 20
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260619574211.pdf"
+    },
+    {
+      "code": "8918",
+      "name": "ランド",
+      "reason": "直近30日中20日ランクインし、平均ランク4.4で高い位置を維持している。継続的な高い取引需要が見られている。",
+      "selection_basis": {
+        "avg_rank": 4.4,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 20
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "found",
+        "ir": "error"
+      },
+      "news_url": "https://www.nikkei.com/article/DGXZQOKC19BPZ0Z10C26A6000000/"
+    },
+    {
+      "code": "9432",
+      "name": "ＮＴＴ",
+      "reason": "直近30日中20日ランクインし、平均ランク6.8で安定した高い取引量を示している。大型銘柄への継続的な買い需要が見られている。",
+      "selection_basis": {
+        "avg_rank": 6.8,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 20
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "5801",
+      "name": "古河電",
+      "reason": "直近30日中20日ランクインし、平均ランク13.3で高い回転率を維持している。電機セクターへの継続的な資金流入が示唆される。",
+      "selection_basis": {
+        "avg_rank": 13.3,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 20
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "9984",
+      "name": "ＳＢＧ",
+      "reason": "直近30日中20日ランクインし、平均ランク4.6で極めて高い位置での回転率を示している。大型銘柄への強い資金需要が継続している。",
+      "selection_basis": {
+        "avg_rank": 4.6,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 20
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "5803",
+      "name": "フジクラ",
+      "reason": "直近30日中20日ランクインし、平均ランク6.2で高い位置を維持している。電機・通信関連セクターへの継続的な関心が強い。2026年6月18日付でTDnetで2027年3月期の業績予想修正が公開されており、市場が業績見通しの変化に反応している可能性がある。同時期のニュース報道で企業業績予想の難しさが指摘されており、市場の関心が高まっていると推定される。",
+      "selection_basis": {
+        "avg_rank": 6.2,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 20
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260618573731.pdf",
+      "news_url": "https://www.nikkei.com/article/DGXZQOUB196MW0Z10C26A6000000/"
+    }
+  ],
+  "rankings": {
+    "price_up": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "price_down": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "volume": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "turnover": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    }
+  }
+}
