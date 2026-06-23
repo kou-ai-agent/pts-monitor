@@ -1,0 +1,276 @@
+{
+  "date": "2026-06-24",
+  "generated_at": "02:25:32",
+  "ai_summary": "申し訳ございませんが、提供いただいたPTSランキングデータが空の状態となっており、具体的な銘柄情報や数値が記載されていません。分析を行うには、値上がり率上位10、値下がり率上位10、出来高上位10、売買代金上位10の各項目に実際のデータが必要です。データをご確認いただき、銘柄名、騰落率、出来高、売買代金などの具体的な情報をご提供いただければ、市場全体の動向、セクターローテーション、翌日の示唆について詳細な分析を提供させていただきます。",
+  "ai_highlights": [
+    {
+      "code": "285A",
+      "name": "キオクシア",
+      "reason": "直近30日中8日ランクインしており、price_up銘柄の中で最高頻度を記録しています。継続的な買い需要が見られ、上昇トレンドへの強い関心が持続している状況です。",
+      "selection_basis": {
+        "avg_rank": 22.4,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 8
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "4392",
+      "name": "ＦＩＧ",
+      "reason": "直近30日中7日ランクインし、price_up銘柄の中で第2位の出現頻度を示しています。平均ランク10.9と上位に位置する安定性から、特定テーマへの継続的な買い関心が窺えます。",
+      "selection_basis": {
+        "avg_rank": 10.9,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 7
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "6659",
+      "name": "メディアＬ",
+      "reason": "直近30日中6日ランクインしており、price_up銘柄として安定した出現パターンを示しています。平均ランク14.2の良好なポジションから、市場での買い圧力が継続している傾向が読み取れます。",
+      "selection_basis": {
+        "avg_rank": 14.2,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 6
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "3929",
+      "name": "Ｓワイヤー",
+      "reason": "直近30日中6日ランクインし、price_down銘柄の中で最高頻度を記録しています。継続的な売り圧力が見られ、特定の下落要因への市場の注視が持続している状況です。",
+      "selection_basis": {
+        "avg_rank": 16.5,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 6
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "7114",
+      "name": "フーディソン",
+      "reason": "直近30日中5日ランクインしており、price_down銘柄として安定した出現パターンを示しています。平均ランク23.0の位置から、継続的な売り関心が市場に存在する傾向が確認できます。",
+      "selection_basis": {
+        "avg_rank": 23.0,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "186A",
+      "name": "アストロＨＤ",
+      "reason": "直近30日中5日ランクインし、price_down銘柄として注視されています。平均ランク13.4と比較的上位に位置する下落銘柄として、市場の警戒感が継続している傾向が読み取れます。",
+      "selection_basis": {
+        "avg_rank": 13.4,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "5856",
+      "name": "ＬＩＥＨ",
+      "reason": "直近30日中20日ランクインし、volume銘柄として極めて高い出現頻度を示しています。平均ランク4.7の優位なポジションから、継続的な取引量の増加と市場参加者の高い関心が見られます。",
+      "selection_basis": {
+        "avg_rank": 4.7,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 20
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "6740",
+      "name": "Ｊディスプレ",
+      "reason": "直近30日中20日ランクインし、volume銘柄の中で最高の平均ランク4.0を記録しています。ほぼ毎日の高い取引量出現から、この銘柄への市場の強い関心が持続している状況です。2026年6月23日に決算短信の訂正を発表しており、数値データの修正が行われた可能性があります。また6月19日には新株予約権の一部行使が発表されており、資本構成の変動が市場参加者の取引活動に影響を与えている可能性があります。",
+      "selection_basis": {
+        "avg_rank": 4.0,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 20
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260622575925.pdf"
+    },
+    {
+      "code": "9432",
+      "name": "ＮＴＴ",
+      "reason": "直近30日中20日ランクインし、volume銘柄として安定した高い出現頻度を示しています。平均ランク6.8から、大型銘柄としての継続的な取引需要が市場に存在する傾向が確認できます。",
+      "selection_basis": {
+        "avg_rank": 6.8,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 20
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "5803",
+      "name": "フジクラ",
+      "reason": "直近30日中20日ランクインし、turnover銘柄内で最高頻度を示しています。平均ランク5.8の安定したポジションから、継続的な回転売買の需要が見られ、市場流動性の高さが窺えます。2026年6月18日に2027年3月期の連結業績予想を修正しており、経営環境の変化が市場参加者の取引判断に影響を与えている可能性があります。",
+      "selection_basis": {
+        "avg_rank": 5.8,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 20
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260618573731.pdf"
+    },
+    {
+      "code": "9984",
+      "name": "ＳＢＧ",
+      "reason": "直近30日中20日ランクインし、turnover銘柄の中で最高の平均ランク4.3を記録しています。ほぼ毎日の高い回転売買出現から、この大型銘柄への継続的な取引需要が市場に存在する傾向です。",
+      "selection_basis": {
+        "avg_rank": 4.3,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 20
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "5016",
+      "name": "ＪＸ金属",
+      "reason": "直近30日中20日ランクインし、turnover銘柄として安定した高い出現頻度を示しています。平均ランク14.2から、商品相場連動銘柄としての継続的な回転売買需要が市場に存在する状況が読み取れます。2026年6月18日に自己株式の公開買付けを終了したことを発表しており、資本政策の実行完了が株価安定化と取引活動の活発化をもたらしている可能性があります。",
+      "selection_basis": {
+        "avg_rank": 14.2,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 20
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260618573662.pdf"
+    }
+  ],
+  "rankings": {
+    "price_up": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "price_down": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "volume": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "turnover": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    }
+  }
+}
