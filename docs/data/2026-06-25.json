@@ -1,0 +1,276 @@
+{
+  "date": "2026-06-25",
+  "generated_at": "02:27:23",
+  "ai_summary": "申し訳ございませんが、提供いただいたPTSランキングデータが空欄となっており、具体的な銘柄情報や数値が記載されていません。分析を行うには、値上がり率上位10、値下がり率上位10、出来高上位10、売買代金上位10の各リストに実際のデータが必要です。データをご確認の上、銘柄名、変動率、出来高などの情報を再度ご提供いただければ、市場全体の解釈と翌日の現物市場への示唆をお示しいたします。",
+  "ai_highlights": [
+    {
+      "code": "285A",
+      "name": "キオクシア",
+      "reason": "直近30日中8日ランクインし、price_upカテゴリで最も高い出現頻度を示している。平均ランク22.4と中程度の位置付けながら、継続的な買い需要が見られる銘柄として注目される。",
+      "selection_basis": {
+        "avg_rank": 22.4,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 8
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "4392",
+      "name": "ＦＩＧ",
+      "reason": "直近30日中7日ランクインし、price_upカテゴリで2番目の出現頻度を記録している。平均ランク10.9と上位に位置しており、強い上昇トレンドと投資家の高い関心が持続している。",
+      "selection_basis": {
+        "avg_rank": 10.9,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 7
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "6659",
+      "name": "メディアＬ",
+      "reason": "直近30日中6日ランクインし、price_upカテゴリで安定した出現パターンを示している。平均ランク14.2と良好な位置付けから、特定テーマへの継続的な買い関心が認識される。",
+      "selection_basis": {
+        "avg_rank": 14.2,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 6
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "3929",
+      "name": "Ｓワイヤー",
+      "reason": "直近30日中6日ランクインし、price_downカテゴリで最も高い出現頻度を示している。平均ランク16.5と中程度の位置から、継続的な売却圧力が存在する銘柄として注視される。2026年6月24日付でTDNETにて「上場維持基準への適合に向けた計画(改善期間入り)について」および「支配株主等に関する事項について」が開示されており、上場維持基準への適合に向けた改善計画が進行中である可能性が高い。",
+      "selection_basis": {
+        "avg_rank": 16.5,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 6
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260616572092.pdf"
+    },
+    {
+      "code": "186A",
+      "name": "アストロＨＤ",
+      "reason": "直近30日中5日ランクインし、price_downカテゴリで平均ランク13.4と上位に位置している。継続的な下降トレンドが見られ、市場の弱気姿勢が持続している。",
+      "selection_basis": {
+        "avg_rank": 13.4,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "7114",
+      "name": "フーディソン",
+      "reason": "直近30日中5日ランクインし、price_downカテゴリで安定した出現パターンを示している。平均ランク23.0と下位に位置しながらも、一定の売却関心が認識される。",
+      "selection_basis": {
+        "avg_rank": 23.0,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "5856",
+      "name": "ＬＩＥＨ",
+      "reason": "直近30日中19日ランクインし、volumeカテゴリで最高レベルの出現頻度を記録している。平均ランク4.1と最上位に位置しており、極めて高い取引関心と市場の注目度が持続している。",
+      "selection_basis": {
+        "avg_rank": 4.1,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 19
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "6740",
+      "name": "Ｊディスプレ",
+      "reason": "直近30日中19日ランクインし、volumeカテゴリで最高レベルの出現頻度を示している。平均ランク4.2と最上位に位置し、継続的で安定した高い取引需要が見られる。2026年6月24日付でTDNETにて「第24期定時株主総会及び普通株主様による種類株主総会における議決権行使結果のお知らせ」が開示されており、株主総会が正常に進行していることが確認される。また6月23日には決算短信の訂正、6月19日には新株予約権の行使報告が開示されており、企業活動が活発である可能性が高い。",
+      "selection_basis": {
+        "avg_rank": 4.2,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 19
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260611568527.pdf"
+    },
+    {
+      "code": "9432",
+      "name": "ＮＴＴ",
+      "reason": "直近30日中19日ランクインし、volumeカテゴリで最高レベルの出現頻度を記録している。平均ランク6.9と上位に位置しており、機関投資家を含む継続的な取引関心が強い。",
+      "selection_basis": {
+        "avg_rank": 6.9,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 19
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "5803",
+      "name": "フジクラ",
+      "reason": "直近30日中19日ランクインし、turnoverカテゴリで最高レベルの出現頻度を示している。平均ランク5.9と上位に位置し、継続的な売買高関心と市場流動性の高さが認識される。",
+      "selection_basis": {
+        "avg_rank": 5.9,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 19
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "9984",
+      "name": "ＳＢＧ",
+      "reason": "直近30日中19日ランクインし、turnoverカテゴリで最高レベルの出現頻度を記録している。平均ランク4.4と最上位に位置しており、大型銘柄としての安定した高い売買高が持続している。2026年6月24日付でTDNETにて「新株予約権（ストックオプション）の発行に関するお知らせ」が開示されており、経営インセンティブの強化施策が実施されている可能性が高い。",
+      "selection_basis": {
+        "avg_rank": 4.4,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 19
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260623577089.pdf"
+    },
+    {
+      "code": "5016",
+      "name": "ＪＸ金属",
+      "reason": "直近30日中19日ランクインし、turnoverカテゴリで最高レベルの出現頻度を示している。平均ランク14.2と中程度に位置しながら、継続的で安定した売買高関心が見られる。",
+      "selection_basis": {
+        "avg_rank": 14.2,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 19
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    }
+  ],
+  "rankings": {
+    "price_up": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "price_down": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "volume": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "turnover": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    }
+  }
+}
