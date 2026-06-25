@@ -1,0 +1,278 @@
+{
+  "date": "2026-06-26",
+  "generated_at": "02:29:42",
+  "ai_summary": "申し訳ございませんが、提供いただいたPTSランキングデータが空の状態となっており、具体的な銘柄情報や数値が記載されていません。分析を実施するには、値上がり率上位10、値下がり率上位10、出来高上位10、売買代金上位10の各カテゴリーに対する具体的な銘柄名と数値が必要です。データをご確認の上、改めてご提供いただければ、セクターローテーションの観点を含めた市場解釈と翌日への示唆をお示しいたします。",
+  "ai_highlights": [
+    {
+      "code": "285A",
+      "name": "キオクシア",
+      "reason": "直近30日中8日ランクインしており、price_up銘柄として継続的な買い需要が見られます。平均ランク22.4は中位水準ですが、安定した上昇トレンドへの関心が持続しています。",
+      "selection_basis": {
+        "avg_rank": 22.4,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 8
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "6659",
+      "name": "メディアＬ",
+      "reason": "直近30日中6日ランクインし、平均ランク14.2と上位水準での出現が特徴です。price_up銘柄として比較的高い注目度を維持しており、特定テーマへの継続的な関心が示唆されます。2026年6月25日付でTDNETにて「公益財団法人財務会計基準機構への加入状況及び加入に関する考え方等に関するお知らせ」が開示されており、会計基準への対応強化が進行中と推定されます。",
+      "selection_basis": {
+        "avg_rank": 14.2,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 6
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260625579846.pdf"
+    },
+    {
+      "code": "4392",
+      "name": "ＦＩＧ",
+      "reason": "直近30日中6日ランクインし、平均ランク11.5と最も高い注目度を示しています。price_up銘柄として強い買い需要が認識でき、継続的な上昇圧力が期待されます。",
+      "selection_basis": {
+        "avg_rank": 11.5,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 6
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "3929",
+      "name": "Ｓワイヤー",
+      "reason": "直近30日中6日ランクインしており、price_down銘柄として安定した下落トレンドが観察されます。平均ランク16.5は中位水準で、継続的な売り圧力が市場で認識されています。2026年6月24日付でTDNETにて「上場維持基準への適合に向けた計画(改善期間入り)について」及び「支配株主等に関する事項について」が開示されており、上場維持に向けた重要な経営課題への対応が進行中と推定されます。",
+      "selection_basis": {
+        "avg_rank": 16.5,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 6
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260616572092.pdf"
+    },
+    {
+      "code": "7114",
+      "name": "フーディソン",
+      "reason": "直近30日中5日ランクインし、price_down銘柄として平均ランク23.0を記録しています。下落トレンドへの継続的な注目が見られ、市場の弱気センチメントが持続しています。",
+      "selection_basis": {
+        "avg_rank": 23.0,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "186A",
+      "name": "アストロＨＤ",
+      "reason": "直近30日中5日ランクインし、price_down銘柄として平均ランク13.4と上位水準での出現が特徴です。特定テーマへの売り関心が継続しており、下落圧力が強く認識されています。",
+      "selection_basis": {
+        "avg_rank": 13.4,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "5856",
+      "name": "ＬＩＥＨ",
+      "reason": "直近30日中18日ランクインしており、volume銘柄として極めて高い出現頻度を示しています。平均ランク3.2と最上位水準での継続的な取引高注目が見られ、市場流動性への強い関心が持続しています。2026年6月25日付でTDNETにて「2026年３月期有価証券報告書の提出期限延長申請の検討に関するお知らせ」が開示されており、決算報告に関する手続きの進行状況に注視が必要と推定されます。",
+      "selection_basis": {
+        "avg_rank": 3.2,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 18
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260625580707.pdf"
+    },
+    {
+      "code": "6740",
+      "name": "Ｊディスプレ",
+      "reason": "直近30日中18日ランクインしており、volume銘柄として最高水準の出現頻度を示しています。平均ランク4.3は上位水準で、継続的な高い取引量が市場で認識され、流動性への強い需要が示唆されます。2026年6月25日付でTDNETにて「借入金の返済のお知らせ」が開示されており、財務体質の改善が進行中と推定されます。同時に6月24日には「第24期定時株主総会及び普通株主様による種類株主総会における議決権行使結果のお知らせ」、6月23日には決算短信の訂正が開示されており、企業統治と決算情報の透明性強化が進められています。",
+      "selection_basis": {
+        "avg_rank": 4.3,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 18
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260624578908.pdf"
+    },
+    {
+      "code": "9432",
+      "name": "ＮＴＴ",
+      "reason": "直近30日中18日ランクインしており、volume銘柄として最高水準の出現頻度を示しています。平均ランク6.9と安定した上位水準での継続的な取引高注目が見られ、市場流動性への強い関心が持続しています。",
+      "selection_basis": {
+        "avg_rank": 6.9,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 18
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "5803",
+      "name": "フジクラ",
+      "reason": "直近30日中18日ランクインしており、turnover銘柄として最高水準の出現頻度を示しています。平均ランク6.2と上位水準での継続的な売買代金注目が見られ、市場での強い取引関心が持続しています。",
+      "selection_basis": {
+        "avg_rank": 6.2,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 18
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "9984",
+      "name": "ＳＢＧ",
+      "reason": "直近30日中18日ランクインしており、turnover銘柄として最高水準の出現頻度を示しています。平均ランク4.2と最上位水準での継続的な売買代金注目が見られ、市場流動性への極めて強い関心が示唆されます。2026年6月24日付でTDNETにて「新株予約権（ストックオプション）の発行に関するお知らせ」が開示されており、従業員インセンティブ施策の強化が進行中と推定されます。",
+      "selection_basis": {
+        "avg_rank": 4.2,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 18
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260623577089.pdf"
+    },
+    {
+      "code": "5016",
+      "name": "ＪＸ金属",
+      "reason": "直近30日中18日ランクインしており、turnover銘柄として最高水準の出現頻度を示しています。平均ランク14.2は中位水準で、継続的な売買代金注目が見られ、市場での安定した取引関心が持続しています。",
+      "selection_basis": {
+        "avg_rank": 14.2,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 18
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    }
+  ],
+  "rankings": {
+    "price_up": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "price_down": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "volume": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "turnover": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    }
+  }
+}
