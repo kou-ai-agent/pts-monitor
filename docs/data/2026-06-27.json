@@ -1,0 +1,282 @@
+{
+  "date": "2026-06-27",
+  "generated_at": "02:15:49",
+  "ai_summary": "申し訳ございませんが、ご提供いただいたPTSランキングデータが空の状態となっており、具体的な銘柄や数値情報が記載されていません。分析を実施するには、値上がり率上位10銘柄、値下がり率上位10銘柄、出来高上位10銘柄、売買代金上位10銘柄の詳細データが必要です。データをご確認の上、改めてご提供いただければ、セクターローテーションの観点から市場全体の動向を分析し、翌日の現物市場への示唆をお示しいたします。",
+  "ai_highlights": [
+    {
+      "code": "285A",
+      "name": "キオクシア",
+      "reason": "直近30日中7日ランクインしており、price_up銘柄の中で最高頻度を示しています。継続的な買い需要が見られ、半導体関連の上昇トレンドが持続している可能性があります。",
+      "selection_basis": {
+        "avg_rank": 24.0,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 7
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "6659",
+      "name": "メディアＬ",
+      "reason": "直近30日中6日ランクインし、avg_rankが14.2と良好なポジションを維持しています。安定した上昇基調が継続しており、特定セクターへの投資家関心が高まっている傾向が読み取れます。TDNETで公益財団法人財務会計基準機構への加入に関する情報が開示されており、企業ガバナンスの透明性強化が進められていると推定されます。",
+      "selection_basis": {
+        "avg_rank": 14.2,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 6
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260625579846.pdf"
+    },
+    {
+      "code": "5803",
+      "name": "フジクラ",
+      "reason": "直近30日中5日ランクインし、avg_rankが11.2と上位ランクを示しています。継続的な買い圧力が存在し、電線・ケーブル関連の需要が堅調に推移している可能性があります。TDNETで譲渡制限付株式報酬としての自己株式処分に関する情報が開示されており、従業員インセンティブ施策の実行が進められていると推定されます。",
+      "selection_basis": {
+        "avg_rank": 11.2,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260626581717.pdf"
+    },
+    {
+      "code": "3929",
+      "name": "Ｓワイヤー",
+      "reason": "直近30日中6日ランクインし、price_down銘柄の中で最高頻度を記録しています。継続的な売り圧力が見られ、特定の弱気要因が市場で認識されている状況が続いています。TDNETで上場維持基準への適合に向けた計画が改善期間入りしたことが開示されており、企業の経営課題が市場で認識されている可能性があります。",
+      "selection_basis": {
+        "avg_rank": 16.5,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 6
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260616572092.pdf"
+    },
+    {
+      "code": "2440",
+      "name": "ぐるなび",
+      "reason": "直近30日中5日ランクインし、avg_rankが15.4と下落銘柄の中で比較的上位です。外食関連セクターの調整局面が続いており、市場の慎重姿勢が持続しています。TDNETで支配株主等に関する事項と人事異動が開示されており、経営体制の変化が進行中と推定されます。",
+      "selection_basis": {
+        "avg_rank": 15.4,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260625579545.pdf"
+    },
+    {
+      "code": "7114",
+      "name": "フーディソン",
+      "reason": "直近30日中5日ランクインし、avg_rankが23.0と下落銘柄の中で下位ランクを示しています。継続的な売り圧力が強く、特定テーマへの関心が低下している傾向が見られます。TDNETで事業計画及び成長可能性に関する事項が開示されており、企業の成長戦略について市場の評価が分かれている可能性があります。",
+      "selection_basis": {
+        "avg_rank": 23.0,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260626581272.pdf"
+    },
+    {
+      "code": "8918",
+      "name": "ランド",
+      "reason": "直近30日中18日ランクインし、avg_rankが3.9と極めて高い位置を維持しています。異常な取引量が継続的に発生しており、大口投資家の関心が集中している可能性があります。",
+      "selection_basis": {
+        "avg_rank": 3.9,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 18
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "6740",
+      "name": "Ｊディスプレ",
+      "reason": "直近30日中18日ランクインし、avg_rankが4.3と最上位クラスの出現頻度を示しています。ディスプレイ関連銘柄への継続的な買い需要が見られ、市場の注目度が極めて高い状況が続いています。TDNETで借入金の返済、株主総会議決権行使結果、決算数値訂正が開示されており、財務改善と企業統治の透明性強化が進められていると推定されます。",
+      "selection_basis": {
+        "avg_rank": 4.3,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 18
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260624578908.pdf"
+    },
+    {
+      "code": "9432",
+      "name": "ＮＴＴ",
+      "reason": "直近30日中18日ランクインし、avg_rankが6.9と安定した上位ランクを維持しています。大型通信銘柄への継続的な取引関心が高く、機関投資家による活発な売買が継続している傾向があります。",
+      "selection_basis": {
+        "avg_rank": 6.9,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 18
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "9984",
+      "name": "ＳＢＧ",
+      "reason": "直近30日中18日ランクインし、avg_rankが4.0と最高水準の出現頻度を示しています。大型総合企業への継続的な売買関心が極めて高く、市場流動性の中核を占めている可能性があります。TDNETで新株予約権（ストックオプション）の発行が開示されており、従業員インセンティブ施策の拡充が進められていると推定されます。",
+      "selection_basis": {
+        "avg_rank": 4.0,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 18
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260623577089.pdf"
+    },
+    {
+      "code": "6857",
+      "name": "アドテスト",
+      "reason": "直近30日中18日ランクインし、avg_rankが9.1と上位ランクを維持しています。広告関連銘柄への継続的な売買需要が見られ、デジタル広告市場への投資家関心が持続している傾向があります。TDNETで投資単位の引下げに関する考え方が開示されており、株価水準の調整と投資家アクセスの改善が進められていると推定されます。",
+      "selection_basis": {
+        "avg_rank": 9.1,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 18
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260619574695.pdf"
+    },
+    {
+      "code": "5016",
+      "name": "ＪＸ金属",
+      "reason": "直近30日中18日ランクインし、avg_rankが13.9と安定した中位ランクを示しています。非鉄金属関連銘柄への継続的な売買関心が高く、資源価格変動への市場反応が活発に続いている状況があります。TDNETで株式交換による端数処理と支配株主等に関する事項が開示されており、企業再編と経営体制の明確化が進められていると推定されます。",
+      "selection_basis": {
+        "avg_rank": 13.9,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 18
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260625580946.pdf"
+    }
+  ],
+  "rankings": {
+    "price_up": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "price_down": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "volume": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "turnover": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    }
+  }
+}
