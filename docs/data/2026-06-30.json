@@ -1,0 +1,283 @@
+{
+  "date": "2026-06-30",
+  "generated_at": "02:58:11",
+  "ai_summary": "申し訳ございませんが、分析に必要なPTSランキングデータが提供されていないため、市場解釈を行うことができません。値上がり率上位10、値下がり率上位10、出来高上位10、売買代金上位10の具体的な銘柄情報をご提供いただければ、セクターローテーションの観点から資金流入の方向性と翌日現物市場への示唆を含めた分析を提供させていただきます。",
+  "ai_highlights": [
+    {
+      "code": "285A",
+      "name": "キオクシア",
+      "reason": "直近30日中6日ランクインしており、平均順位23.7と中程度の注目度を保持。継続的な買い需要が見られ、価格上昇トレンドの補完候補として有効性がある。ニュース報道で「メモリー高騰でキオクシアは株価5倍」と報じられており、市場の強気評価が確認でき、買い圧力の強化が見込まれる。",
+      "selection_basis": {
+        "avg_rank": 23.7,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 6
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "found",
+        "ir": "error"
+      },
+      "news_url": "https://www.nikkei.com/article/DGXZQOUB234L00T20C26A6000000/"
+    },
+    {
+      "code": "8105",
+      "name": "ＢＴＣＪＰＮ",
+      "reason": "直近30日中5日ランクインし、平均順位11.6と高い注目度を示している。暗号資産関連テーマへの継続的な関心が持続しており、買い圧力の強さが伺える。TDNETで「AIインフラ投資事業におけるファンドへの出資に関するお知らせ」が開示されており、AI関連事業への戦略的な拡大が確認でき、買い需要の持続性が強化される可能性がある。",
+      "selection_basis": {
+        "avg_rank": 11.6,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260626582325.pdf"
+    },
+    {
+      "code": "6659",
+      "name": "メディアＬ",
+      "reason": "直近30日中5日ランクインし、平均順位15.6と良好な注目度を維持。メディア関連セクターの継続的な買い需要が認識でき、上昇トレンドの補完に適している。TDNETで「公益財団法人財務会計基準機構への加入状況及び加入に関する考え方等に関するお知らせ」が開示されており、企業統治の透明性向上が示唆される。",
+      "selection_basis": {
+        "avg_rank": 15.6,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260625579846.pdf"
+    },
+    {
+      "code": "3929",
+      "name": "Ｓワイヤー",
+      "reason": "直近30日中6日ランクインし、平均順位16.5と堅調な注目度を保持。継続的な売り圧力が見られ、下落トレンドの補完候補として信頼性が高い。TDNETで「上場維持基準への適合に向けた計画(改善期間入り)について」が開示されており、企業が経営課題に直面している可能性があり、売り圧力の継続が見込まれる。",
+      "selection_basis": {
+        "avg_rank": 16.5,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 6
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260616572092.pdf"
+    },
+    {
+      "code": "3681",
+      "name": "ブイキューブ",
+      "reason": "直近30日中5日ランクインし、平均順位16.8と安定した注目度を示している。特定セクターへの継続的な売り関心が持続しており、下落トレンドの補完に有効である。TDNETで「一時会計監査人の選任に関するお知らせ」が開示されており、会計監査体制の変更が示唆され、企業の経営環境に変化がある可能性がある。",
+      "selection_basis": {
+        "avg_rank": 16.8,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260625580890.pdf"
+    },
+    {
+      "code": "2440",
+      "name": "ぐるなび",
+      "reason": "直近30日中5日ランクインし、平均順位15.4と良好な注目度を維持。外食関連セクターの継続的な売り需要が認識でき、下落トレンドの補完に適している。TDNETで「支配株主等に関する事項について」および「人事異動に関するお知らせ」が開示されており、経営体制の変化が示唆される。",
+      "selection_basis": {
+        "avg_rank": 15.4,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260625579545.pdf"
+    },
+    {
+      "code": "6740",
+      "name": "Ｊディスプレ",
+      "reason": "直近30日中18日ランクインし、平均順位4.1と極めて高い注目度を示している。出現頻度の高さから、継続的で安定した取引量需要が見られ、市場の中核銘柄として機能している。TDNETで「借入金の返済のお知らせ」が開示されており、財務体質の改善が進行中と推定され、市場評価の向上が見込まれる。",
+      "selection_basis": {
+        "avg_rank": 4.1,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 18
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260624578908.pdf"
+    },
+    {
+      "code": "8918",
+      "name": "ランド",
+      "reason": "直近30日中18日ランクインし、平均順位4.1と極めて高い注目度を維持。頻繁な出現により、安定した取引量需要が継続しており、市場流動性の重要な源泉となっている。",
+      "selection_basis": {
+        "avg_rank": 4.1,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 18
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "9432",
+      "name": "ＮＴＴ",
+      "reason": "直近30日中18日ランクインし、平均順位6.9と高い注目度を保持。大型株として継続的に安定した取引量が見られ、市場の流動性を支える中核銘柄として機能している。",
+      "selection_basis": {
+        "avg_rank": 6.9,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 18
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "9984",
+      "name": "ＳＢＧ",
+      "reason": "直近30日中18日ランクインし、平均順位3.7と最高水準の注目度を示している。極めて高い出現頻度から、継続的で強固な売買代金需要が見られ、市場で最も重要な流動性供給源となっている。TDNETで「新株予約権（ストックオプション）の発行に関するお知らせ」が開示されており、従業員インセンティブ強化による経営体制の活性化が示唆される。",
+      "selection_basis": {
+        "avg_rank": 3.7,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 18
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260623577089.pdf"
+    },
+    {
+      "code": "5803",
+      "name": "フジクラ",
+      "reason": "直近30日中18日ランクインし、平均順位6.3と高い注目度を維持。頻繁な出現により、安定した売買代金需要が継続しており、市場流動性の重要な構成要素として機能している。TDNETで「譲渡制限付株式報酬としての自己株式の処分に関するお知らせ」が開示されており、従業員報酬制度の実行が進行中と推定される。",
+      "selection_basis": {
+        "avg_rank": 6.3,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 18
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260626581717.pdf"
+    },
+    {
+      "code": "6857",
+      "name": "アドテスト",
+      "reason": "直近30日中18日ランクインし、平均順位9.1と堅調な注目度を示している。継続的な出現から、安定した売買代金需要が見られ、市場流動性の補完に貢献する銘柄として位置付けられる。TDNETで「投資単位の引下げに関する考え方および方針等について」が開示されており、投資家アクセスの向上を目指す施策が実施されており、流動性向上の可能性がある。",
+      "selection_basis": {
+        "avg_rank": 9.1,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 18
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260619574695.pdf"
+    }
+  ],
+  "rankings": {
+    "price_up": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "price_down": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "volume": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "turnover": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    }
+  }
+}
