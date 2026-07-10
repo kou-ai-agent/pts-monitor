@@ -1,0 +1,276 @@
+{
+  "date": "2026-07-11",
+  "generated_at": "02:17:34",
+  "ai_summary": "申し訳ございませんが、提供いただいたPTSランキングデータが空の状態となっており、具体的な銘柄情報や数値が記載されていません。分析を実施するためには、値上がり率上位10、値下がり率上位10、出来高上位10、売買代金上位10の各リストに銘柄名と数値が必要です。データをご確認の上、改めてご提供いただければ、セクターローテーションの観点から市場全体の動向と翌日への示唆を含めた分析をお提供いたします。",
+  "ai_highlights": [
+    {
+      "code": "285A",
+      "name": "キオクシア",
+      "reason": "直近30日中8日ランクインしており、平均順位21.5と中程度の安定性を示している。継続的な買い需要が見られ、価格上昇トレンドへの市場の関心が持続している。",
+      "selection_basis": {
+        "avg_rank": 21.5,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 8
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "6166",
+      "name": "中村超硬",
+      "reason": "直近30日中6日ランクインし、平均順位18.5で比較的安定した上昇パターンを示している。特定テーマへの関心が継続しており、買い圧力の存在が示唆される。",
+      "selection_basis": {
+        "avg_rank": 18.5,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 6
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "4395",
+      "name": "アクリート",
+      "reason": "直近30日中5日ランクインし、平均順位11.8と高い順位を獲得している。限定的だが強い買い需要が示唆され、市場の注目度が高い。",
+      "selection_basis": {
+        "avg_rank": 11.8,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "4062",
+      "name": "イビデン",
+      "reason": "直近30日中7日ランクインしており、平均順位17.9で売り圧力が継続している。下落トレンドへの一定の市場関心が持続している。",
+      "selection_basis": {
+        "avg_rank": 17.9,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 7
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "3133",
+      "name": "海帆",
+      "reason": "直近30日中5日ランクインし、平均順位8.6と高い順位での下落パターンを示している。強い売り需要が示唆され、市場の警戒感が高い。",
+      "selection_basis": {
+        "avg_rank": 8.6,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "3905",
+      "name": "データセク",
+      "reason": "直近30日中5日ランクインし、平均順位17.8で売り圧力が見られる。特定セクターへの警戒感が継続している。2026年7月8日付けで支配株主等に関する事項が開示されており、経営体制の変化の可能性が示唆される。",
+      "selection_basis": {
+        "avg_rank": 17.8,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260708589961.pdf"
+    },
+    {
+      "code": "8918",
+      "name": "ランド",
+      "reason": "直近30日中20日ランクインしており、平均順位4.8と極めて高い順位を維持している。継続的で強い取引量需要が見られ、市場流動性の中核銘柄として機能している。2026年7月9日付けで2027年2月期第1四半期決算短信が開示されており、決算内容への市場関心が高い可能性がある。",
+      "selection_basis": {
+        "avg_rank": 4.8,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 20
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260709590385.pdf"
+    },
+    {
+      "code": "6740",
+      "name": "Ｊディスプレ",
+      "reason": "直近30日中20日ランクインし、平均順位3.5と最高水準の安定性を示している。継続的で圧倒的な取引量需要が示唆され、市場の最重要流動性銘柄である。2026年7月9日付けで香港子会社の解散及び清算が開示されており、事業構造の再編に伴う市場の取引関心が高い可能性がある。",
+      "selection_basis": {
+        "avg_rank": 3.5,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 20
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260707589020.pdf"
+    },
+    {
+      "code": "9432",
+      "name": "ＮＴＴ",
+      "reason": "直近30日中20日ランクインし、平均順位6.6で安定した高い取引量を維持している。継続的な市場参加者の関心が見られ、主要流動性銘柄としての地位が確立している。",
+      "selection_basis": {
+        "avg_rank": 6.6,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 20
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "9984",
+      "name": "ＳＢＧ",
+      "reason": "直近30日中20日ランクインし、平均順位3.9と極めて高い順位を保持している。継続的で強い回転売買需要が示唆され、市場の中心的な取引対象銘柄である。",
+      "selection_basis": {
+        "avg_rank": 3.9,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 20
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "8035",
+      "name": "東エレク",
+      "reason": "直近30日中20日ランクインし、平均順位7.0で安定した高い回転売買を記録している。継続的な投資家の売買関心が見られ、主要な回転売買対象銘柄として機能している。",
+      "selection_basis": {
+        "avg_rank": 7.0,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 20
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "6857",
+      "name": "アドテスト",
+      "reason": "直近30日中20日ランクインし、平均順位7.7で安定した回転売買需要を示している。継続的な市場参加者の取引関心が持続しており、重要な流動性供給銘柄である。",
+      "selection_basis": {
+        "avg_rank": 7.7,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 20
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    }
+  ],
+  "rankings": {
+    "price_up": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "price_down": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "volume": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "turnover": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    }
+  }
+}
