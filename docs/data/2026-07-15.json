@@ -1,0 +1,275 @@
+{
+  "date": "2026-07-15",
+  "generated_at": "01:44:39",
+  "ai_summary": "申し訳ございませんが、提供いただいたPTSランキングデータが空白となっており、具体的な銘柄情報や数値が記載されていません。分析を行うには、値上がり率上位10、値下がり率上位10、出来高上位10、売買代金上位10の各リストに銘柄名と数値が必要です。データを再度ご確認いただき、具体的なランキング情報をご提供いただければ、市場全体の動向、セクターローテーション、翌日の現物市場への示唆を含めた分析レポートを作成させていただきます。",
+  "ai_highlights": [
+    {
+      "code": "285A",
+      "name": "キオクシア",
+      "reason": "直近30日中8日ランクインしており、価格上昇銘柄として継続的に注目されている。平均順位21.5位という安定した出現パターンから、中期的な買い需要が持続している可能性が高い。",
+      "selection_basis": {
+        "avg_rank": 21.5,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 8
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "6166",
+      "name": "中村超硬",
+      "reason": "直近30日中6日ランクインし、価格上昇銘柄として比較的高い出現頻度を示している。平均順位18.5位という上位での登場から、特定テーマ（素材・工具関連）への継続的な関心が見られる。",
+      "selection_basis": {
+        "avg_rank": 18.5,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 6
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "4395",
+      "name": "アクリート",
+      "reason": "直近30日中5日ランクインし、価格上昇銘柄として注目度が高い。平均順位11.8位という上位ランクでの出現から、市場における強い買い圧力が継続している。",
+      "selection_basis": {
+        "avg_rank": 11.8,
+        "appeared_in": [
+          "price_up",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_up",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "4062",
+      "name": "イビデン",
+      "reason": "直近30日中7日ランクインしており、価格下落銘柄として最も高い出現頻度を記録している。平均順位17.9位での継続的な登場から、市場における売り圧力が相応に強い状況が続いている。",
+      "selection_basis": {
+        "avg_rank": 17.9,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 7
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "3261",
+      "name": "グラン",
+      "reason": "直近30日中5日ランクインし、価格下落銘柄として注目されている。平均順位8.8位という上位での出現から、特定のネガティブ要因に対する市場の反応が顕著である。",
+      "selection_basis": {
+        "avg_rank": 8.8,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "3133",
+      "name": "海帆",
+      "reason": "直近30日中5日ランクインし、価格下落銘柄として安定した出現パターンを示している。平均順位8.6位という高ランクでの登場から、投資家の売却意欲が継続している。",
+      "selection_basis": {
+        "avg_rank": 8.6,
+        "appeared_in": [
+          "price_down",
+          "historical_supplement"
+        ],
+        "freq_days": 5
+      },
+      "rank_today": null,
+      "category": "price_down",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "6740",
+      "name": "Ｊディスプレ",
+      "reason": "直近30日中21日ランクインしており、出来高銘柄として圧倒的な出現頻度を示している。平均順位3.4位という最上位クラスでの登場から、市場における極めて高い流動性需要が持続している。なお、2026年7月9日付けで香港子会社の解散及び清算が発表されており、構造的な事業再編が進行中と推定される。",
+      "selection_basis": {
+        "avg_rank": 3.4,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 21
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260707589020.pdf"
+    },
+    {
+      "code": "9432",
+      "name": "ＮＴＴ",
+      "reason": "直近30日中21日ランクインし、出来高銘柄として最高水準の出現頻度を記録している。平均順位6.6位での継続的な登場から、大型銘柄としての安定した取引需要が見られる。",
+      "selection_basis": {
+        "avg_rank": 6.6,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 21
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "3350",
+      "name": "メタプラ",
+      "reason": "直近30日中21日ランクインし、出来高銘柄として常時注目されている。平均順位12.7位での安定した出現から、テーマ関連銘柄としての継続的な取引関心が維持されている。",
+      "selection_basis": {
+        "avg_rank": 12.7,
+        "appeared_in": [
+          "volume",
+          "historical_supplement"
+        ],
+        "freq_days": 21
+      },
+      "rank_today": null,
+      "category": "volume",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "9984",
+      "name": "ＳＢＧ",
+      "reason": "直近30日中21日ランクインしており、売買代金銘柄として最高水準の出現頻度を示している。平均順位3.8位という最上位での登場から、大型優良銘柄としての圧倒的な市場流動性が確認できる。",
+      "selection_basis": {
+        "avg_rank": 3.8,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 21
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "8035",
+      "name": "東エレク",
+      "reason": "直近30日中21日ランクインし、売買代金銘柄として常時最上位クラスで登場している。平均順位7.0位での継続的な高ランク出現から、機関投資家による安定した取引需要が持続している。",
+      "selection_basis": {
+        "avg_rank": 7.0,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 21
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "not_found",
+        "news": "not_found",
+        "ir": "error"
+      }
+    },
+    {
+      "code": "5803",
+      "name": "フジクラ",
+      "reason": "直近30日中21日ランクインしており、売買代金銘柄として最高水準の出現頻度を記録している。平均順位6.9位という上位での安定した登場から、市場における強固な取引ニーズが見られる。なお、2026年7月10日付けで特定子会社の異動（株式譲渡）が発表されており、ポートフォリオの最適化が進行中と推定される。",
+      "selection_basis": {
+        "avg_rank": 6.9,
+        "appeared_in": [
+          "turnover",
+          "historical_supplement"
+        ],
+        "freq_days": 21
+      },
+      "rank_today": null,
+      "category": "turnover",
+      "external_info_status": {
+        "tdnet": "found",
+        "news": "not_found",
+        "ir": "error"
+      },
+      "tdnet_url": "https://www.release.tdnet.info/inbs/140120260710591277.pdf"
+    }
+  ],
+  "rankings": {
+    "price_up": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "price_down": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "volume": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "turnover": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    }
+  }
+}
