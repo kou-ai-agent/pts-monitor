@@ -1,0 +1,32 @@
+{
+  "date": "2026-07-25",
+  "generated_at": "02:04:16",
+  "ai_summary": "AIサマリーの生成に失敗しました。",
+  "ai_highlights": [],
+  "rankings": {
+    "price_up": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "price_down": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "volume": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    },
+    "turnover": {
+      "all": [],
+      "prime": [],
+      "standard": [],
+      "growth": []
+    }
+  }
+}
