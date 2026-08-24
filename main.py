@@ -82,8 +82,23 @@ if __name__ == "__main__":
         _update_index()
 
         # Phase 2: AI コンテンツ生成
-        logger.info("Phase 2: Generating AI Summaries and Highlights...")
-        generate_ai_content(today)
+        # スクレイピングが全カテゴリ空振りの場合はAI Agent呼び出しをスキップする。
+        # _has_valid_dataは次回起動時のスキップ判定用のみで、同日内でスクレイピングが
+        # 毎回失敗するケース（今回の7/14〜のような障害）はガードされないため、
+        # ここで当該実行のrankingsを直接見て判定する。
+        has_ranking_data = any(
+            len(rows) > 0
+            for cat in rankings.values()
+            for rows in cat.values()
+        )
+        if has_ranking_data:
+            logger.info("Phase 2: Generating AI Summaries and Highlights...")
+            generate_ai_content(today)
+        else:
+            logger.warning(
+                f"No ranking data fetched for {today} (all categories empty). "
+                "Skipping AI Agent to avoid wasting Claude API calls on empty scrape results."
+            )
 
         # AI生成結果を読み込んで通知レポートに反映
         result_data = load_daily_json(today)

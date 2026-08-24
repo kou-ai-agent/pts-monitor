@@ -11,3 +11,4 @@ venv/
 *.docx
 *.xls
 *.xlsx
+gitignorefiles/
