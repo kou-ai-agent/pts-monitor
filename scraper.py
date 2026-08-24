@@ -47,21 +47,52 @@ def _parse_int(val_str: str) -> int:
     except:
         return 0
 
+_session = None
+
+def _get_session() -> "requests.Session":
+    """
+    kabutanが2026-07-14頃からGitHub Actions経由のリクエストを405で拒否するようになったため、
+    ブラウザに近いセッション（Cookie保持＋拡張ヘッダー）を1プロセスにつき1回だけ用意する。
+    トップページに一度アクセスしてBot対策のCookieを取得してから、各ランキングページへ
+    同一セッションでアクセスする。
+    """
+    global _session
+    if _session is not None:
+        return _session
+
+    session = requests.Session()
+    session.headers.update({
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "Accept-Language": "ja,en-US;q=0.7,en;q=0.3",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Connection": "keep-alive",
+        "Sec-Fetch-Dest": "document",
+        "Sec-Fetch-Mode": "navigate",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-User": "?1",
+        "Upgrade-Insecure-Requests": "1",
+    })
+
+    try:
+        warm_up = session.get("https://kabutan.jp/", timeout=10)
+        logger.info(f"Warm-up request to kabutan.jp: status={warm_up.status_code}")
+        time.sleep(1.5)
+    except Exception as e:
+        logger.warning(f"Warm-up request to kabutan.jp failed: {e}")
+
+    _session = session
+    return session
+
+
 def fetch_ranking(date: str, category: str, market: str) -> List[Dict]:
     """
     株探のPTSランキングページをスクレイピングし、データを取得する（100位まで対応）
     """
     path = CATEGORY_MAP.get(category, "pts_night_price_increase")
     market_val = MARKET_MAP.get(market, "0")
-    
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-        "Accept-Language": "ja,en-US;q=0.7,en;q=0.3",
-        "Accept-Encoding": "gzip, deflate, br",
-        "Referer": "https://kabutan.jp/",
-        "Connection": "keep-alive",
-    }
+
+    session = _get_session()
 
     results = []
 
@@ -72,7 +103,7 @@ def fetch_ranking(date: str, category: str, market: str) -> List[Dict]:
 
         try:
             logger.info(f"Fetching from: {url}")
-            response = requests.get(url, headers=headers, timeout=10)
+            response = session.get(url, headers={"Referer": "https://kabutan.jp/"}, timeout=10)
             response.raise_for_status()
             
             soup = BeautifulSoup(response.content, 'html.parser')
