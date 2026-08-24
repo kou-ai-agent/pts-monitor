@@ -1,12 +1,11 @@
 """
-一時的な診断スクリプト。
-kabutan.jpが2026-07-14頃からGitHub Actions経由のrequestsベースのリクエストを
-405で拒否する問題について、Playwright(headless Chromium)経由なら通るかどうかを
-確認するためだけのもの。
+一時的な診断スクリプト(第2弾)。
+kabutan.jpがGitHub Actions経由のアクセスを405で拒否する問題(Playwright/requestsどちらでも
+再現、IPベースのブロックと推定)を受けて、PTSの運営元であるジャパンネクスト証券の
+公式統計ページ・CSVダウンロードがGitHub Actionsから利用できるかどうかを確認する。
 
-本番パイプライン(main.py / scraper.py)には組み込まない。
-daily.ymlの検証用ステップから1回だけ実行し、結果を見たら
-このファイルとdaily.ymlの該当ステップは削除してよい。
+本番パイプライン(main.py / scraper.py)には組み込まない。単発検証用。
+検証が終わったらdaily.ymlの該当ステップと合わせて削除、または次の候補への差し替えでよい。
 """
 import sys
 
@@ -15,6 +14,16 @@ try:
 except ImportError:
     print("Error: playwright is required. Run `pip install playwright && playwright install --with-deps chromium`")
     sys.exit(1)
+
+PAGES_TO_CHECK = [
+    ("値上がり率/値下がり率(ナイトタイム)", "https://www.japannext.co.jp/ja/statistics/market-movers/turnover-and-market-share"),
+    ("売買代金ランキング(ナイトタイム)", "https://www.japannext.co.jp/ja/statistics/top-performers/turnover-and-market-share"),
+]
+
+CSV_TO_CHECK = [
+    ("値上がり/値下がりCSV(ナイトタイム)", "https://www.japannext.co.jp/csv_download/dnd_market_movers/NGHT"),
+    ("売買代金/出来高CSV(ナイトタイム)", "https://www.japannext.co.jp/csv_download/dnd_top_ranking/NGHT"),
+]
 
 
 def main():
@@ -29,33 +38,42 @@ def main():
         )
         page = context.new_page()
 
-        print("=== Step 1: kabutan.jp トップページ ===")
-        try:
-            resp = page.goto("https://kabutan.jp/", timeout=30000)
-            print(f"status={resp.status if resp else 'N/A'}")
-        except Exception as e:
-            print(f"Failed to load top page: {e}")
+        print("=== HTMLページの確認 (ブラウザナビゲーション) ===")
+        for label, url in PAGES_TO_CHECK:
+            try:
+                resp = page.goto(url, timeout=30000)
+                status = resp.status if resp else None
+                print(f"[{label}] {url} -> status={status}")
+                if status == 200:
+                    table = page.query_selector("table")
+                    if table:
+                        rows = page.query_selector_all("table tr")
+                        print(f"  table found: rows={len(rows)}")
+                    else:
+                        print("  table NOT found on page")
+            except Exception as e:
+                print(f"[{label}] Failed: {e}")
 
-        print("=== Step 2: PTSランキングページ (price_up / market=0 / page=1) ===")
-        try:
-            resp2 = page.goto(
-                "https://kabutan.jp/warning/pts_night_price_increase?market=0&page=1",
-                timeout=30000,
-            )
-            status2 = resp2.status if resp2 else None
-            print(f"status={status2}")
-
-            if status2 == 200:
-                table = page.query_selector("table.stock_table")
-                if table:
-                    rows = page.query_selector_all("table.stock_table tr")
-                    print(f"table found: rows={len(rows)}")
-                else:
-                    print("table NOT found (status 200 but no stock_table element - page structure may differ)")
-            else:
-                print("Ranking page did not return 200 - likely still blocked.")
-        except Exception as e:
-            print(f"Failed to load ranking page: {e}")
+        print()
+        print("=== CSVダウンロードの確認 (直接リクエスト) ===")
+        for label, url in CSV_TO_CHECK:
+            try:
+                resp = context.request.get(url, timeout=30000)
+                status = resp.status
+                body = resp.body()
+                print(f"[{label}] {url} -> status={status}, bytes={len(body)}")
+                if status == 200:
+                    try:
+                        text = body.decode("utf-8")
+                    except UnicodeDecodeError:
+                        text = body.decode("shift_jis", errors="replace")
+                    lines = text.splitlines()
+                    print(f"  content-type={resp.headers.get('content-type')}")
+                    print("  --- first 5 lines ---")
+                    for line in lines[:5]:
+                        print(f"  {line}")
+            except Exception as e:
+                print(f"[{label}] Failed: {e}")
 
         browser.close()
 
