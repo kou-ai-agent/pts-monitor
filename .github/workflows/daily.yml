@@ -33,6 +33,15 @@ jobs:
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
+      - name: Install Playwright (diagnostic - temporary)
+        run: |
+          pip install playwright
+          playwright install --with-deps chromium
+
+      - name: Playwright diagnostic test (kabutan.jp bot detection - temporary)
+        continue-on-error: true
+        run: python playwright_test.py
+
       - name: Run daily pipeline (Scraper -> Processor -> AI Agent -> Notifier)
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
