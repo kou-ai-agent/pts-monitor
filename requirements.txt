@@ -1,6 +1,6 @@
 requests
 beautifulsoup4
-anthropic
+anthropic<1.0.0
 lxml
 jpholiday
 pytz

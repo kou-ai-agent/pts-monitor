@@ -14,6 +14,7 @@ import pytz
 import anthropic
 
 CHANGELOG_PATH = Path(__file__).parent / "docs" / "data" / "changelog.json"
+STATE_PATH = Path(__file__).parent / "docs" / "data" / "changelog_state.json"
 JST = pytz.timezone("Asia/Tokyo")
 
 EXCLUDED_PATTERNS = [
@@ -65,6 +66,29 @@ def get_next_version() -> str:
 
     major, minor = max(versions)
     return f"v{major}.{minor + 1}"
+
+
+def _already_ran_today(today_str: str) -> bool:
+    """今日(JST)分の判定を既に実行済みかどうかを返す。
+    dailyワークフローは1日に最大3回（0:30/1:30/2:30 JST）起動されるため、
+    このガードがないと同じコミットに対して毎回Claudeを呼んでしまう。"""
+    if not STATE_PATH.exists():
+        return False
+    try:
+        with open(STATE_PATH, encoding="utf-8") as f:
+            state = json.load(f)
+        return state.get("last_run_date") == today_str
+    except Exception:
+        return False
+
+
+def _mark_ran_today(today_str: str) -> None:
+    try:
+        STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
+        with open(STATE_PATH, "w", encoding="utf-8") as f:
+            json.dump({"last_run_date": today_str}, f)
+    except Exception as e:
+        print(f"Warning: failed to write state file: {e}")
 
 
 def generate_changelog_entry(commits: list[str], today_str: str) -> dict | None:
@@ -135,6 +159,10 @@ if __name__ == "__main__":
         print(f"No developer commits for {today_str} (JST). Skipping.")
         sys.exit(0)
 
+    if _already_ran_today(today_str):
+        print(f"Changelog already checked for {today_str} (JST) in an earlier run today. Skipping to avoid duplicate Claude calls.")
+        sys.exit(0)
+
     print(f"Found {len(commits)} developer commit(s) for {today_str}:")
     for c in commits:
         print(f"  {c}")
@@ -144,6 +172,8 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"Error calling Claude API: {e}")
         sys.exit(0)
+
+    _mark_ran_today(today_str)
 
     if entry is None:
         print("No user-facing changes detected. Skipping changelog update.")
