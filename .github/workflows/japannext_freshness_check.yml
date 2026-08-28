@@ -2,9 +2,9 @@ name: Japannext freshness check (temporary)
 
 on:
   schedule:
-    - cron: '0,15,30,45 21,22 * * *'    # 6:00-7:45 JST, 15分おき
-    - cron: '0,10,20,30,40,50 23 * * *' # 8:00-8:50 JST, 10分おき
-    - cron: '0,10,20,30 0 * * *'        # 9:00-9:30 JST, 10分おき
+    - cron: '3,18,33,48 21,22 * * *'    # 6:03-7:48 JST, 15分おき
+    - cron: '3,13,23,33,43,53 23 * * *' # 8:03-8:53 JST, 10分おき
+    - cron: '3,13,23,33 0 * * *'        # 9:03-9:33 JST, 10分おき
   workflow_dispatch: {}
 
 permissions:
