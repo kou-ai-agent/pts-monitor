@@ -2,28 +2,41 @@ name: Test Japannext CSV Access
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '53 5 * * *'
+      timezone: 'Asia/Tokyo'
+    - cron: '3,13,23,33,43,53 6,7,8 * * *'
+      timezone: 'Asia/Tokyo'
+    - cron: '3 9 * * *'
+      timezone: 'Asia/Tokyo'
 
 jobs:
   test-fetch:
     runs-on: ubuntu-latest
     steps:
-      - name: Plain curl (no custom headers)
-        run: |
-          echo "=== Plain curl ==="
-          curl -sS -o /tmp/plain.csv -w "HTTP Status: %{http_code}\n" "https://www.japannext.co.jp/csv_download/dnd_top_ranking/NGHT" || true
-          echo "--- Content preview ---"
-          head -c 500 /tmp/plain.csv || echo "(empty or binary)"
-          echo ""
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Curl with browser-spoofed headers
+      - name: Fetch CSV and record log line
         run: |
-          echo "=== Spoofed headers ==="
-          curl -sS -o /tmp/spoofed.csv -w "HTTP Status: %{http_code}\n" \
-            -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" \
-            -H "Accept: text/csv,application/csv,*/*" \
-            -H "Accept-Language: ja,en-US;q=0.9,en;q=0.8" \
-            -H "Referer: https://www.japannext.co.jp/ja/market" \
-            "https://www.japannext.co.jp/csv_download/dnd_top_ranking/NGHT" || true
-          echo "--- Content preview ---"
-          head -c 500 /tmp/spoofed.csv || echo "(empty or binary)"
-          echo ""
+          TS=$(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M:%S JST')
+          TRIGGER="${{ github.event_name }}"
+          HTTP_CODE=$(curl -sS -o /tmp/japannext.csv -w "%{http_code}" "https://www.japannext.co.jp/csv_download/dnd_top_ranking/NGHT")
+          DATE_LINE=$(sed -n '2p' /tmp/japannext.csv | tr -d '\r')
+          echo "${TS} | trigger=${TRIGGER} | http=${HTTP_CODE} | ${DATE_LINE}" >> japannext_watch_log.txt
+
+      - name: Commit and push with retry
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add japannext_watch_log.txt
+          git commit -m "test: japannext watch log entry [skip ci]" || echo "no changes to commit"
+          for i in 1 2 3; do
+            if git push; then
+              echo "push succeeded on attempt $i"
+              break
+            fi
+            echo "push failed, attempt $i/3. pulling and retrying..."
+            git pull --rebase origin HEAD
+            sleep 5
+          done
