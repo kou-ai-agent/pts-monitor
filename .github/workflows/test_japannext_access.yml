@@ -17,13 +17,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Fetch CSV and record log line
+      - name: Fetch CSVs and record log lines
         run: |
           TS=$(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M:%S JST')
           TRIGGER="${{ github.event_name }}"
-          HTTP_CODE=$(curl -sS -o /tmp/japannext.csv -w "%{http_code}" "https://www.japannext.co.jp/csv_download/dnd_top_ranking/NGHT")
-          DATE_LINE=$(sed -n '2p' /tmp/japannext.csv | tr -d '\r')
-          echo "${TS} | trigger=${TRIGGER} | http=${HTTP_CODE} | ${DATE_LINE}" >> japannext_watch_log.txt
+
+          HTTP_CODE=$(curl -sS -o /tmp/top_ranking.csv -w "%{http_code}" "https://www.japannext.co.jp/csv_download/dnd_top_ranking/NGHT")
+          DATE_LINE=$(sed -n '2p' /tmp/top_ranking.csv | tr -d '\r')
+          echo "${TS} | trigger=${TRIGGER} | type=top_ranking | http=${HTTP_CODE} | ${DATE_LINE}" >> japannext_watch_log.txt
+
+          HTTP_CODE2=$(curl -sS -o /tmp/market_movers.csv -w "%{http_code}" "https://www.japannext.co.jp/csv_download/dnd_market_movers/NGHT")
+          DATE_LINE2=$(sed -n '2p' /tmp/market_movers.csv | tr -d '\r')
+          echo "${TS} | trigger=${TRIGGER} | type=market_movers | http=${HTTP_CODE2} | ${DATE_LINE2}" >> japannext_watch_log.txt
 
       - name: Commit and push with retry
         run: |
