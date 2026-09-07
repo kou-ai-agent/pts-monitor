@@ -1,0 +1,29 @@
+name: Test Japannext CSV Access
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Plain curl (no custom headers)
+        run: |
+          echo "=== Plain curl ==="
+          curl -sS -o /tmp/plain.csv -w "HTTP Status: %{http_code}\n" "https://www.japannext.co.jp/csv_download/dnd_top_ranking/NGHT" || true
+          echo "--- Content preview ---"
+          head -c 500 /tmp/plain.csv || echo "(empty or binary)"
+          echo ""
+
+      - name: Curl with browser-spoofed headers
+        run: |
+          echo "=== Spoofed headers ==="
+          curl -sS -o /tmp/spoofed.csv -w "HTTP Status: %{http_code}\n" \
+            -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" \
+            -H "Accept: text/csv,application/csv,*/*" \
+            -H "Accept-Language: ja,en-US;q=0.9,en;q=0.8" \
+            -H "Referer: https://www.japannext.co.jp/ja/market" \
+            "https://www.japannext.co.jp/csv_download/dnd_top_ranking/NGHT" || true
+          echo "--- Content preview ---"
+          head -c 500 /tmp/spoofed.csv || echo "(empty or binary)"
+          echo ""
