@@ -4,3 +4,5 @@
 2026-09-09 08:01:08 JST | trigger=schedule | type=market_movers | http=200 | NGHT,2026-09-08
 2026-09-09 08:18:02 JST | trigger=schedule | type=top_ranking | http=200 | NGHT,2026-09-08
 2026-09-09 08:18:02 JST | trigger=schedule | type=market_movers | http=200 | NGHT,2026-09-08
+2026-09-09 10:17:58 JST | trigger=schedule | type=top_ranking | http=200 | NGHT,2026-09-08
+2026-09-09 10:17:58 JST | trigger=schedule | type=market_movers | http=200 | NGHT,2026-09-08
