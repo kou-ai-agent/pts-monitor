@@ -536,3 +536,5 @@
 2026-09-24 06:30:10 JST | trigger=workflow_dispatch | type=market_movers | http=200 | NGHT,2026-09-18
 2026-09-24 06:40:10 JST | trigger=workflow_dispatch | type=top_ranking | http=200 | NGHT,2026-09-18
 2026-09-24 06:40:10 JST | trigger=workflow_dispatch | type=market_movers | http=200 | NGHT,2026-09-18
+2026-09-24 06:50:11 JST | trigger=workflow_dispatch | type=top_ranking | http=200 | NGHT,2026-09-18
+2026-09-24 06:50:11 JST | trigger=workflow_dispatch | type=market_movers | http=200 | NGHT,2026-09-18
