@@ -1930,3 +1930,5 @@
 2026-10-29 06:10:10 JST | trigger=workflow_dispatch | type=market_movers | http=200 | NGHT,2026-10-28
 2026-10-29 06:20:11 JST | trigger=workflow_dispatch | type=top_ranking | http=200 | NGHT,2026-10-27
 2026-10-29 06:20:11 JST | trigger=workflow_dispatch | type=market_movers | http=200 | NGHT,2026-10-28
+2026-10-29 06:30:13 JST | trigger=workflow_dispatch | type=top_ranking | http=200 | NGHT,2026-10-27
+2026-10-29 06:30:13 JST | trigger=workflow_dispatch | type=market_movers | http=200 | NGHT,2026-10-28
