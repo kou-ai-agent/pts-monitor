@@ -2014,3 +2014,5 @@
 2026-10-31 06:30:10 JST | trigger=workflow_dispatch | type=market_movers | http=200 | NGHT,2026-10-30
 2026-10-31 06:40:10 JST | trigger=workflow_dispatch | type=top_ranking | http=200 | NGHT,2026-10-29
 2026-10-31 06:40:10 JST | trigger=workflow_dispatch | type=market_movers | http=200 | NGHT,2026-10-30
+2026-10-31 06:50:10 JST | trigger=workflow_dispatch | type=top_ranking | http=200 | NGHT,2026-10-29
+2026-10-31 06:50:10 JST | trigger=workflow_dispatch | type=market_movers | http=200 | NGHT,2026-10-30
